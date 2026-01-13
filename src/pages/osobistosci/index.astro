@@ -1,0 +1,246 @@
+---
+import settings from "../../content/ustawienia.json";
+import { ClientRouter, ViewTransitions } from "astro:transitions";
+import LoadingIndicator from "astro-loading-indicator/component";
+import { ThemeScript, Toggle } from "astro-theme-toggle/components";
+import { Image } from "astro:assets";
+
+const assets = import.meta.glob("/src/assets/**/*", { eager: true });
+const resolveAsset = (path) => {
+  if (!path) return null;
+  const entry = assets[`/src${path}`];
+  return entry?.default ?? null;
+};
+
+const entries = import.meta.glob('../../content/osobistosci/*.json', { eager: true });
+const items = Object.entries(entries).map(([file, entry]) => {
+  const slug = file.split('/').pop().replace('.json', '');
+  return { slug, ...entry.default, image: resolveAsset(entry.default?.zdjecie) };
+});
+const logoAsset = resolveAsset(settings.logo);
+---
+
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{settings.siteTitle} - Osobistosci</title>
+    <meta name="description" content={settings.metaDescription} />
+    <ClientRouter />
+    <ViewTransitions />
+    <LoadingIndicator color="var(--accent)" height="3px" animationDuration={400} threshold={200} />
+    <ThemeScript />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f3f5f7;
+        --ink: #0f172a;
+        --muted: #475569;
+        --accent: #2563eb;
+        --card: rgba(255, 255, 255, 0.8);
+        --border: rgba(15, 23, 42, 0.12);
+        --glow: rgba(37, 99, 235, 0.18);
+      }
+      html.dark {
+        --bg: #0b1220;
+        --ink: #e2e8f0;
+        --muted: #94a3b8;
+        --accent: #60a5fa;
+        --card: rgba(15, 23, 42, 0.8);
+        --border: rgba(148, 163, 184, 0.18);
+        --glow: rgba(96, 165, 250, 0.2);
+      }
+      body {
+        font-family: "Space Grotesk", "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 40px 24px 80px;
+        background: var(--bg);
+        color: var(--ink);
+      }
+      .menu {
+        display: flex;
+        gap: 16px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        backdrop-filter: blur(10px);
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+      }
+      .menu a {
+        color: var(--ink);
+        text-decoration: none;
+        font-weight: 600;
+        padding: 6px 10px;
+        border-radius: 999px;
+        transition: background 160ms ease, color 160ms ease;
+      }
+      .menu-links {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+      .menu img {
+        display: block;
+        width: auto;
+      }
+      .logo {
+        height: 28px;
+        width: auto;
+      }
+      .menu a:hover {
+        background: rgba(176, 122, 58, 0.15);
+        color: var(--accent);
+      }
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      header {
+        margin-bottom: 32px;
+      }
+      h1 {
+        font-family: "Clash Display", "Times New Roman", serif;
+        font-size: 48px;
+        letter-spacing: 0.01em;
+        margin: 0 0 10px;
+      }
+      .lead {
+        margin: 0 0 32px;
+        font-size: 18px;
+        max-width: 640px;
+        color: var(--muted);
+      }
+      .grid {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        padding: 18px 18px 20px;
+        border-radius: 18px;
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+        display: grid;
+        gap: 12px;
+        transform: translateY(0);
+        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 24px 50px rgba(20, 17, 13, 0.16);
+        border-color: rgba(176, 122, 58, 0.35);
+      }
+      .photo {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: #efe6da;
+      }
+      .photo.placeholder {
+        display: grid;
+        place-items: center;
+        color: var(--muted);
+        font-size: 12px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .name {
+        font-size: 20px;
+        margin: 0;
+      }
+      .role {
+        margin: 0;
+        font-size: 15px;
+        color: var(--muted);
+      }
+      .link {
+        text-decoration: none;
+        color: inherit;
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 28px 18px 60px;
+        }
+      }
+      footer {
+        margin-top: 56px;
+        color: var(--muted);
+      }
+      @view-transition {
+        navigation: auto;
+      }
+      ::view-transition-old(root) {
+        animation: fade-out 500ms ease;
+      }
+      ::view-transition-new(root) {
+        animation: fade-in 500ms ease;
+      }
+      @keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes fade-out {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+    </style>
+    <style is:global>
+      :root .astro-loading-indicator {
+        top: 0;
+        z-index: 2000;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <header>
+        <nav class="menu">
+        <a href="/">
+          {logoAsset ? (
+            <Image src={logoAsset} alt={settings.siteTitle} class="logo" />
+          ) : (
+            settings.siteTitle
+          )}
+        </a>
+          <div class="menu-links">
+        <a href="/osobistosci/">Osobistosci</a>
+        <Toggle style="width: 22px; height: 22px;" />
+      </div>
+        </nav>
+      </header>
+      <h1>Osobistosci</h1>
+      <p class="lead">
+        Galeria osób z kolekcji Keystatic. Kliknij kartę, aby zobaczyć pełny profil.
+      </p>
+      <section class="grid">
+        {items.map((osoba) => (
+          <a class="card link" href={`/osobistosci/${osoba.slug}/`}>
+            {osoba.image ? (
+              <Image
+                class="photo"
+                src={osoba.image}
+                alt={osoba.tytul_wpisu ?? osoba.slug}
+                loading="lazy"
+              />
+            ) : (
+              <div class="photo placeholder">Brak zdjecia</div>
+            )}
+            <div>
+              <h2 class="name">{osoba.tytul_wpisu ?? osoba.slug}</h2>
+              {osoba.tytul_naukowy ? <p class="role">{osoba.tytul_naukowy}</p> : null}
+              {osoba.stanowisko ? <p class="role">{osoba.stanowisko}</p> : null}
+            </div>
+          </a>
+        ))}
+      </section>
+      <footer>{settings.footerText}</footer>
+    </main>
+  </body>
+</html>

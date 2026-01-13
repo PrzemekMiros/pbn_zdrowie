@@ -1,5 +1,10 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
+import keystatic from '@keystatic/astro';
+import react from '@astrojs/react'; // To powinno się pojawić
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  integrations: [
+    react(), // React musi być na liście
+    keystatic()
+  ],
+});

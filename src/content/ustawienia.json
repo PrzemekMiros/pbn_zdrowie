@@ -1,0 +1,7 @@
+{
+  "siteTitle": "Astro CMS",
+  "metaDescription": "Meta opis strony",
+  "logo": "/assets/images/global/logo.jpg",
+  "favicon": "/assets/images/global/favicon.jpg",
+  "footerText": "Tekst w stopce"
+}

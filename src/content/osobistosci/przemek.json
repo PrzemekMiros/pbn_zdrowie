@@ -1,0 +1,9 @@
+{
+  "tytul_wpisu": "Przemek",
+  "zdjecie": "/assets/images/osobistosci/przemek/zdjecie.webp",
+  "tytul_naukowy": "Kierownik",
+  "stanowisko": "Some OAuth Providers request a callback URL be submitted alongside requesting a Client ID, and Client Secret. The callback URL used by the providers must be set to the following, unless you override the prefix field in the configuration:",
+  "biografia": "Some OAuth Providers request a callback URL be submitted alongside requesting a Client ID, and Client Secret. The callback URL used by the providers must be set to the following, unless you override the prefix field in the configuration:",
+  "osiagniecia": "Some OAuth Providers request a callback URL be submitted alongside requesting a Client ID, and Client Secret. The callback URL used by the providers must be set to the following, unless you override the prefix field in the configuration:",
+  "wklad_branza": "Some OAuth Providers request a callback URL be submitted alongside requesting a Client ID, and Client Secret. The callback URL used by the providers must be set to the following, unless you override the prefix field in the configuration:\n\nSome OAuth Providers request a callback URL be submitted alongside requesting a Client ID, and Client Secret. The callback URL used by the providers must be set to the following, unless you override the prefix field in the configuration:"
+}

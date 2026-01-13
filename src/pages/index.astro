@@ -1,5 +1,17 @@
 ---
+import settings from "../content/ustawienia.json";
+import { ClientRouter, ViewTransitions } from "astro:transitions";
+import LoadingIndicator from "astro-loading-indicator/component";
+import { ThemeScript, Toggle } from "astro-theme-toggle/components";
+import { Image } from "astro:assets";
 
+const assets = import.meta.glob("/src/assets/**/*", { eager: true });
+const resolveAsset = (path) => {
+  if (!path) return null;
+  const entry = assets[`/src${path}`];
+  return entry?.default ?? null;
+};
+const logoAsset = resolveAsset(settings.logo);
 ---
 
 <html lang="pl">
@@ -8,9 +20,145 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{settings.siteTitle}</title>
+		<meta name="description" content={settings.metaDescription} />
+		<ClientRouter />
+		<ViewTransitions />
+		<LoadingIndicator color="var(--accent)" height="3px" animationDuration={400} threshold={200} />
+		<ThemeScript />
+		<style>
+			:root {
+				color-scheme: light;
+				--bg: #f3f5f7;
+				--ink: #0f172a;
+				--muted: #475569;
+				--accent: #2563eb;
+				--card: rgba(255, 255, 255, 0.8);
+				--border: rgba(15, 23, 42, 0.12);
+				--glow: rgba(37, 99, 235, 0.18);
+			}
+			html.dark {
+				--bg: #0b1220;
+				--ink: #e2e8f0;
+				--muted: #94a3b8;
+				--accent: #60a5fa;
+				--card: rgba(15, 23, 42, 0.8);
+				--border: rgba(148, 163, 184, 0.18);
+				--glow: rgba(96, 165, 250, 0.2);
+			}
+			html {
+				background: var(--bg);
+			}
+			body {
+				font-family: "Space Grotesk", "Segoe UI", sans-serif;
+				margin: 0;
+				padding: 32px 24px 64px;
+				background: var(--bg);
+				color: var(--ink);
+			}
+			.wrap {
+				max-width: 1100px;
+				margin: 0 auto;
+				min-height: calc(100vh - 96px);
+				display: flex;
+				flex-direction: column;
+			}
+			.menu {
+				display: flex;
+				gap: 16px;
+				padding: 10px 14px;
+				border-radius: 999px;
+				background: var(--card);
+				border: 1px solid var(--border);
+				backdrop-filter: blur(10px);
+				width: 100%;
+				justify-content: space-between;
+				align-items: center;
+				box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+			}
+			header {
+				margin-bottom: 36px;
+			}
+			.menu a {
+				color: var(--ink);
+				text-decoration: none;
+				font-weight: 600;
+				padding: 6px 10px;
+				border-radius: 999px;
+				transition: background 160ms ease, color 160ms ease;
+			}
+			.menu-links {
+				display: flex;
+				gap: 16px;
+				align-items: center;
+			}
+			.menu img {
+				display: block;
+				width: auto;
+			}
+			.logo {
+				height: 28px;
+				width: auto;
+			}
+			.menu a:hover {
+				background: rgba(176, 122, 58, 0.15);
+				color: var(--accent);
+			}
+			h1 {
+				font-family: "Clash Display", "Times New Roman", serif;
+				font-size: 48px;
+				margin: 0;
+				letter-spacing: 0.01em;
+			}
+			footer {
+				margin-top: 48px;
+				color: var(--muted);
+			}
+			@view-transition {
+				navigation: auto;
+			}
+			::view-transition-old(root) {
+				animation: fade-out 500ms ease;
+			}
+			::view-transition-new(root) {
+				animation: fade-in 500ms ease;
+			}
+			@keyframes fade-in {
+				from { opacity: 0; }
+				to { opacity: 1; }
+			}
+			@keyframes fade-out {
+				from { opacity: 1; }
+				to { opacity: 0; }
+			}
+		</style>
+		<style is:global>
+			:root .astro-loading-indicator {
+				top: 0;
+				z-index: 2000;
+			}
+		</style>
 	</head>
 	<body>
-		<h1>Astro Starter</h1>
+		<main class="wrap">
+			<header>
+				<nav class="menu">
+					<a href="/">
+						{logoAsset ? (
+							<Image src={logoAsset} alt={settings.siteTitle} class="logo" />
+						) : (
+							settings.siteTitle
+						)}
+					</a>
+					<div class="menu-links">
+						<a href="/osobistosci/">Osobistosci</a>
+						<Toggle style="width: 22px; height: 22px;" />
+					</div>
+				</nav>
+			</header>
+			<h1>Astro Starter</h1>
+			<p>{settings.metaDescription}</p>
+			<footer>{settings.footerText}</footer>
+		</main>
 	</body>
 </html>
