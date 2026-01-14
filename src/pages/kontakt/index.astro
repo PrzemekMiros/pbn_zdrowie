@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const contact = {
+  title: "Kontakt",
+  lead: "Opowiedz o projekcie. Wroce z odpowiedzia w 24-48h.",
+  email: "kontakt@twojadomena.pl",
+  phone: "+48 123 456 789",
+  address: "ul. Przykladowa 12, 00-000 Miasto",
+  hours: "Pn-Pt 9:00-17:00",
+  mapUrl: "https://maps.google.com/?q=Przykladowa+12+Miasto",
+};
+---
+
+<BaseLayout title="Kontakt">
+  <section class="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+    <div class="space-y-6">
+      <div class="space-y-3">
+        <p class="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--muted)]">Skontaktuj sie</p>
+        <h1 class="text-4xl font-semibold tracking-tight sm:text-6xl">{contact.title}</h1>
+        <p class="max-w-xl text-lg text-[var(--muted)]">{contact.lead}</p>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.6)]">
+          <p class="text-xs uppercase tracking-[0.2em] text-[var(--muted)]">Email</p>
+          <a class="mt-3 block text-lg font-semibold text-[var(--text)]" href={`mailto:${contact.email}`}>
+            {contact.email}
+          </a>
+        </div>
+        <div class="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.6)]">
+          <p class="text-xs uppercase tracking-[0.2em] text-[var(--muted)]">Telefon</p>
+          <a class="mt-3 block text-lg font-semibold text-[var(--text)]" href={`tel:${contact.phone.replace(/\s/g, "")}`}>
+            {contact.phone}
+          </a>
+        </div>
+        <div class="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.6)]">
+          <p class="text-xs uppercase tracking-[0.2em] text-[var(--muted)]">Adres</p>
+          <p class="mt-3 text-base text-[var(--text)]">{contact.address}</p>
+          <a class="mt-3 inline-flex text-sm font-semibold text-[var(--accent)] hover:brightness-95" href={contact.mapUrl} rel="noopener" target="_blank">
+            Zobacz na mapie
+          </a>
+        </div>
+        <div class="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.6)]">
+          <p class="text-xs uppercase tracking-[0.2em] text-[var(--muted)]">Godziny</p>
+          <p class="mt-3 text-base text-[var(--text)]">{contact.hours}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.6)]">
+      <h2 class="text-2xl font-semibold tracking-tight">Formularz kontaktowy</h2>
+      <p class="mt-2 text-sm text-[var(--muted)]">Podaj kilka szczegolow, a odezwe sie z propozycja dalszych krokow.</p>
+      <form
+        class="mt-6 grid gap-4"
+        name="kontakt"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="kontakt" />
+        <p class="hidden">
+          <label>
+            Nie wypelniaj:
+            <input name="bot-field" />
+          </label>
+        </p>
+        <label class="grid gap-2 text-sm font-semibold text-[var(--text)]">
+          Imie i nazwisko
+          <input class="rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="name" type="text" placeholder="Jan Kowalski" required />
+        </label>
+        <label class="grid gap-2 text-sm font-semibold text-[var(--text)]">
+          Email
+          <input class="rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="email" type="email" placeholder="jan@firma.pl" required />
+        </label>
+        <label class="grid gap-2 text-sm font-semibold text-[var(--text)]">
+          Firma (opcjonalnie)
+          <input class="rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="company" type="text" placeholder="Nazwa firmy" />
+        </label>
+        <label class="grid gap-2 text-sm font-semibold text-[var(--text)]">
+          Temat
+          <input class="rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="subject" type="text" placeholder="Nowa strona, redesign, SEO" required />
+        </label>
+        <label class="grid gap-2 text-sm font-semibold text-[var(--text)]">
+          Wiadomosc
+          <textarea class="min-h-[140px] rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="message" placeholder="Napisz, czego potrzebujesz i jaki jest termin." required></textarea>
+        </label>
+        <button class="mt-2 inline-flex w-full items-center justify-center rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-95" type="submit">
+          Wyslij wiadomosc
+        </button>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
