@@ -40,6 +40,25 @@ export default config({
 
   // --- KOLEKCJE (Twoje dotychczasowe osobistości) ---
   collections: {
+    opinie: collection({
+      label: 'Opinie',
+      slugField: 'slug',
+      path: 'src/content/opinie/*',
+      format: { data: 'json' },
+      schema: {
+        slug: fields.slug({ name: { label: 'Nazwa klienta' } }),
+        name: fields.text({ label: 'Imie i nazwisko / Firma' }),
+        role: fields.text({
+          label: 'Stanowisko / Rola',
+          validation: { isRequired: false },
+        }),
+        quote: fields.text({ label: 'Opinia', multiline: true }),
+        order: fields.integer({
+          label: 'Kolejnosc na liscie',
+          validation: { isRequired: false },
+        }),
+      },
+    }),
     osobistosci: collection({
       label: 'Osobistości',
       slugField: 'tytul_wpisu',
