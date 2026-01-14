@@ -4,21 +4,24 @@ const works = [
     title: "Portal kobiet biznesu",
     tag: "Strona wizerunkowa",
     year: "2024",
+    image: "/src/content/realizacje/img/business-thumb-big.jpg",
   },
   {
     title: "C7Med Centrum Rehabilitacji",
     tag: "Healthcare",
     year: "2023",
+    image: "/src/content/realizacje/img/c7med-thumb-big.jpg",
   },
   {
     title: "EcoTech Solutions",
     tag: "B2B",
     year: "2024",
+    image: "/src/content/realizacje/img/ecotech-thumb-big.jpg",
   },
 ];
 ---
 
-<section class="mt-16">
+<section class="mt-24">
   <div class="flex items-center justify-between gap-6">
     <div class="space-y-3">
       <p class="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--muted)]">Realizacje</p>
@@ -34,9 +37,13 @@ const works = [
   <div class="mt-8 grid gap-6 lg:grid-cols-3">
     {works.map((work) => (
       <article class="flex flex-col gap-6 rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.6)]">
-        <div class="rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] p-6">
-          <div class="h-28 w-full rounded-2xl bg-white shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06)]"></div>
-        </div>
+        <img
+          class="h-84 w-full rounded-2xl border border-[var(--border)] object-cover"
+          src={work.image}
+          alt={work.title}
+          loading="lazy"
+          decoding="async"
+        />
         <div class="space-y-2">
           <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">{work.tag}</p>
           <h3 class="text-xl font-semibold">{work.title}</h3>
