@@ -51,7 +51,7 @@ if (!realizacja) {
       <div class="grid aspect-[4/3] place-items-center rounded-3xl border border-dashed border-[var(--border)] bg-[var(--surface-muted)] text-xs uppercase tracking-widest text-[var(--muted)]">Brak zdjecia</div>
     )}
     <div class="space-y-2">
-      <h1 class="text-4xl font-semibold tracking-tight sm:text-6xl">{realizacja.title ?? realizacja.slug}</h1>
+      <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">{realizacja.title ?? realizacja.slug}</h1>
       {realizacja.role ? <p class="text-sm text-[var(--muted)]">{realizacja.role}</p> : null}
       {realizacja.year ? <p class="text-sm text-[var(--muted)]">{realizacja.year}</p> : null}
       {realizacja.href ? (

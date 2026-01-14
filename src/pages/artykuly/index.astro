@@ -24,9 +24,9 @@ const items = Object.entries(entries).map(([file, entry]) => {
 ---
 
 <BaseLayout title="Artykuly">
-  <h1 class="text-4xl font-semibold tracking-tight sm:text-6xl">Artykuly</h1>
+  <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">Artykuly</h1>
   <p class="mt-4 max-w-2xl text-lg text-[var(--muted)]">Lista artykulow z kolekcji Keystatic. Kliknij karte, aby zobaczyc szczegoly.</p>
-  <section class="mt-10 grid gap-7 lg:grid-cols-2">
+  <section class="mt-10 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
     {items.map((artykul) => {
       const image = resolveArticleImage(artykul.tileImage ?? artykul.thumbnail);
       return (

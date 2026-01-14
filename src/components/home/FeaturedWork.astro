@@ -1,27 +1,45 @@
 ---
-const works = [
-  {
-    title: "Portal kobiet biznesu",
-    tag: "Strona wizerunkowa",
-    year: "2024",
-    image: "/src/content/realizacje/img/business-thumb-big.jpg",
-  },
-  {
-    title: "C7Med Centrum Rehabilitacji",
-    tag: "Healthcare",
-    year: "2023",
-    image: "/src/content/realizacje/img/c7med-thumb-big.jpg",
-  },
-  {
-    title: "EcoTech Solutions",
-    tag: "B2B",
-    year: "2024",
-    image: "/src/content/realizacje/img/ecotech-thumb-big.jpg",
-  },
-];
+import { Image } from "astro:assets";
+
+const imageEntries = import.meta.glob("/src/content/realizacje/img/**/*", { eager: true });
+const resolveContentImage = (path) => {
+  if (!path) return null;
+  const normalized = path.startsWith("/src/") ? path : `/src${path}`;
+  const entry = imageEntries[normalized];
+  return entry?.default ?? null;
+};
+
+const entries = import.meta.glob("../../content/realizacje/*.md", { eager: true });
+const works = Object.entries(entries)
+  .map(([file, entry]) => {
+    const slug = file.split("/").pop().replace(".md", "");
+    const data = entry.frontmatter ?? {};
+    return {
+      slug,
+      title: data.title ?? slug,
+      tag: Array.isArray(data.category) ? data.category[0] : data.category,
+      date: data.date ? new Date(data.date) : null,
+      order: data.order,
+      image: data.tileImage ?? data.thumbnail ?? data.imageMain,
+    };
+  })
+  .filter((item) => item.title && item.image)
+  .sort((a, b) => {
+    const orderA = typeof a.order === "number" ? a.order : Number.MAX_SAFE_INTEGER;
+    const orderB = typeof b.order === "number" ? b.order : Number.MAX_SAFE_INTEGER;
+    if (orderA !== orderB) return orderA - orderB;
+    const timeA = a.date instanceof Date && !Number.isNaN(a.date.getTime()) ? a.date.getTime() : 0;
+    const timeB = b.date instanceof Date && !Number.isNaN(b.date.getTime()) ? b.date.getTime() : 0;
+    return timeB - timeA;
+  })
+  .slice(0, 3);
 ---
 
-<section class="mt-24">
+<section class="relative mt-24">
+  <div class="pointer-events-none absolute inset-0 -z-10">
+    <div class="absolute -top-40 left-[-15%] h-[36rem] w-[36rem] rounded-full bg-[radial-gradient(circle,rgba(255,91,73,0.35),transparent_70%)] blur-3xl"></div>
+    <div class="absolute -bottom-44 right-[-12%] h-[40rem] w-[40rem] rounded-full bg-[radial-gradient(circle,rgba(255,91,73,0.25),transparent_70%)] blur-3xl"></div>
+  </div>
   <div class="flex items-center justify-between gap-6">
     <div class="space-y-3">
       <p class="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--muted)]">Realizacje</p>
@@ -30,26 +48,39 @@ const works = [
         Kilka ostatnich wdrozen, ktore lacza estetyke z celami biznesowymi.
       </p>
     </div>
-    <a class="hidden rounded-full border border-[var(--border)] px-4 py-2 text-sm font-semibold text-[var(--text)] transition hover:bg-black/5 sm:inline-flex" href="/realizacje/">
+    <a class="hidden inline-flex rounded-full bg-[var(--accent)] px-6 py-3 text-base font-semibold text-white transition hover:brightness-95 sm:inline-flex" href="/realizacje/">
       Wszystkie realizacje
     </a>
   </div>
   <div class="mt-8 grid gap-6 lg:grid-cols-3">
-    {works.map((work) => (
-      <article class="flex flex-col gap-6 rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.6)]">
-        <img
-          class="h-84 w-full rounded-2xl border border-[var(--border)] object-cover"
-          src={work.image}
-          alt={work.title}
-          loading="lazy"
-          decoding="async"
-        />
-        <div class="space-y-2">
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">{work.tag}</p>
-          <h3 class="text-xl font-semibold">{work.title}</h3>
-          <p class="text-sm text-[var(--muted)]">{work.year}</p>
-        </div>
-      </article>
-    ))}
+    {works.map((work) => {
+      const image = resolveContentImage(work.image);
+      const year = work.date ? work.date.getFullYear() : null;
+      return (
+        <a
+          class="flex flex-col gap-6 rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 text-[var(--text)] no-underline shadow-[0_24px_60px_-40px_rgba(0,0,0,0.7)] transition hover:-translate-y-1"
+          href={`/realizacje/${work.slug}/`}
+        >
+          {image ? (
+            <Image
+              class="aspect-[4/4] w-full rounded-2xl border border-[var(--border)] object-cover"
+              src={image}
+              alt={work.title}
+              widths={[320, 480, 768, 960]}
+              sizes="(max-width: 768px) 100vw, 440px"
+              loading="lazy"
+              placeholder="blur"
+            />
+          ) : (
+            <div class="grid aspect-[4/3] place-items-center rounded-2xl border border-dashed border-[var(--border)] bg-[var(--surface-muted)] text-xs uppercase tracking-widest text-[var(--muted)]">Brak zdjecia</div>
+          )}
+          <div class="space-y-2">
+            {work.tag ? <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">{work.tag}</p> : null}
+            <h3 class="text-xl font-semibold">{work.title}</h3>
+            {year ? <p class="text-sm text-[var(--muted)]">{year}</p> : null}
+          </div>
+        </a>
+      );
+    })}
   </div>
 </section>

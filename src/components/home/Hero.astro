@@ -14,10 +14,10 @@ const ctaSecondary = { label: "Zobacz realizacje", href: "/realizacje/" };
       szybko i z myślą o wynikach.
     </p>
     <div class="flex flex-wrap gap-3">
-      <a class="rounded-full bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-white transition hover:brightness-95" href={ctaPrimary.href}>
+      <a class="inline-flex rounded-full bg-[var(--accent)] px-6 py-3 text-base font-semibold text-white transition hover:brightness-95" href={ctaPrimary.href}>
         {ctaPrimary.label}
       </a>
-      <a class="rounded-full border border-[var(--border)] px-5 py-2.5 text-sm font-semibold text-[var(--text)] transition hover:bg-black/5" href={ctaSecondary.href}>
+      <a class="inline-flex rounded-full border border-[var(--border)] bg-transparent px-6 py-3 text-base font-semibold text-[var(--text)] transition hover:bg-black/5" href={ctaSecondary.href}>
         {ctaSecondary.label}
       </a>
     </div>
