@@ -20,7 +20,39 @@ import cookieConsentUrl from "../scripts/cookieconsent.js?url";
 import cookieConsentInitUrl from "../scripts/cookieconsent-init.js?url";
 ---
 
-<footer class="mt-12 text-sm text-[var(--muted)]">{footerText}</footer>
+<footer class="mt-16 border-t border-[var(--border)] pt-10 text-[var(--text)]">
+  <div class="grid gap-12 lg:grid-cols-[1.2fr_1fr_1fr]">
+    <div class="space-y-4">
+      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--muted)]">Studio</p>
+      <p class="max-w-sm text-sm leading-6 text-[var(--muted)]">
+        Kompleksowo od strategii, przez design, po wdrozenie i opieke. Tworzymy doswiadczenia, ktore pracuja na wyniki.
+      </p>
+    </div>
+    <div class="space-y-4">
+      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--muted)]">Nawigacja</p>
+      <nav class="grid gap-2 text-sm">
+        <a class="w-fit text-[var(--text)] no-underline transition hover:text-[var(--muted)]" href="/realizacje/">Realizacje</a>
+        <a class="w-fit text-[var(--text)] no-underline transition hover:text-[var(--muted)]" href="/artykuly/">Nowinki i ciekawostki</a>
+        <a class="w-fit text-[var(--text)] no-underline transition hover:text-[var(--muted)]" href="/kontakt/">Kontakt</a>
+      </nav>
+    </div>
+    <div class="space-y-4">
+      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-[var(--muted)]">Kontakt</p>
+      <div class="space-y-2 text-sm text-[var(--muted)]">
+        <a class="block w-fit text-[var(--text)] no-underline transition hover:text-[var(--muted)]" href="mailto:hello@futurewebstudio.pl">hello@futurewebstudio.pl</a>
+        <p class="block w-fit text-[var(--text)] no-underline transition">Pon - Pt: 8.00 - 16.00</p>
+        <a class="block w-fit text-[var(--text)] no-underline transition hover:text-[var(--muted)]" href="tel:+48123123123">+48 123 123 123</a>
+      </div>
+    </div>
+  </div>
+  <div class="mt-10 flex flex-col gap-3 border-t border-[var(--border)] pt-6 text-xs text-[var(--muted)] sm:flex-row sm:items-center sm:justify-between">
+    <span>{footerText}</span>
+    <div class="flex gap-4">
+      <a class="no-underline transition hover:text-[var(--text)]" href="/polityka-prywatnosci/">Polityka prywatnosci</a>
+      <a class="no-underline transition hover:text-[var(--text)]" href="/cookies/">Cookies</a>
+    </div>
+  </div>
+</footer>
 
 <!-- 
 <script src={gsapUrl} defer></script>

@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const contact = {
   title: "Kontakt",
-  lead: "Opowiedz o projekcie. Wroce z odpowiedzia w 24-48h.",
+  lead: "Napisz albo zadzwoń i opowiedz o projekcie. Wroce z odpowiedzia w 24-48h.",
   email: "kontakt@twojadomena.pl",
   phone: "+48 123 456 789",
   address: "ul. Przykladowa 12, 00-000 Miasto",
@@ -16,8 +16,7 @@ const contact = {
   <section class="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
     <div class="space-y-6">
       <div class="space-y-3">
-        <p class="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--muted)]">Skontaktuj sie</p>
-        <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">{contact.title}</h1>
+        <h1 class="text-4xl font-semibold tracking-tight">{contact.title}</h1>
         <p class="max-w-xl text-lg text-[var(--muted)]">{contact.lead}</p>
       </div>
 
@@ -65,14 +64,14 @@ const contact = {
             <input name="bot-field" />
           </label>
         </p>
+        <div class="grid gap-3">
         <label class="grid gap-2 text-sm font-semibold text-[var(--text)]">
-          Imie i nazwisko
           <input class="rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="name" type="text" placeholder="Jan Kowalski" required />
         </label>
         <label class="grid gap-2 text-sm font-semibold text-[var(--text)]">
-          Email
           <input class="rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="email" type="email" placeholder="jan@firma.pl" required />
         </label>
+        </div>
         <label class="grid gap-2 text-sm font-semibold text-[var(--text)]">
           Wiadomosc
           <textarea class="min-h-[140px] rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="message" placeholder="Napisz, czego potrzebujesz i jaki jest termin." required></textarea>
