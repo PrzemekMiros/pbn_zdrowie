@@ -24,34 +24,34 @@ const items = Object.entries(entries).map(([file, entry]) => {
 ---
 
 <BaseLayout title="Artykuly">
-  <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">Artykuly</h1>
-  <p class="mt-3 max-w-2xl text-base text-slate-600">Lista artykulow z kolekcji Keystatic. Kliknij karte, aby zobaczyc szczegoly.</p>
-  <section class="mt-8 grid gap-6 lg:grid-cols-2">
+  <h1 class="text-4xl font-semibold tracking-tight sm:text-6xl">Artykuly</h1>
+  <p class="mt-4 max-w-2xl text-lg text-[var(--muted)]">Lista artykulow z kolekcji Keystatic. Kliknij karte, aby zobaczyc szczegoly.</p>
+  <section class="mt-10 grid gap-7 lg:grid-cols-2">
     {items.map((artykul) => {
       const image = resolveArticleImage(artykul.tileImage ?? artykul.thumbnail);
       return (
         <a
-          class="group grid gap-3 rounded-2xl border border-slate-200 bg-white/80 p-4 text-slate-900 no-underline shadow-lg shadow-slate-900/10 transition hover:-translate-y-1 hover:shadow-xl"
+          class="group grid gap-4 rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 text-[var(--text)] no-underline shadow-[0_18px_40px_-30px_rgba(0,0,0,0.6)] transition hover:-translate-y-1"
           href={`/artykuly/${artykul.slug}/`}
           style={artykul.tileBg ? `background-color: ${artykul.tileBg};` : undefined}
         >
           {image ? (
             <Image
-              class="aspect-[4/3] w-full rounded-xl border border-slate-200 object-cover"
+              class="aspect-[4/3] w-full rounded-2xl border border-[var(--border)] object-cover"
               src={image}
               alt={artykul.title ?? artykul.slug}
               widths={[320, 480, 768, 960]}
-              sizes="(max-width: 768px) 100vw, 440px"
+              sizes="(max-width: 768px) 100vw, 540px"
               loading="lazy"
               placeholder="blur"
             />
           ) : (
-            <div class="grid aspect-[4/3] place-items-center rounded-xl border border-dashed border-slate-300 bg-slate-100 text-xs uppercase tracking-widest text-slate-500">Brak zdjecia</div>
+            <div class="grid aspect-[4/3] place-items-center rounded-2xl border border-dashed border-[var(--border)] bg-[var(--surface-muted)] text-xs uppercase tracking-widest text-[var(--muted)]">Brak zdjecia</div>
           )}
-          <div class="space-y-1">
-            <h2 class="text-lg font-semibold">{artykul.title ?? artykul.slug}</h2>
-            {artykul.role ? <p class="text-sm text-slate-600">{artykul.role}</p> : null}
-            {artykul.year ? <p class="text-sm text-slate-600">{artykul.year}</p> : null}
+          <div class="space-y-2">
+            <h2 class="text-xl font-semibold">{artykul.title ?? artykul.slug}</h2>
+            {artykul.role ? <p class="text-sm text-[var(--muted)]">{artykul.role}</p> : null}
+            {artykul.year ? <p class="text-sm text-[var(--muted)]">{artykul.year}</p> : null}
           </div>
         </a>
       );

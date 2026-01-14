@@ -33,11 +33,11 @@ if (!realizacja) {
   title={realizacja.title ?? realizacja.slug}
   description={realizacja.description}
 >
-  <a class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-slate-900" href="/realizacje/">&larr; Wroc do listy</a>
-  <section class="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+  <a class="inline-flex items-center gap-2 text-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]" href="/realizacje/">&larr; Wroc do listy</a>
+  <section class="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
     {headerImage ? (
       <Image
-        class="aspect-[4/3] w-full rounded-2xl border border-slate-200 object-cover"
+        class="aspect-[4/3] w-full rounded-3xl border border-[var(--border)] object-cover shadow-[0_18px_40px_-30px_rgba(0,0,0,0.6)]"
         src={headerImage}
         alt={realizacja.title ?? realizacja.slug}
         widths={[320, 480, 768, 960, 1100, 1400]}
@@ -46,15 +46,15 @@ if (!realizacja) {
         placeholder="blur"
       />
     ) : (
-      <div class="grid aspect-[4/3] place-items-center rounded-2xl border border-dashed border-slate-300 bg-slate-100 text-xs uppercase tracking-widest text-slate-500">Brak zdjecia</div>
+      <div class="grid aspect-[4/3] place-items-center rounded-3xl border border-dashed border-[var(--border)] bg-[var(--surface-muted)] text-xs uppercase tracking-widest text-[var(--muted)]">Brak zdjecia</div>
     )}
     <div class="space-y-2">
-      <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">{realizacja.title ?? realizacja.slug}</h1>
-      {realizacja.role ? <p class="text-sm text-slate-600">{realizacja.role}</p> : null}
-      {realizacja.year ? <p class="text-sm text-slate-600">{realizacja.year}</p> : null}
+      <h1 class="text-4xl font-semibold tracking-tight sm:text-6xl">{realizacja.title ?? realizacja.slug}</h1>
+      {realizacja.role ? <p class="text-sm text-[var(--muted)]">{realizacja.role}</p> : null}
+      {realizacja.year ? <p class="text-sm text-[var(--muted)]">{realizacja.year}</p> : null}
       {realizacja.href ? (
-        <p class="text-sm text-slate-600">
-          <a class="underline decoration-slate-300 underline-offset-2 hover:text-slate-900" href={realizacja.href} rel="noopener" target="_blank">
+        <p class="text-sm text-[var(--muted)]">
+          <a class="underline decoration-[var(--accent)] underline-offset-4 hover:text-[var(--text)]" href={realizacja.href} rel="noopener" target="_blank">
             {realizacja.href}
           </a>
         </p>
@@ -63,13 +63,13 @@ if (!realizacja) {
   </section>
 
   {realizacja.classes?.length ? (
-    <section class="mt-10 space-y-2">
+    <section class="mt-12 space-y-2">
       <h2 class="text-xl font-semibold">Zakres</h2>
-      <p class="text-sm text-slate-600">{realizacja.classes.join(", ")}</p>
+      <p class="text-sm text-[var(--muted)]">{realizacja.classes.join(", ")}</p>
     </section>
   ) : null}
   {Content ? (
-    <section class="mt-8 space-y-4 text-[17px] leading-7 text-slate-700 [&>a]:underline [&>a]:decoration-slate-300 [&>a]:underline-offset-2 [&>blockquote]:border-l-4 [&>blockquote]:border-slate-200 [&>blockquote]:pl-4 [&>blockquote]:text-slate-600 [&>h2]:mt-8 [&>h2]:text-2xl [&>h2]:font-semibold [&>h3]:mt-6 [&>h3]:text-xl [&>h3]:font-semibold [&>hr]:border-slate-200 [&>li]:mt-2 [&>ol]:list-decimal [&>ol]:pl-6 [&>p]:leading-7 [&>ul]:list-disc [&>ul]:pl-6">
+    <section class="mt-10 space-y-4 text-[17px] leading-7 text-[var(--text)] [&>a]:underline [&>a]:decoration-[var(--accent)] [&>a]:underline-offset-4 [&>blockquote]:border-l-4 [&>blockquote]:border-[var(--border)] [&>blockquote]:pl-4 [&>blockquote]:text-[var(--muted)] [&>h2]:mt-8 [&>h2]:text-2xl [&>h2]:font-semibold [&>h3]:mt-6 [&>h3]:text-xl [&>h3]:font-semibold [&>hr]:border-[var(--border)] [&>li]:mt-2 [&>ol]:list-decimal [&>ol]:pl-6 [&>p]:leading-7 [&>ul]:list-disc [&>ul]:pl-6">
       <Content />
     </section>
   ) : null}

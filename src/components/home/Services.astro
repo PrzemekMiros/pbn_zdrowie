@@ -1,0 +1,39 @@
+---
+const services = [
+  {
+    title: "Strategia i UX",
+    description: "Audit, mapa tresci i architektura informacji dopasowana do klientow.",
+  },
+  {
+    title: "Design premium",
+    description: "Minimalistyczne, eleganckie UI z naciskiem na czytelnosc.",
+  },
+  {
+    title: "Wdrozenie i SEO",
+    description: "Szybkie strony, poprawne technicznie, gotowe do pozycjonowania.",
+  },
+];
+---
+
+<section class="mt-16">
+  <div class="flex items-end justify-between gap-6">
+    <div class="space-y-3">
+      <p class="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--muted)]">Oferta</p>
+      <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Co dostajesz</h2>
+      <p class="max-w-2xl text-base text-[var(--muted)]">
+        Kompletny proces, ktory oszczedza czas i prowadzi do realnych efektow.
+      </p>
+    </div>
+  </div>
+  <div class="mt-8 grid gap-6 lg:grid-cols-3">
+    {services.map((item) => (
+      <article class="flex flex-col gap-4 rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.6)]">
+        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--accent)] text-white">+</div>
+        <div class="space-y-2">
+          <h3 class="text-xl font-semibold">{item.title}</h3>
+          <p class="text-sm text-[var(--muted)]">{item.description}</p>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

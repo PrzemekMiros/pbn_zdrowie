@@ -3,3 +3,24 @@
 @theme {
   --font-sans: "Zalando Sans SemiExpanded", "Segoe UI", sans-serif;
 }
+
+:root {
+  --accent: #ff5b49;
+  --surface: #ffffff;
+  --surface-muted: #f7f5f2;
+  --bg: #f7f5f2;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: rgba(15, 23, 42, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: #151518;
+    --surface-muted: #0f1012;
+    --bg: #0b0c0f;
+    --text: #f8fafc;
+    --muted: #a1a1aa;
+    --border: rgba(148, 163, 184, 0.16);
+  }
+}

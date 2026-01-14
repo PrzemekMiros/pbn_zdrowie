@@ -1,0 +1,22 @@
+---
+const cta = {
+  title: "Gotowy na nowa strone?",
+  description:
+    "Napisz, opowiedz o projekcie i zobacz, jak mozemy wspolnie go rozwinac.",
+  button: { label: "Skontaktuj sie", href: "/kontakt/" },
+};
+---
+
+<section class="mt-16">
+  <div class="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-8 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.6)]">
+    <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+      <div class="space-y-3">
+        <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">{cta.title}</h2>
+        <p class="max-w-2xl text-base text-[var(--muted)]">{cta.description}</p>
+      </div>
+      <a class="inline-flex rounded-full bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-white transition hover:brightness-95" href={cta.button.href}>
+        {cta.button.label}
+      </a>
+    </div>
+  </div>
+</section>

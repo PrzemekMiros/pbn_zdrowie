@@ -1,0 +1,48 @@
+---
+const works = [
+  {
+    title: "Portal kobiet biznesu",
+    tag: "Strona wizerunkowa",
+    year: "2024",
+  },
+  {
+    title: "C7Med Centrum Rehabilitacji",
+    tag: "Healthcare",
+    year: "2023",
+  },
+  {
+    title: "EcoTech Solutions",
+    tag: "B2B",
+    year: "2024",
+  },
+];
+---
+
+<section class="mt-16">
+  <div class="flex items-center justify-between gap-6">
+    <div class="space-y-3">
+      <p class="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--muted)]">Realizacje</p>
+      <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Wybrane projekty</h2>
+      <p class="max-w-2xl text-base text-[var(--muted)]">
+        Kilka ostatnich wdrozen, ktore lacza estetyke z celami biznesowymi.
+      </p>
+    </div>
+    <a class="hidden rounded-full border border-[var(--border)] px-4 py-2 text-sm font-semibold text-[var(--text)] transition hover:bg-black/5 sm:inline-flex" href="/realizacje/">
+      Wszystkie realizacje
+    </a>
+  </div>
+  <div class="mt-8 grid gap-6 lg:grid-cols-3">
+    {works.map((work) => (
+      <article class="flex flex-col gap-6 rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.6)]">
+        <div class="rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] p-6">
+          <div class="h-28 w-full rounded-2xl bg-white shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06)]"></div>
+        </div>
+        <div class="space-y-2">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">{work.tag}</p>
+          <h3 class="text-xl font-semibold">{work.title}</h3>
+          <p class="text-sm text-[var(--muted)]">{work.year}</p>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>

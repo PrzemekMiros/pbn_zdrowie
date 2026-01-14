@@ -1,9 +1,16 @@
 ---
-import settings from "../content/ustawienia.json";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/home/Hero.astro";
+import Services from "../components/home/Services.astro";
+import FeaturedWork from "../components/home/FeaturedWork.astro";
+import Testimonials from "../components/home/Testimonials.astro";
+import CallToAction from "../components/home/CallToAction.astro";
 ---
 
 <BaseLayout>
-	<h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">Astro Starter</h1>
-	<p class="mt-3 max-w-2xl text-base text-slate-600">{settings.metaDescription}</p>
+	<Hero />
+	<Services />
+	<FeaturedWork />
+	<Testimonials />
+	<CallToAction />
 </BaseLayout>

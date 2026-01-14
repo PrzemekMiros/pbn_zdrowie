@@ -36,7 +36,7 @@ const logoAsset = resolveAsset(settings.logo);
     />
     <ClientRouter />
     <ViewTransitions />
-    <LoadingIndicator color="red" height="3px" animationDuration={400} threshold={200} />
+    <LoadingIndicator color="var(--accent)" height="3px" animationDuration={400} threshold={200} />
     <style is:inline>
       ::view-transition-old(root) {
         animation: fade-out 160ms ease;
@@ -54,8 +54,8 @@ const logoAsset = resolveAsset(settings.logo);
       }
     </style>
   </head>
-  <body class="min-h-screen bg-slate-100 font-sans text-slate-900">
-    <main class="mx-auto flex min-h-screen w-full max-w-[1100px] flex-col px-6 py-10 sm:px-8 lg:px-10">
+  <body class="min-h-screen bg-[var(--bg)] font-sans text-[var(--text)]">
+    <main class="mx-auto flex min-h-screen w-full max-w-[1320px] flex-col px-6 py-10 sm:px-10 lg:px-12">
       <Header settings={settings} logoAsset={logoAsset} />
       <slot />
       <Footer footerText={settings.footerText} />

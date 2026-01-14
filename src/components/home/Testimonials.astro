@@ -1,0 +1,33 @@
+---
+const testimonials = [
+  {
+    name: "Szymon Kobylnik",
+    role: "Hotel Moment",
+    quote:
+      "Mega profesjonalizm. Cala realizacja na czas, a efekt strony zachwycajacy.",
+  },
+  {
+    name: "Agnieszka Nowak",
+    role: "Brand Manager",
+    quote:
+      "Swietna komunikacja, szybkie iteracje i final, ktory realnie poprawil konwersje.",
+  },
+];
+---
+
+<section class="mt-16">
+  <div class="space-y-3">
+    <p class="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--muted)]">Opinie</p>
+    <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Klienci polecaja</h2>
+  </div>
+  <div class="mt-8 grid gap-6 lg:grid-cols-2">
+    {testimonials.map((item) => (
+      <figure class="flex flex-col gap-6 rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.6)]">
+        <blockquote class="text-base text-[var(--text)]">"{item.quote}"</blockquote>
+        <figcaption class="text-sm font-semibold text-[var(--text)]">
+          {item.name} · <span class="font-normal text-[var(--muted)]">{item.role}</span>
+        </figcaption>
+      </figure>
+    ))}
+  </div>
+</section>
