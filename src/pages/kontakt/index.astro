@@ -18,6 +18,16 @@ const contact = {
 >
   <section class="pb-24 pt-24 grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-12">
     <div class="space-y-6">
+      <div class="space-y-2">
+        <p class="max-w-xl text-base text-[var(--muted)]">
+          Opisz krótko potrzeby, termin i budżet. Jeśli masz brief, link do inspiracji albo obecnej strony,
+          podaj je w wiadomości. Odezwiemy się z propozycją dalszych kroków, wstępną wyceną oraz planem działań.
+        </p>
+                <p class="max-w-xl text-base text-[var(--muted)]">
+          Opisz krótko potrzeby, termin i budżet. Jeśli masz brief, link do inspiracji albo obecnej strony,
+          podaj je w wiadomości. Odezwiemy się z propozycją dalszych kroków, wstępną wyceną oraz planem działań.
+        </p>
+      </div>
       <div class="grid gap-4 sm:grid-cols-2">
         <div class="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5">
           <p class="text-xs uppercase tracking-[0.2em] text-[var(--muted)]">Email</p>
@@ -62,16 +72,16 @@ const contact = {
           </label>
         </p>
         <div class="grid gap-3 sm:grid-cols-2">
-          <label class="grid gap-2 text-sm font-semibold text-[var(--text)]">
+          <label class="grid gap-2 text-sm font-semibold text-[var(--muted)]">
             Imie i nazwisko
             <input class="w-full box-border rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="name" type="text" placeholder="Jan Kowalski" required />
           </label>
-          <label class="grid gap-2 text-sm font-semibold text-[var(--text)]">
+          <label class="grid gap-2 text-sm font-semibold text-[var(--muted)]">
             Email
             <input class="w-full box-border rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="email" type="email" placeholder="jan@firma.pl" required />
           </label>
         </div>
-        <label class="grid gap-2 text-sm font-semibold text-[var(--text)]">
+        <label class="grid gap-2 text-sm font-semibold text-[var(--muted)]">
           Wiadomosc
           <textarea class="w-full box-border min-h-[140px] rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="message" placeholder="Napisz, czego potrzebujesz i jaki jest termin." required></textarea>
         </label>
