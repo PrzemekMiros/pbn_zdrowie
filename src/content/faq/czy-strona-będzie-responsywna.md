@@ -1,5 +1,4 @@
 ---
-layout: ../layouts/BaseLayout.astro
 title: Czy strona będzie responsywna?
 answer: W dzisiejszych czasach ok 65% ruchu na stronach pochodzi z urządzeń
   mobilnych. Podczas kodowania stosuje zasadę mobile first, Twoja strona będzie

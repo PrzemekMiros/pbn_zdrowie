@@ -1,5 +1,4 @@
 ---
-layout: ../layouts/BaseLayout.astro
 title: Ile kosztuje wykonanie strony www?
 answer: Zależy od złożoności witryny, technologii oraz funkcjonalności jakie
   będzie posiadać. Podstawowa strona typu one page (oparta na jednej długiej
