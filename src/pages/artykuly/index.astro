@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArticlesHero from "../../layouts/heroes/ArticlesHero.astro";
 
 const imageEntries = import.meta.glob("/src/content/artykuly/img/**/*", { eager: true });
 const resolveArticleImage = (path) => {
@@ -17,21 +18,30 @@ const resolveArticleImage = (path) => {
 };
 
 const entries = import.meta.glob('../../content/artykuly/*.md', { eager: true });
-const items = Object.entries(entries).map(([file, entry]) => {
-  const slug = file.split('/').pop().replace('.md', '');
-  return { slug, ...entry.frontmatter };
-});
+const items = Object.entries(entries)
+  .map(([file, entry]) => {
+    const slug = file.split('/').pop().replace('.md', '');
+    return { slug, ...entry.frontmatter };
+  })
+  .sort((a, b) => {
+    const dateA = a.date ? new Date(a.date).getTime() : 0;
+    const dateB = b.date ? new Date(b.date).getTime() : 0;
+    return dateB - dateA;
+  });
 ---
 
 <BaseLayout
   title="Porady i ciekawostki"
   description="Praktyczne porady, trendy i ciekawostki o stronach, SEO i marketingu. Przegladaj najnowsze artykuly."
+  showHero={false}
 >
-  <section class="mb-12 mt-42">
-      <div class="space-y-3 lg:max-w-3xl">
-        <h1 class="text-4xl font-semibold tracking-tight text-[var(--text)]">Nowinki i ciekawostki</h1>
-        <p class="max-w-2xl text-base text-[var(--muted)]">Kompleksowo prowadzę od strategii, przez design, po wdrożenie i wsparcie. Minimalistycznie, szybko i z myślą o wynikach. </p>
-        <div class="mt-16 space-y-20 lg:mt-20 lg:space-y-20">
+  <ArticlesHero
+    title="Porady i ciekawostki"
+    lead="Kompleksowo prowadzŽt od strategii, przez design, po wdro‘•enie i wsparcie. Minimalistycznie, szybko i z myślą o wynikach. "
+  />
+  <section class="mb-24 mt-12">
+      <div class="lg:max-w-4xl">
+        <div class="mt-6 space-y-20 lg:mt-10 lg:space-y-20">
           {items.map((artykul) => {
             const image = resolveArticleImage(artykul.tileImage ?? artykul.thumbnail);
             const date = artykul.date ? new Date(artykul.date) : null;
@@ -47,7 +57,7 @@ const items = Object.entries(entries).map(([file, entry]) => {
               .toUpperCase();
             return (
               <article class="relative isolate flex flex-col gap-8 lg:flex-row">
-                <div class="relative aspect-[16/9] sm:aspect-[2/1] lg:aspect-square lg:w-64 lg:shrink-0">
+                <div class="relative aspect-[16/9] sm:aspect-[2/1] lg:w-96 lg:shrink-0">
                   {image ? (
                     <Image
                       class="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover"
@@ -64,16 +74,16 @@ const items = Object.entries(entries).map(([file, entry]) => {
                   <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
                 </div>
                 <div>
-                  <div class="flex items-center gap-x-4 text-xs">
-                    {date ? <time datetime={date.toISOString()} class="text-gray-400">{formattedDate}</time> : null}
+                  <div class="flex items-center gap-x-4 text-xs">                 
                     {tag ? (
                       <span class="relative z-10 rounded-full bg-gray-800 px-3 py-1.5 font-medium text-gray-300">
                         {tag}
                       </span>
                     ) : null}
+                     {date ? <time datetime={date.toISOString()} class="text-gray-400">{formattedDate}</time> : null}
                   </div>
                   <div class="group relative max-w-xl">
-                    <h2 class="mt-3 text-lg font-semibold leading-6 text-[var(--text)] group-hover:text-[var(--muted)]">
+                    <h2 class="mt-3 text-2xl font-semibold leading-6 text-[var(--text)] group-hover:text-[var(--muted)]">
                       <a href={`/artykuly/${artykul.slug}/`} title={`Zobacz artykul: ${artykul.title ?? artykul.slug}`}>
                         <span class="absolute inset-0"></span>
                         {artykul.title ?? artykul.slug}
@@ -87,7 +97,7 @@ const items = Object.entries(entries).map(([file, entry]) => {
                     <div class="relative flex items-center gap-x-4">
                       <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-800 text-xs font-bold text-white">{initials}</div>
                       <div class="text-sm leading-6">
-                        <p class="font-semibold text-white">{author}</p>
+                        <p class="font-semibold text-gray-400">{author}</p>
                         {artykul.role ? <p class="text-gray-400">{artykul.role}</p> : null}
                       </div>
                     </div>

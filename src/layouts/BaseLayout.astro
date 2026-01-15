@@ -4,6 +4,7 @@ import { ClientRouter, ViewTransitions } from "astro:transitions";
 import LoadingIndicator from "astro-loading-indicator/component";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import PageHero from "./heroes/PageHero.astro";
 import { WebVitals } from "@casoon/astro-webvitals";
 import "../styles/global.css";
 import ogImage from "../assets/images/opengraph/opengraph.png";
@@ -17,7 +18,7 @@ const resolveAsset = (path) => {
   return entry?.default ?? null;
 };
 
-const { title, description } = Astro.props;
+const { title, description, showHero = true } = Astro.props;
 const { site, url } = Astro;
 const pageTitle = title ? ` ${title} - ${settings.siteTitle}` : settings.siteTitle;
 const metaDescription = description ?? settings.metaDescription;
@@ -68,6 +69,7 @@ const ogImageUrl = site ? new URL(ogImage.src, site).toString() : ogImage.src;
   <body class="min-h-screen bg-[var(--bg)] font-sans text-[var(--text)]">
     <main class="mx-auto flex min-h-screen w-full max-w-[1320px] flex-col px-6 sm:px-10 lg:px-12">
       <Header settings={settings} logoAsset={logoAsset} />
+      {showHero && title ? <PageHero title={title} /> : null}
       <slot />
       <Footer footerText={settings.footerText} />
     </main>

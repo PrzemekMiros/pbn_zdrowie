@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArticlesHero from "../../layouts/heroes/ArticlesHero.astro";
 
 export const prerender = true;
 
@@ -40,14 +41,13 @@ if (!artykul) {
 <BaseLayout
   title={artykul.title ?? artykul.slug}
   description={artykul.description}
+  showHero={false}
 >
-  <a class="mt-36 inline-flex items-center gap-2 text-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]" href="/artykuly/" title="Wroc do listy artykulow">&larr; Wroc do listy</a>
-  <article class="mt-42 space-y-12">
+  <ArticlesHero title={artykul.title ?? artykul.slug} lead={artykul.description} />
+  <a class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]" href="/artykuly/" title="Wroc do listy artykulow">&larr; Wroc do listy</a>
+  <article class="mt-10 space-y-12">
     <header class="space-y-8">
       <div class="mx-auto max-w-3xl space-y-12">
-        <h1 class="text-4xl font-semibold leading-tight tracking-tight text-[var(--text)] sm:text-5xl lg:text-5xl">
-          {artykul.title ?? artykul.slug}
-        </h1>
         <div class="space-y-4 text-sm text-[var(--muted)]">
           {artykul.role ? <p>{artykul.role}</p> : null}
           {artykul.year ? <p>{artykul.year}</p> : null}

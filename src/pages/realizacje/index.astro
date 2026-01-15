@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import RealizacjeHero from "../../layouts/heroes/RealizacjeHero.astro";
 
 const imageEntries = import.meta.glob("/src/content/realizacje/img/**/*", { eager: true });
 const resolveContentImage = (path) => {
@@ -20,14 +21,13 @@ const items = Object.entries(entries).map(([file, entry]) => {
 <BaseLayout
   title="Wybrane realizacje"
   description="Galeria wybranych projektow i wdrozen. Zobacz szczegoly realizacji i zakres prac."
+  showHero={false}
 >
-  <section class="mb-12 mt-42">
-    <div class="space-y-3 lg:max-w-3xl">
-      <h1 class="text-4xl font-semibold tracking-tight text-[var(--text)]">Wybrane projekty</h1>
-      <p class="max-w-2xl text-base text-[var(--muted)]">
-        Galeria realizacji z kolekcji Keystatic. Kliknij karte, aby zobaczyc szczegoly.
-      </p>
-    </div>
+  <RealizacjeHero
+    title="Wybrane projekty"
+    lead="Galeria realizacji z kolekcji Keystatic. Kliknij karte, aby zobaczyc szczegoly."
+  />
+  <section class="mb-12 mt-8">
     <div class="mt-8 grid gap-6 lg:grid-cols-3">
       {items.map((realizacja) => {
         const image = resolveContentImage(

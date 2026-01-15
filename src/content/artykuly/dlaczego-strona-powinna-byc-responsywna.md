@@ -4,7 +4,7 @@ description: Według badań około 80% osób, które mają telefon komórkowy, u
   do łączenia się z Internetem, a połowa z nich korzysta z internetu
   przynajmniej raz dziennie
 author: Przemek
-date: 2023-08-15
+date: 2025-11-15
 tags:
   - strony www
 thumbnail: /content/posts/img/blog-responsive.jpg

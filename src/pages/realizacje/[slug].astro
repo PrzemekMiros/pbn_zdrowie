@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import RealizacjeHero from "../../layouts/heroes/RealizacjeHero.astro";
 
 export const prerender = true;
 
@@ -36,9 +37,11 @@ if (!realizacja) {
 <BaseLayout
   title={realizacja.title ?? realizacja.slug}
   description={realizacja.description}
+  showHero={false}
 >
-  <a class="mt-36 inline-flex items-center gap-2 text-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]" href="/realizacje/" title="Wroc do listy realizacji">&larr; Wroc do listy</a>
-  <section class="mt-12 grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+  <RealizacjeHero title={realizacja.title ?? realizacja.slug} lead={realizacja.description} />
+  <a class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]" href="/realizacje/" title="Wroc do listy realizacji">&larr; Wroc do listy</a>
+  <section class="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
     {headerImage ? (
       <Image
         class="aspect-[4/4] w-full rounded-2xl border border-[var(--border)] object-cover"
@@ -53,7 +56,6 @@ if (!realizacja) {
       <div class="grid aspect-[4/4] place-items-center rounded-2xl border border-dashed border-[var(--border)] bg-[var(--surface-muted)] text-xs uppercase tracking-widest text-[var(--muted)]">Brak zdjecia</div>
     )}
     <div class="space-y-4">
-      <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">{realizacja.title ?? realizacja.slug}</h1>
       {realizacja.description ? <p class="text-[var(--muted)]">{realizacja.description}</p> : null}
       {realizacja.client ? <p class="text-[var(--muted)]">{realizacja.client}</p> : null}
       {year ? <p class="text-[var(--muted)]">{year}</p> : null}
