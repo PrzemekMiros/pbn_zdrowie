@@ -66,24 +66,24 @@ const contact = {
       >
         <input type="hidden" name="form-name" value="kontakt" />
         <p class="hidden">
-          <label>
+          <label for="contact-bot-field">
             Nie wypelniaj:
-            <input name="bot-field" />
+            <input id="contact-bot-field" name="bot-field" />
           </label>
         </p>
         <div class="grid gap-3 sm:grid-cols-2">
-          <label class="grid gap-2 text-sm font-semibold text-[var(--muted)]">
+          <label class="grid gap-2 text-sm font-semibold text-[var(--muted)]" for="contact-name">
             Imie i nazwisko
-            <input class="w-full box-border rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="name" type="text" placeholder="Jan Kowalski" required />
+            <input id="contact-name" class="w-full box-border rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="name" type="text" placeholder="Jan Kowalski" required />
           </label>
-          <label class="grid gap-2 text-sm font-semibold text-[var(--muted)]">
+          <label class="grid gap-2 text-sm font-semibold text-[var(--muted)]" for="contact-email">
             Email
-            <input class="w-full box-border rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="email" type="email" placeholder="jan@firma.pl" required />
+            <input id="contact-email" class="w-full box-border rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="email" type="email" placeholder="jan@firma.pl" required />
           </label>
         </div>
-        <label class="grid gap-2 text-sm font-semibold text-[var(--muted)]">
+        <label class="grid gap-2 text-sm font-semibold text-[var(--muted)]" for="contact-message">
           Wiadomosc
-          <textarea class="w-full box-border min-h-[140px] rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="message" placeholder="Napisz, czego potrzebujesz i jaki jest termin." required></textarea>
+          <textarea id="contact-message" class="w-full box-border min-h-[140px] rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="message" placeholder="Napisz, czego potrzebujesz i jaki jest termin." required></textarea>
         </label>
         <button class="mt-2 inline-flex w-full items-center justify-center rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-95" type="submit">
           Wyslij wiadomosc

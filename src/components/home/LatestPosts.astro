@@ -53,6 +53,7 @@ const getImage = (article) => resolveArticleImage(article?.tileImage ?? article?
       {first ? (
         <a
           href={`/artykuly/${first.slug}/`}
+          aria-label={`Zobacz artykul: ${first.title ?? first.slug}`}
           class="group flex h-full flex-col rounded-2xl bg-[#FF6B52] p-6 transition-transform hover:scale-[1.02]"
         >
           <div class="mb-8 flex items-start justify-between">
@@ -96,6 +97,7 @@ const getImage = (article) => resolveArticleImage(article?.tileImage ?? article?
       {second ? (
         <a
           href={`/artykuly/${second.slug}/`}
+          aria-label={`Zobacz artykul: ${second.title ?? second.slug}`}
           class="flex h-full flex-col rounded-2xl bg-[#7C4DFF] p-6 text-white transition-transform hover:scale-[1.02]"
         >
           <div class="mb-8 flex items-start justify-between">
@@ -139,6 +141,7 @@ const getImage = (article) => resolveArticleImage(article?.tileImage ?? article?
       {third ? (
         <a
           href={`/artykuly/${third.slug}/`}
+          aria-label={`Zobacz artykul: ${third.title ?? third.slug}`}
           class="flex h-full flex-col rounded-2xl bg-black p-6 text-white transition-transform hover:scale-[1.02]"
         >
           <div class="mb-8 flex items-start justify-between">

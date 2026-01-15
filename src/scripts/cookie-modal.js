@@ -21,7 +21,7 @@
       try {
         const raw = localStorage.getItem(STORAGE_KEY);
         return raw ? JSON.parse(raw) : null;
-      } catch {
+      } catch (error) {
         return null;
       }
     };
@@ -33,7 +33,7 @@
       };
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
-      } catch {
+      } catch (error) {
         // Ignore storage errors.
       }
       const cookieValue = encodeURIComponent(JSON.stringify(payload));

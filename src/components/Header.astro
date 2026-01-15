@@ -12,6 +12,10 @@ const linkClass = (href) =>
 	isActive(href)
 		? "rounded-full px-3 py-3 text-white no-underline transition hover:brightness-95"
 		: "rounded-full px-3 py-3 text-white/70 no-underline transition hover:text-white";
+const mobileLinkClass = (href) =>
+	isActive(href)
+		? "w-full rounded-2xl bg-black text-white px-5 py-4 text-base font-semibold"
+		: "w-full rounded-2xl border border-black/10 bg-white px-5 py-4 text-base font-semibold text-black/80 hover:bg-black/5";
 ---
 
 <header class="absolute left-0 right-0 top-0 z-50 pt-[30px]">
@@ -164,14 +168,22 @@ const linkClass = (href) =>
 		</button>
 		</nav>
 		<div
-			class="absolute left-0 right-0 top-full z-20 mt-3 flex max-h-0 -translate-y-2 flex-col gap-2 overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 text-sm font-semibold opacity-0 transition-[max-height,transform,opacity] duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] pointer-events-none sm:hidden"
+			class="fixed inset-0 z-40 flex translate-y-2 flex-col gap-4 overflow-y-auto bg-white px-6 pb-10 pt-24 text-black opacity-0 shadow-2xl transition duration-300 pointer-events-none sm:hidden"
 			id="mobile-menu"
 			data-mobile-menu
 		>
+			<button
+				class="absolute right-6 top-6 inline-flex items-center justify-center rounded-full border border-black/10 bg-white px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-black transition hover:bg-black/5"
+				type="button"
+				aria-label="Zamknij menu"
+				data-mobile-close
+			>
+				Zamknij
+			</button>
 		{
 			navItems.map((item) => (
 				<a
-					class={linkClass(item.href)}
+					class={mobileLinkClass(item.href)}
 					href={item.href}
 					aria-current={isActive(item.href) ? "page" : undefined}
 					title={item.label}
@@ -187,21 +199,24 @@ const linkClass = (href) =>
 <script is:inline>
 	const toggle = document.querySelector("[data-mobile-toggle]");
 	const menu = document.querySelector("[data-mobile-menu]");
+	const closeBtn = document.querySelector("[data-mobile-close]");
 
 	if (toggle && menu) {
-		toggle.addEventListener("click", () => {
-			const isOpen = menu.classList.toggle("is-open");
+		const setOpen = (isOpen) => {
+			menu.classList.toggle("is-open", isOpen);
 			toggle.setAttribute("aria-expanded", String(isOpen));
-			menu.classList.toggle("max-h-0", !isOpen);
-			menu.classList.toggle("max-h-64", isOpen);
 			menu.classList.toggle("opacity-0", !isOpen);
 			menu.classList.toggle("opacity-100", isOpen);
 			menu.classList.toggle("translate-y-0", isOpen);
 			menu.classList.toggle("-translate-y-2", !isOpen);
-			menu.classList.toggle("scale-95", !isOpen);
-			menu.classList.toggle("scale-100", isOpen);
 			menu.classList.toggle("pointer-events-none", !isOpen);
 			menu.classList.toggle("pointer-events-auto", isOpen);
+		};
+
+		toggle.addEventListener("click", () => {
+			setOpen(!menu.classList.contains("is-open"));
 		});
+
+		closeBtn?.addEventListener("click", () => setOpen(false));
 	}
 </script>

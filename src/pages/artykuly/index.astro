@@ -92,7 +92,7 @@ const categories = Array.from(
                   </div>
                   <div class="group relative max-w-xl">
                     <h2 class="mt-3 text-2xl font-semibold leading-6 text-[var(--text)] group-hover:text-[var(--muted)]">
-                      <a href={`/artykuly/${artykul.slug}/`} title={`Zobacz artykul: ${artykul.title ?? artykul.slug}`}>
+                      <a href={`/artykuly/${artykul.slug}/`} title={`Zobacz artykul: ${artykul.title ?? artykul.slug}`} aria-label={`Zobacz artykul: ${artykul.title ?? artykul.slug}`}>
                         <span class="absolute inset-0"></span>
                         {artykul.title ?? artykul.slug}
                       </a>
