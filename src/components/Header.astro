@@ -10,12 +10,12 @@ const navItems = [
 ];
 const linkClass = (href) =>
 	isActive(href)
-		? "rounded-full px-3 py-3 text-white no-underline transition hover:brightness-95"
-		: "rounded-full px-3 py-3 text-white/70 no-underline transition hover:text-white";
+		? "px-3 py-3 text-white no-underline transition hover:brightness-95"
+		: "px-3 py-3 text-white/70 no-underline transition hover:text-white";
 const mobileLinkClass = (href) =>
 	isActive(href)
-		? "w-full rounded-2xl bg-black text-white px-5 py-4 text-base font-semibold"
-		: "w-full rounded-2xl border border-black/10 bg-white px-5 py-4 text-base font-semibold text-black/80 hover:bg-black/5";
+		? "text-xl px-5 py-4 text-base font-semibold"
+		: "text-xl bg-white px-5 py-4 text-base font-semibold text-black/80 hover:bg-black/5";
 ---
 
 <header class="absolute left-0 right-0 top-0 z-50 pt-[30px]">
@@ -168,7 +168,7 @@ const mobileLinkClass = (href) =>
 		</button>
 		</nav>
 		<div
-			class="fixed inset-0 z-40 flex translate-y-2 flex-col gap-4 overflow-y-auto bg-white px-6 pb-10 pt-24 text-black opacity-0 shadow-2xl transition duration-300 pointer-events-none sm:hidden"
+			class="fixed inset-0 z-40 flex translate-y-0 flex-col gap-4 overflow-y-auto rounded-2xl bg-white m-6 pt-24 text-black opacity-0 shadow-2xl transition duration-300 pointer-events-none sm:hidden"
 			id="mobile-menu"
 			data-mobile-menu
 		>

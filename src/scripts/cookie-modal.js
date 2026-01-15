@@ -18,24 +18,15 @@
     const openers = Array.from(document.querySelectorAll("[data-cookie-open]"));
 
     const readConsent = () => {
-      try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        return raw ? JSON.parse(raw) : null;
-      } catch (error) {
-        return null;
-      }
+      const raw = window.localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : null;
     };
 
     const writeConsent = (consent) => {
-      const payload = {
-        ...consent,
+      const payload = Object.assign({}, consent, {
         timestamp: new Date().toISOString(),
-      };
-      try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
-      } catch (error) {
-        // Ignore storage errors.
-      }
+      });
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
       const cookieValue = encodeURIComponent(JSON.stringify(payload));
       document.cookie = `${COOKIE_NAME}=${cookieValue}; Max-Age=31536000; Path=/; SameSite=Lax`;
     };
@@ -48,7 +39,7 @@
           checkbox.checked = true;
           return;
         }
-        checkbox.checked = Boolean(consent?.[key]);
+        checkbox.checked = Boolean(consent && consent[key]);
       });
     };
 
@@ -136,10 +127,10 @@
       });
     });
 
-    acceptBtn?.addEventListener("click", acceptAll);
-    denyBtn?.addEventListener("click", denyAll);
-    saveBtn?.addEventListener("click", saveCustom);
-    customizeBtn?.addEventListener("click", () => setTabActive("details"));
+    if (acceptBtn) acceptBtn.addEventListener("click", acceptAll);
+    if (denyBtn) denyBtn.addEventListener("click", denyAll);
+    if (saveBtn) saveBtn.addEventListener("click", saveCustom);
+    if (customizeBtn) customizeBtn.addEventListener("click", () => setTabActive("details"));
 
     modal.addEventListener("click", (event) => {
       if (event.target !== modal) return;
