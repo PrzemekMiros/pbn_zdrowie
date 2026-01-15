@@ -35,15 +35,12 @@ const works = Object.entries(entries)
   .slice(0, 3);
 ---
 
-<section class="relative mt-24 overflow-hidden sm:overflow-visible">
-  <div class="pointer-events-none absolute inset-0 -z-10">
-    <div class="absolute -top-28 left-[-6%] h-[24rem] w-[24rem] rounded-full bg-[radial-gradient(circle,rgba(255,91,73,0.35),transparent_70%)] blur-3xl sm:-top-40 sm:left-[-15%] sm:h-[36rem] sm:w-[36rem]"></div>
-    <div class="absolute -bottom-32 right-[-6%] h-[26rem] w-[26rem] rounded-full bg-[radial-gradient(circle,rgba(255,91,73,0.25),transparent_70%)] blur-3xl sm:-bottom-44 sm:right-[-12%] sm:h-[40rem] sm:w-[40rem]"></div>
-  </div>
-  <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+<section class="relative bg-white pt-20 pb-24">
+  <div class="absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 bg-white"></div>
+  <div class="relative flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
     <div class="space-y-3">
       <p class="text-base/7 font-semibold text-[var(--accent)]">Sprawdz</p>
-      <h2 class="text-4xl font-semibold tracking-tight text-[var(--text)]">Wybrane projekty</h2>
+      <h2 class="text-3xl font-semibold tracking-tight text-black sm:text-4xl">Wybrane projekty</h2>
       <p class="max-w-2xl text-base text-[var(--muted)]">
         Kilka ostatnich wdrożeń, ktore łączą estetykę z celami biznesowymi.
       </p>
@@ -52,13 +49,13 @@ const works = Object.entries(entries)
       Wszystkie realizacje
     </a>
   </div>
-  <div class="mt-8 grid gap-6 lg:grid-cols-3">
+  <div class="relative mt-8 grid gap-6 lg:grid-cols-3">
     {works.map((work) => {
       const image = resolveContentImage(work.image);
       const year = work.date ? work.date.getFullYear() : null;
       return (
         <a
-          class="flex flex-col gap-6 rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 text-[var(--text)] no-underline transition hover:-translate-y-1"
+          class="flex flex-col gap-6 rounded-2xl border border-[var(--border)] bg-gray-50 p-6 text-[var(--text)] no-underline transition hover:-translate-y-1"
           href={`/realizacje/${work.slug}/`}
         >
           {image ? (
@@ -76,7 +73,7 @@ const works = Object.entries(entries)
           )}
           <div class="space-y-2">
             {work.tag ? <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">{work.tag}</p> : null}
-            <h3 class="text-xl font-semibold text-[var(--text)]">{work.title}</h3>
+            <h3 class="text-xl font-semibold text-black">{work.title}</h3>
             {year ? <p class="text-sm text-[var(--muted)]">{year}</p> : null}
           </div>
         </a>
@@ -84,4 +81,3 @@ const works = Object.entries(entries)
     })}
   </div>
 </section>
-

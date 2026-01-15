@@ -21,7 +21,7 @@ const items = Object.entries(entries).map(([file, entry]) => {
   title="Wybrane realizacje"
   description="Galeria wybranych projektow i wdrozen. Zobacz szczegoly realizacji i zakres prac."
 >
-  <section class="mt-12">
+  <section class="mb-12 mt-42">
     <div class="space-y-3 lg:max-w-3xl">
       <h1 class="text-4xl font-semibold tracking-tight text-[var(--text)]">Wybrane projekty</h1>
       <p class="max-w-2xl text-base text-[var(--muted)]">
@@ -38,7 +38,7 @@ const items = Object.entries(entries).map(([file, entry]) => {
         const year = date ? date.getFullYear() : null;
         return (
           <a
-            class="flex flex-col gap-6 rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 text-[var(--text)] no-underline transition hover:-translate-y-1"
+            class="flex flex-col gap-6 rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 text-[var(--text)] no-underline transition hover:-translate-y-1"
             href={`/realizacje/${realizacja.slug}/`}
             style={realizacja.tileBg ? `background-color: ${realizacja.tileBg};` : undefined}
           >

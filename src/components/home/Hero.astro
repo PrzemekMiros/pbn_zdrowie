@@ -3,49 +3,51 @@ const ctaPrimary = { label: "Umów konsultacje", href: "/kontakt/" };
 const ctaSecondary = { label: "Zobacz realizacje", href: "/realizacje/" };
 ---
 
-<section class="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
-  <div class="space-y-6">
-    <p class="text-base/7 font-semibold text-[var(--accent)]">Dzień dobry</p>
-    <h1 class="text-4xl font-semibold tracking-tight sm:text-6xl">
-      Projektuje nowoczesne strony internetowe
-    </h1>
-    <p class="max-w-2xl text-lg text-[var(--muted)]">
-      Kompleksowo prowadzę od strategii, przez design, po wdrożenie i wsparcie. Minimalistycznie,
-      szybko i z myślą o wynikach.
-    </p>
-    <div class="flex flex-wrap gap-3">
-      <a class="inline-flex rounded-full bg-[var(--accent)] px-6 py-3 text-base font-semibold text-white transition hover:brightness-95" href={ctaPrimary.href}>
-        {ctaPrimary.label}
-      </a>
-      <a class="inline-flex rounded-full border border-[var(--border)] bg-transparent px-6 py-3 text-base font-semibold text-[var(--text)] transition hover:bg-black/5" href={ctaSecondary.href}>
-        {ctaSecondary.label}
-      </a>
+<section class="relative bg-black pb-36 pt-52 text-white">
+  <div class="absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 bg-black"></div>
+  <div class="relative grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+    <div class="space-y-6">
+      <p class="text-base/7 font-semibold text-[var(--accent)]">Dzień dobry</p>
+      <h1 class="text-4xl font-semibold tracking-tight sm:text-6xl">
+        Projektuje nowoczesne strony internetowe
+      </h1>
+      <p class="max-w-2xl text-lg text-gray-300">
+        Kompleksowo prowadząt od strategii, przez design, po wdrożenie i wsparcie. Minimalistycznie,
+        szybko i z myślą o wynikach.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a class="inline-flex rounded-full bg-[var(--accent)] px-6 py-3 text-base font-semibold text-white transition hover:brightness-95" href={ctaPrimary.href}>
+          {ctaPrimary.label}
+        </a>
+        <a class="inline-flex rounded-full border border-white/20 bg-transparent px-6 py-3 text-base font-semibold text-white transition hover:bg-white/10" href={ctaSecondary.href}>
+          {ctaSecondary.label}
+        </a>
+      </div>
     </div>
-  </div>
-  <div class="grid gap-4 rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6">
-    <p class="text-lg font-semibold text-[var(--muted)]">Najczęściej wybierane</p>
-    <ul class="space-y-4 text-sm text-[var(--text)]">
-      <li class="flex items-start gap-3">
-        <span class="mt-1 h-2 w-2 rounded-full bg-[var(--accent)]"></span>
-        <span>Strony dla marek osobistych i firm.</span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="mt-1 h-2 w-2 rounded-full bg-[var(--accent)]"></span>
-        <span>Sklepy online gotowe do skalowania.</span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="mt-1 h-2 w-2 rounded-full bg-[var(--accent)]"></span>
-        <span>Opieka i rozwoj stron po wdrozeniu.</span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="mt-1 h-2 w-2 rounded-full bg-[var(--accent)]"></span>
-        <span>Landing page pod kampanie i leady.</span>
-      </li>
-    </ul>
-    <div class="rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] p-4 text-sm text-[var(--muted)]">
-      <p class="font-semibold text-[var(--text)]">Przejrzysty proces</p>
-      <p class="mt-2">Stala komunikacja, jasne etapy i pelna opieka od briefu po wsparcie po starcie.</p>
+    <div class="grid gap-4 rounded-2xl border border-white/10 bg-white/5 p-6">
+      <p class="text-lg font-semibold text-gray-200">Najczęściej wybierane</p>
+      <ul class="space-y-4 text-sm text-gray-200">
+        <li class="flex items-start gap-3">
+          <span class="mt-1 h-2 w-2 rounded-full bg-[var(--accent)]"></span>
+          <span>Strony dla marek osobistych i firm.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1 h-2 w-2 rounded-full bg-[var(--accent)]"></span>
+          <span>Sklepy online gotowe do skalowania.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1 h-2 w-2 rounded-full bg-[var(--accent)]"></span>
+          <span>Opieka i rozwoj stron po wdrozeniu.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1 h-2 w-2 rounded-full bg-[var(--accent)]"></span>
+          <span>Landing page pod kampanie i leady.</span>
+        </li>
+      </ul>
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-gray-300">
+        <p class="font-semibold text-white">Przejrzysty proces</p>
+        <p class="mt-2">Stala komunikacja, jasne etapy i pelna opieka od briefu po wsparcie po starcie.</p>
+      </div>
     </div>
   </div>
 </section>
-

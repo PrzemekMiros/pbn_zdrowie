@@ -11,16 +11,17 @@ const navItems = [
 const linkClass = (href) =>
 	isActive(href)
 		? "rounded-full px-3 py-3 text-white no-underline transition hover:brightness-95"
-		: "rounded-full px-3 py-3 text-[var(--muted)] no-underline transition hover:bg-black/5 hover:text-[var(--text)]";
+		: "rounded-full px-3 py-3 text-white/70 no-underline transition hover:text-white";
 ---
 
-<header class="relative mb-12">
-	<nav
-		class="flex items-center justify-between gap-4 rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2"
-	>
-		<a href="/" class="text-[var(--text)] no-underline" aria-label="Logo">
+<header class="absolute left-0 right-0 top-0 z-50 pt-[30px]">
+	<div class="relative mx-auto w-full max-w-[1320px] px-6 sm:px-10 lg:px-12">
+		<nav
+			class="flex items-center justify-between gap-4 rounded-full border border-white/15 bg-black/80 px-4 py-2 backdrop-blur"
+		>
+		<a href="/" class="text-white no-underline" aria-label="Logo">
 			<svg
-				class="h-8 w-auto text-[var(--text)] sm:h-9"
+				class="h-9 w-auto text-white sm:h-10"
 				viewBox="0 0 971 234"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
@@ -131,7 +132,7 @@ const linkClass = (href) =>
 					fill="currentColor"></path>
 			</svg>
 		</a>
-		<div class="hidden items-center gap-2 text-sm font-semibold sm:flex">
+		<div class="hidden flex-1 items-center justify-center gap-6 text-sm font-semibold sm:flex">
 			{
 				navItems.map((item) => (
 					<a
@@ -144,8 +145,14 @@ const linkClass = (href) =>
 				))
 			}
 		</div>
+		<a
+			class="hidden items-center rounded-full bg-[var(--accent)] px-5 py-4 text-sm font-semibold text-white transition hover:brightness-95 sm:inline-flex"
+			href="/kontakt/"
+		>
+			Umow konsultacje
+		</a>
 		<button
-			class="inline-flex items-center justify-center rounded-full border border-[var(--border)] bg-[var(--surface-muted)] px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text)] transition hover:bg-black/5 sm:hidden"
+			class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-white/20 sm:hidden"
 			type="button"
 			aria-controls="mobile-menu"
 			aria-expanded="false"
@@ -153,12 +160,12 @@ const linkClass = (href) =>
 		>
 			Menu
 		</button>
-	</nav>
-	<div
-		class="absolute left-0 right-0 top-full z-20 mt-3 flex max-h-0 -translate-y-2 flex-col gap-2 overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 text-sm font-semibold opacity-0 transition-[max-height,transform,opacity] duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] pointer-events-none sm:hidden"
-		id="mobile-menu"
-		data-mobile-menu
-	>
+		</nav>
+		<div
+			class="absolute left-0 right-0 top-full z-20 mt-3 flex max-h-0 -translate-y-2 flex-col gap-2 overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-3 text-sm font-semibold opacity-0 transition-[max-height,transform,opacity] duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] pointer-events-none sm:hidden"
+			id="mobile-menu"
+			data-mobile-menu
+		>
 		{
 			navItems.map((item) => (
 				<a
@@ -170,6 +177,7 @@ const linkClass = (href) =>
 				</a>
 			))
 		}
+		</div>
 	</div>
 </header>
 
@@ -194,4 +202,3 @@ const linkClass = (href) =>
 		});
 	}
 </script>
-

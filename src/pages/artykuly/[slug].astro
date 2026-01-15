@@ -41,8 +41,8 @@ if (!artykul) {
   title={artykul.title ?? artykul.slug}
   description={artykul.description}
 >
-  <a class="inline-flex items-center gap-2 text-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]" href="/artykuly/">&larr; Wroc do listy</a>
-  <article class="mt-8 space-y-12">
+  <a class="mt-36 inline-flex items-center gap-2 text-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]" href="/artykuly/">&larr; Wroc do listy</a>
+  <article class="mt-42 space-y-12">
     <header class="space-y-8">
       <div class="mx-auto max-w-3xl space-y-12">
         <h1 class="text-4xl font-semibold leading-tight tracking-tight text-[var(--text)] sm:text-5xl lg:text-5xl">
@@ -62,7 +62,7 @@ if (!artykul) {
       </div>
       {headerImage ? (
         <Image
-          class="aspect-[16/9] mx-auto w-5xl rounded-3xl border border-[var(--border)] object-cover"
+          class="aspect-[16/9] mx-auto w-5xl rounded-2xl border border-[var(--border)] object-cover"
           src={headerImage}
           alt={artykul.title ?? artykul.slug}
           widths={[480, 768, 960, 1100, 1400, 1680]}
@@ -71,7 +71,7 @@ if (!artykul) {
           placeholder="blur"
         />
       ) : (
-        <div class="grid aspect-[16/9] w-5xl place-items-center rounded-3xl border border-dashed border-[var(--border)] bg-[var(--surface-muted)] text-xs uppercase tracking-widest text-[var(--muted)]">Brak zdjecia</div>
+        <div class="grid aspect-[16/9] w-5xl place-items-center rounded-2xl border border-dashed border-[var(--border)] bg-[var(--surface-muted)] text-xs uppercase tracking-widest text-[var(--muted)]">Brak zdjecia</div>
       )}
     </header>
 

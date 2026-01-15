@@ -41,18 +41,19 @@ const getTag = (article) => {
 const getImage = (article) => resolveArticleImage(article?.tileImage ?? article?.thumbnail);
 ---
 
-<section class="mt-24">
+<section class="relative pt-20 pb-24">
+  <div class="relative">
   <div class="">
     <div class="mb-12 space-y-3">
-      <p class="text-base/7 font-semibold text-[var(--accent)]">Sprawdz</p>
-      <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Porady i ciekawostki</h2>
+      <p class="text-base/7 font-semibold text-[var(--accent)]">Sprawdż</p>
+      <h2 class="text-3xl font-semibold tracking-tight text-black sm:text-4xl">Porady i ciekawostki</h2>
     </div>
 
     <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
       {first ? (
         <a
           href={`/artykuly/${first.slug}/`}
-          class="group flex h-full flex-col rounded-[16px] bg-[#FF6B52] p-6 transition-transform hover:scale-[1.02]"
+          class="group flex h-full flex-col rounded-2xl bg-[#FF6B52] p-6 transition-transform hover:scale-[1.02]"
         >
           <div class="mb-8 flex items-start justify-between">
             <span class="flex items-center gap-2 rounded-full bg-black px-3 py-1.5 text-[10px] font-bold uppercase text-white">
@@ -71,13 +72,13 @@ const getImage = (article) => resolveArticleImage(article?.tileImage ?? article?
               <Image
                 src={getImage(first)}
                 alt={first.title ?? first.slug}
-                class="w-full h-[185px] rounded-xl border border-white/10 object-cover"
+                class="w-full h-[185px] rounded-2xl border border-white/10 object-cover"
                 widths={[320, 480, 768]}
                 sizes="(max-width: 768px) 100vw, 33vw"
                 loading="lazy"
               />
             ) : (
-              <div class="grid h-[185px] w-full place-items-center rounded-xl border border-white/10 bg-black/20 text-xs uppercase tracking-widest text-white">
+              <div class="grid h-[185px] w-full place-items-center rounded-2xl border border-white/10 bg-black/20 text-xs uppercase tracking-widest text-white">
                 Brak zdjecia
               </div>
             )}
@@ -95,7 +96,7 @@ const getImage = (article) => resolveArticleImage(article?.tileImage ?? article?
       {second ? (
         <a
           href={`/artykuly/${second.slug}/`}
-          class="flex h-full flex-col rounded-[16px] bg-[#7C4DFF] p-6 text-white transition-transform hover:scale-[1.02]"
+          class="flex h-full flex-col rounded-2xl bg-[#7C4DFF] p-6 text-white transition-transform hover:scale-[1.02]"
         >
           <div class="mb-8 flex items-start justify-between">
             <span class="flex items-center gap-2 rounded-full bg-black px-3 py-1.5 text-[10px] font-bold uppercase text-white">
@@ -114,13 +115,13 @@ const getImage = (article) => resolveArticleImage(article?.tileImage ?? article?
               <Image
                 src={getImage(second)}
                 alt={second.title ?? second.slug}
-                class="w-full h-[185px] rounded-xl border border-white/10 object-cover"
+                class="w-full h-[185px] rounded-2xl border border-white/10 object-cover"
                 widths={[320, 480, 768]}
                 sizes="(max-width: 768px) 100vw, 33vw"
                 loading="lazy"
               />
             ) : (
-              <div class="grid h-[185px] w-full place-items-center rounded-xl border border-white/10 bg-black/20 text-xs uppercase tracking-widest text-white">
+              <div class="grid h-[185px] w-full place-items-center rounded-2xl border border-white/10 bg-black/20 text-xs uppercase tracking-widest text-white">
                 Brak zdjecia
               </div>
             )}
@@ -138,7 +139,7 @@ const getImage = (article) => resolveArticleImage(article?.tileImage ?? article?
       {third ? (
         <a
           href={`/artykuly/${third.slug}/`}
-          class="flex h-full flex-col rounded-[16px] bg-black p-6 text-white transition-transform hover:scale-[1.02]"
+          class="flex h-full flex-col rounded-2xl bg-black p-6 text-white transition-transform hover:scale-[1.02]"
         >
           <div class="mb-8 flex items-start justify-between">
             <span class="flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-[10px] font-bold uppercase text-black">
@@ -157,13 +158,13 @@ const getImage = (article) => resolveArticleImage(article?.tileImage ?? article?
               <Image
                 src={getImage(third)}
                 alt={third.title ?? third.slug}
-                class="w-full h-[185px] rounded-xl border border-white/10 object-cover"
+                class="w-full h-[185px] rounded-2xl border border-white/10 object-cover"
                 widths={[320, 480, 768]}
                 sizes="(max-width: 768px) 100vw, 33vw"
                 loading="lazy"
               />
             ) : (
-              <div class="grid h-[185px] w-full place-items-center rounded-xl border border-white/10 bg-black/20 text-xs uppercase tracking-widest text-white">
+              <div class="grid h-[185px] w-full place-items-center rounded-2xl border border-white/10 bg-black/20 text-xs uppercase tracking-widest text-white">
                 Brak zdjecia
               </div>
             )}
@@ -178,5 +179,5 @@ const getImage = (article) => resolveArticleImage(article?.tileImage ?? article?
         </a>
       ) : null}
     </div>
-  </div>
+</div>
 </section>

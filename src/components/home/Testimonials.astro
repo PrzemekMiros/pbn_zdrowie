@@ -2,15 +2,23 @@
 import { Image } from "astro:assets";
 import avatarImage from "../../assets/images/global/avatar.jpg";
 
-const entries = import.meta.glob('../../content/opinie/*.md', { eager: true });
+const entries = import.meta.glob("../../content/opinie/*.md", { eager: true });
+const imageEntries = import.meta.glob("/src/content/opinie/img/**/*", { eager: true });
+const resolveOpinionImage = (path) => {
+  if (!path) return null;
+  const normalized = path.startsWith("/src/") ? path : `/src${path}`;
+  const entry = imageEntries[normalized];
+  return entry?.default ?? null;
+};
 
 const testimonials = Object.values(entries)
   .map((mod) => {
-    const { title, client, review, name, role, quote, order } = mod.frontmatter ?? {};
+    const { title, client, review, name, role, quote, order, clientlogo } = mod.frontmatter ?? {};
     return {
       name: name ?? title,
       role: role ?? client,
       quote: quote ?? review,
+      clientlogo,
       order,
     };
   })
@@ -23,8 +31,9 @@ const testimonials = Object.values(entries)
   });
 ---
 
-<section class="mt-24">
-  <div class="mx-auto max-w-7xl">
+<section class="relative py-24">
+  <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 rounded-2xl bg-black"></div>
+  <div class="relative text-white">
     <div class="mb-12 flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
       <div class="max-w-2xl space-y-3">
         <p class="text-base/7 font-semibold text-[var(--accent)]">Sprawdz</p>
@@ -35,8 +44,8 @@ const testimonials = Object.values(entries)
           <div class="mb-1 flex text-[var(--accent)]">
               <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
           </div>
-          <p class="text-sm font-bold text-[var(--text)]">
-            4.8 RATING <span class="ml-2 font-normal text-[var(--muted)]">500+ REVIEWS</span>
+          <p class="text-sm font-bold text-white">
+            4.8 RATING <span class="ml-2 font-normal text-gray-300">500+ REVIEWS</span>
           </p>
         </div>
       </div>
@@ -45,7 +54,7 @@ const testimonials = Object.values(entries)
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
       {testimonials.slice(0, 2).map((item, index) => {
         const isAccent = index === 1;
-        const cardClass = isAccent ? 'bg-[var(--accent)] text-black' : 'bg-black text-white';
+        const cardClass = isAccent ? 'bg-[var(--accent)] text-black' : 'bg-white text-black';
         const pillClass = isAccent ? 'bg-black text-white' : 'bg-white text-black';
         const dotActive = isAccent ? 'bg-black' : 'bg-white';
         const dotMuted = isAccent ? 'bg-black/20' : 'bg-gray-600';
@@ -54,7 +63,7 @@ const testimonials = Object.values(entries)
         const brandClass = isAccent ? 'text-black' : 'text-white';
 
         return (
-          <div class={`flex min-h-[400px] flex-col justify-between rounded-3xl p-8 md:p-12 ${cardClass}`}>
+          <div class={`flex min-h-[400px] flex-col justify-between rounded-2xl p-8 md:p-12 ${cardClass}`}>
             <div>
               <div class="mb-12 flex items-center justify-between">
                 <span class={`rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider ${pillClass}`}>
@@ -66,23 +75,50 @@ const testimonials = Object.values(entries)
                   <div class={`h-1.5 w-1.5 rounded-full ${dotMuted}`}></div>
                 </div>
               </div>
-              <blockquote class="text-2xl font-semibold leading-snug">"{item.quote}"</blockquote>
+              <blockquote class="text-xl font-semibold leading-snug">"{item.quote}"</blockquote>
             </div>
-            <div class="mt-12">
+            <div class="mt-12 flex items-center justify-between">
               <div class="flex items-center space-x-4">
-                <Image
-                  src={avatarImage}
-                  alt={`Zdjecie ${item.name}`}
-                  class={`h-12 w-12 rounded-full border-2 ${avatarBorder}`}
-                  widths={[48]}
-                  sizes="48px"
-                  loading="lazy"
-                />
+                {resolveOpinionImage(item.clientlogo) ? (
+                  <Image
+                    src={resolveOpinionImage(item.clientlogo)}
+                    alt={`Logo ${item.role ?? item.name}`}
+                    class={`h-12 w-12 rounded-full border-2 ${avatarBorder}`}
+                    widths={[48]}
+                    sizes="48px"
+                    loading="lazy"
+                  />
+                ) : (
+                  <Image
+                    src={avatarImage}
+                    alt={`Zdjecie ${item.name}`}
+                    class={`h-12 w-12 rounded-full border-2 ${avatarBorder}`}
+                    widths={[48]}
+                    sizes="48px"
+                    loading="lazy"
+                  />
+                )}
                 <div>
                   <p class="font-bold">{item.name}</p>
                   {item.role ? <p class={`text-sm ${roleClass}`}>{item.role}</p> : null}
                 </div>
               </div>
+              <div class="opacity-90">
+                {resolveOpinionImage(item.clientlogo) ? (
+                  <Image
+                    src={resolveOpinionImage(item.clientlogo)}
+                    alt={`Logo ${item.role ?? item.name}`}
+                    class="h-6 w-auto"
+                    widths={[120]}
+                    sizes="120px"
+                    loading="lazy"
+                  />
+                ) : (
+                  <span class={`text-lg font-bold uppercase tracking-widest ${brandClass}`}>
+                    {item.role ?? 'Klient'}
+                  </span>
+                )}
+              </div> 
             </div>
           </div>
         );
