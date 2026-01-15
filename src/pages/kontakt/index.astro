@@ -13,11 +13,11 @@ const contact = {
 ---
 
 <BaseLayout title="Kontakt">
-  <section class="mt-8 grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+  <section class="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-12">
     <div class="space-y-6">
       <div class="space-y-3">
-        <h1 class="text-4xl font-semibold tracking-tight">{contact.title}</h1>
-        <p class="max-w-xl text-lg text-[var(--muted)]">{contact.lead}</p>
+        <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">{contact.title}</h1>
+        <p class="max-w-xl text-base text-[var(--muted)] sm:text-lg">{contact.lead}</p>
       </div>
 
       <div class="grid gap-4 sm:grid-cols-2">
@@ -47,7 +47,7 @@ const contact = {
       </div>
     </div>
 
-    <div class="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.6)]">
+    <div class="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[0_18px_40px_-30px_rgba(0,0,0,0.6)] lg:sticky lg:top-8">
       <h2 class="text-2xl font-semibold tracking-tight">Formularz kontaktowy</h2>
       <p class="mt-2 text-sm text-[var(--muted)]">Podaj kilka szczegolow, a odezwe sie z propozycja dalszych krokow.</p>
       <form
@@ -64,13 +64,15 @@ const contact = {
             <input name="bot-field" />
           </label>
         </p>
-        <div class="grid gap-3">
-        <label class="grid gap-2 text-sm font-semibold text-[var(--text)]">
-          <input class="rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="name" type="text" placeholder="Jan Kowalski" required />
-        </label>
-        <label class="grid gap-2 text-sm font-semibold text-[var(--text)]">
-          <input class="rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="email" type="email" placeholder="jan@firma.pl" required />
-        </label>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <label class="grid gap-2 text-sm font-semibold text-[var(--text)]">
+            Imie i nazwisko
+            <input class="rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="name" type="text" placeholder="Jan Kowalski" required />
+          </label>
+          <label class="grid gap-2 text-sm font-semibold text-[var(--text)]">
+            Email
+            <input class="rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="email" type="email" placeholder="jan@firma.pl" required />
+          </label>
         </div>
         <label class="grid gap-2 text-sm font-semibold text-[var(--text)]">
           Wiadomosc

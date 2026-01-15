@@ -5,12 +5,16 @@ import Services from "../components/home/Services.astro";
 import FeaturedWork from "../components/home/FeaturedWork.astro";
 import Testimonials from "../components/home/Testimonials.astro";
 import CallToAction from "../components/home/CallToAction.astro";
+import BentoGrid from "../components/home/BentoGrid.astro";
+import LatestPosts from "../components/home/LatestPosts.astro";
 ---
 
 <BaseLayout>
 	<Hero />
-	<Services />
+	<BentoGrid />
 	<FeaturedWork />
+	<Services />
+	<LatestPosts />
 	<Testimonials />
 	<CallToAction />
 </BaseLayout>

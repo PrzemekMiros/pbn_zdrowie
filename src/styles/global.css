@@ -16,9 +16,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --surface: #151518;
-    --surface-muted: #0f1012;
-    --bg: #0b0c0f;
+    --surface: #24282e;
+    --surface-muted: rgb(23, 25, 29);
+    --bg: #16191d;
     --text: #f8fafc;
     --muted: #a1a1aa;
     --border: rgba(148, 163, 184, 0.16);

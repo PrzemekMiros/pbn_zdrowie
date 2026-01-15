@@ -1,0 +1,182 @@
+---
+import { Image } from "astro:assets";
+
+const imageEntries = import.meta.glob("/src/content/artykuly/img/**/*", { eager: true });
+const resolveArticleImage = (path) => {
+  if (!path) return null;
+  let normalized = path;
+  if (normalized.startsWith("/content/posts/img/")) {
+    const filename = normalized.split("/").pop();
+    normalized = `/src/content/artykuly/img/${filename}`;
+  } else if (normalized.startsWith("/content/")) {
+    normalized = `/src${normalized}`;
+  }
+  const entry = imageEntries[normalized];
+  return entry?.default ?? null;
+};
+
+const entries = import.meta.glob("../../content/artykuly/*.md", { eager: true });
+const items = Object.entries(entries).map(([file, entry]) => {
+  const slug = file.split("/").pop().replace(".md", "");
+  return { slug, ...entry.frontmatter };
+});
+
+const articles = items
+  .map((item) => ({
+    ...item,
+    _date: item.date ? new Date(item.date) : null,
+  }))
+  .sort((a, b) => {
+    const aTime = a._date ? a._date.getTime() : 0;
+    const bTime = b._date ? b._date.getTime() : 0;
+    return bTime - aTime;
+  })
+  .slice(0, 3);
+
+const [first, second, third] = articles;
+const getTag = (article) => {
+  const tag = Array.isArray(article?.tags) ? article.tags[0] : article?.tags;
+  return tag ?? "Artykul";
+};
+const getImage = (article) => resolveArticleImage(article?.tileImage ?? article?.thumbnail);
+---
+
+<section class="mt-24">
+  <div class="">
+    <div class="mb-12 space-y-3">
+      <p class="text-base/7 font-semibold text-[var(--accent)]">Sprawdz</p>
+      <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Porady i ciekawostki</h2>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+      {first ? (
+        <a
+          href={`/artykuly/${first.slug}/`}
+          class="group flex h-full flex-col rounded-[16px] bg-[#FF6B52] p-6 transition-transform hover:scale-[1.02]"
+        >
+          <div class="mb-8 flex items-start justify-between">
+            <span class="flex items-center gap-2 rounded-full bg-black px-3 py-1.5 text-[10px] font-bold uppercase text-white">
+              <span class="flex h-3 w-3 items-center justify-center rounded-sm bg-white text-[8px] text-black">II</span>
+              {getTag(first)}
+            </span>
+            <div class="rounded-full bg-black p-2">
+              <svg class="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            {getImage(second) ? (
+              <Image
+                src={getImage(second)}
+                alt={second.title ?? second.slug}
+                class="w-full rounded-xl border border-white/10 shadow-lg"
+                widths={[320, 480, 768]}
+                sizes="(max-width: 768px) 100vw, 33vw"
+                loading="lazy"
+              />
+            ) : (
+              <div class="grid h-[225px] w-full place-items-center rounded-xl border border-white/10 bg-black/20 text-xs uppercase tracking-widest text-white">
+                Brak zdjecia
+              </div>
+            )}
+          </div>
+
+          <div class="">
+            <h3 class="mb-3 text-xl font-bold text-black">{first.title ?? first.slug}</h3>
+            {first.description ? (
+              <p class="text-sm leading-relaxed text-black">{first.description}</p>
+            ) : null}
+          </div>
+        </a>
+      ) : null}
+
+      {second ? (
+        <a
+          href={`/artykuly/${second.slug}/`}
+          class="flex h-full flex-col rounded-[16px] bg-[#7C4DFF] p-6 text-white transition-transform hover:scale-[1.02]"
+        >
+          <div class="mb-8 flex items-start justify-between">
+            <span class="flex items-center gap-2 rounded-full bg-black px-3 py-1.5 text-[10px] font-bold uppercase text-white">
+              <span class="flex h-3 w-3 items-center justify-center rounded-sm bg-white text-[8px] text-black">AA</span>
+              {getTag(second)}
+            </span>
+            <div class="rounded-full bg-black p-2">
+              <svg class="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            {getImage(second) ? (
+              <Image
+                src={getImage(second)}
+                alt={second.title ?? second.slug}
+                class="w-full rounded-xl border border-white/10 shadow-lg"
+                widths={[320, 480, 768]}
+                sizes="(max-width: 768px) 100vw, 33vw"
+                loading="lazy"
+              />
+            ) : (
+              <div class="grid h-[225px] w-full place-items-center rounded-xl border border-white/10 bg-black/20 text-xs uppercase tracking-widest text-white">
+                Brak zdjecia
+              </div>
+            )}
+          </div>
+
+          <div class="">
+            <h3 class="mb-3 text-xl font-bold">{second.title ?? second.slug}</h3>
+            {second.description ? (
+              <p class="text-sm leading-relaxed text-purple-100">{second.description}</p>
+            ) : null}
+          </div>
+        </a>
+      ) : null}
+
+      {third ? (
+        <a
+          href={`/artykuly/${third.slug}/`}
+          class="flex h-full flex-col rounded-[16px] bg-black p-6 text-white transition-transform hover:scale-[1.02]"
+        >
+          <div class="mb-8 flex items-start justify-between">
+            <span class="flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-[10px] font-bold uppercase text-black">
+              <span class="flex h-3 w-3 items-center justify-center rounded-sm bg-black text-[8px] text-white">AA</span>
+              {getTag(third)}
+            </span>
+            <div class="rounded-full bg-white p-2">
+              <svg class="h-4 w-4 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            {getImage(third) ? (
+              <Image
+                src={getImage(second)}
+                alt={second.title ?? second.slug}
+                class="w-full rounded-xl border border-white/10 shadow-lg"
+                widths={[320, 480, 768]}
+                sizes="(max-width: 768px) 100vw, 33vw"
+                loading="lazy"
+              />
+            ) : (
+              <div class="grid h-[225px] w-full place-items-center rounded-xl border border-white/10 bg-black/20 text-xs uppercase tracking-widest text-white">
+                Brak zdjecia
+              </div>
+            )}
+          </div>
+
+          <div class="">
+            <h3 class="mb-3 text-xl font-bold">{third.title ?? third.slug}</h3>
+            {third.description ? (
+              <p class="text-sm leading-relaxed text-white/70">{third.description}</p>
+            ) : null}
+          </div>
+        </a>
+      ) : null}
+    </div>
+  </div>
+</section>
