@@ -37,12 +37,12 @@
 }
 
 :root {
-  --accent: #ff5b49;
+  --accent: #e0432f;
   --surface: #ffffff;
   --surface-muted: #f7f5f2;
   --bg: #f7f5f2;
   --text: #111827;
-  --muted: #6b7280;
+  --muted: #4b5563;
   --border: rgba(15, 23, 42, 0.12);
 }
 
