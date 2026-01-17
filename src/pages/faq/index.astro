@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const entries = import.meta.glob("../../content/faq/*.md", { eager: true });
+const questions = Object.entries(entries)
+  .map(([file, entry]) => {
+    const slug = file.split("/").pop().replace(".md", "");
+    return { slug, ...entry.frontmatter };
+  })
+  .sort((a, b) => (a.title ?? "").localeCompare(b.title ?? "", "pl", { sensitivity: "base" }));
+---
+
+<BaseLayout
+  title="Najczęściej zadawane pytania"
+  description="Napisz lub zadzwon, opowiedz o projekcie i otrzymaj odpowiedz w 24-48h."
+>
+  <section class="py-20">
+    <div class="grid gap-6 md:grid-cols-2">
+      {questions.map((item) => (
+        <article class="rounded-2xl border border-[var(--border)] bg-white p-6 shadow-sm transition hover:border-[var(--accent)] hover:shadow-lg">
+          <h3 class="text-lg font-semibold text-[var(--text)]">{item.title}</h3>
+          {item.answer ? (
+            <p class="mt-3 text-sm leading-relaxed text-[var(--muted)]">{item.answer}</p>
+          ) : null}
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

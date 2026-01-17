@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import MiastaHero from "../../layouts/heroes/MiastaHero.astro";
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  const entries = import.meta.glob("../../content/miasta/*.md", { eager: true });
+  return Object.entries(entries).map(([file, entry]) => {
+    const slug = file.split("/").pop().replace(".md", "");
+    return {
+      params: { slug },
+      props: { miasto: { slug, ...entry.frontmatter }, Content: entry.Content },
+    };
+  });
+}
+
+const { miasto, Content } = Astro.props;
+const mapUrl = miasto?.maplink
+  ? miasto.maplink.startsWith("http")
+    ? miasto.maplink
+    : `https://www.google.com/maps/${miasto.maplink}`
+  : null;
+
+if (!miasto) {
+  return Astro.redirect("/miasta");
+}
+---
+
+<BaseLayout title={miasto.title ?? miasto.slug} description={miasto.description} showHero={false}>
+  <MiastaHero title={miasto.title ?? miasto.slug} lead={miasto.description} />
+
+  <section class="py-20 space-y-12">
+    <div class="grid gap-8 md:grid-cols-[minmax(0,1fr)_max-content]">
+      {mapUrl ? (
+        <div class="aspect-[4/3] w-full rounded-3xl border border-[var(--border)] overflow-hidden bg-black">
+          <iframe
+            class="h-full w-full"
+            src={mapUrl}
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title={`Mapa ${miasto.title ?? miasto.town ?? miasto.slug}`}
+          ></iframe>
+        </div>
+      ) : (
+        <div class="aspect-[4/3] w-full rounded-3xl border border-dashed border-[var(--border)] bg-[var(--surface-muted)] grid place-items-center text-sm uppercase tracking-widest text-[var(--muted)]">
+          Brak mapy
+        </div>
+      )}
+      <div class="space-y-4">
+        <p class="text-xs uppercase tracking-[0.3em] text-[var(--accent)]">Miasto</p>
+        <h2 class="text-3xl font-semibold text-[var(--text)]">{miasto.town ?? miasto.title}</h2>
+        {miasto.description ? (
+          <p class="text-lg text-[var(--muted)]">{miasto.description}</p>
+        ) : null}
+        <a
+          class="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] hover:text-[var(--text)]"
+          href="/kontakt"
+          title="Zapytaj o wycenę strony"
+        >
+          Skontaktuj się i sprawdź dostępność &rarr;
+        </a>
+      </div>
+    </div>
+
+    {Content ? (
+      <article class="prose prose-xl prose-slate max-w-none dark:prose-invert">
+        <Content />
+      </article>
+    ) : (
+      <p class="text-[var(--muted)]">Pracuję nad przygotowaniem opisu dla tego miasta.</p>
+    )}
+
+    <a class="text-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]" href="/miasta">
+      ← Wróć do listy miast
+    </a>
+  </section>
+</BaseLayout>

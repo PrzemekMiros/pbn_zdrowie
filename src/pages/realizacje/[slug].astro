@@ -55,6 +55,11 @@ if (!realizacja) {
       <div class="grid aspect-[4/4] place-items-center rounded-2xl border border-dashed border-[var(--border)] bg-[var(--surface-muted)] text-xs uppercase tracking-widest text-[var(--muted)]">Brak zdjecia</div>
     )}
     <div class="space-y-4">
+    {Content ? (
+    <section class="mt-10 space-y-4 text-[17px] leading-7 text-[var(--text)] [&>a]:underline [&>a]:decoration-[var(--accent)] [&>a]:underline-offset-4 [&>blockquote]:border-l-4 [&>blockquote]:border-[var(--border)] [&>blockquote]:pl-4 [&>blockquote]:text-[var(--muted)] [&>h2]:mt-8 [&>h2]:text-2xl [&>h2]:font-semibold [&>h3]:mt-6 [&>h3]:text-xl [&>h3]:font-semibold [&>hr]:border-[var(--border)] [&>li]:mt-2 [&>ol]:list-decimal [&>ol]:pl-6 [&>p]:leading-7 [&>ul]:list-disc [&>ul]:pl-6">
+      <Content />
+    </section>
+  ) : null}
       {realizacja.description ? <p class="text-[var(--muted)]">{realizacja.description}</p> : null}
       {realizacja.client ? <p class="text-[var(--muted)]">{realizacja.client}</p> : null}
       {year ? <p class="text-[var(--muted)]">{year}</p> : null}
@@ -71,11 +76,7 @@ if (!realizacja) {
       <p class="text-sm text-[var(--muted)]">{realizacja.category.join(", ")}</p>
     </section>
   ) : null}
-  {Content ? (
-    <section class="mt-10 space-y-4 text-[17px] leading-7 text-[var(--text)] [&>a]:underline [&>a]:decoration-[var(--accent)] [&>a]:underline-offset-4 [&>blockquote]:border-l-4 [&>blockquote]:border-[var(--border)] [&>blockquote]:pl-4 [&>blockquote]:text-[var(--muted)] [&>h2]:mt-8 [&>h2]:text-2xl [&>h2]:font-semibold [&>h3]:mt-6 [&>h3]:text-xl [&>h3]:font-semibold [&>hr]:border-[var(--border)] [&>li]:mt-2 [&>ol]:list-decimal [&>ol]:pl-6 [&>p]:leading-7 [&>ul]:list-disc [&>ul]:pl-6">
-      <Content />
-    </section>
-  ) : null}
+
     <a class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]" href="/realizacje/" title="Wroc do listy realizacji">&larr; Wroc do listy</a>
     </div>
   </section>

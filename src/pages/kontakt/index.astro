@@ -16,108 +16,117 @@ const contact = {
   title="Kontakt"
   description="Napisz lub zadzwon, opowiedz o projekcie i otrzymaj odpowiedz w 24-48h."
 >
-  <section class="pb-24 pt-24 grid gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:gap-12">
+  <section class="pb-24 pt-24 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-12">
     <div class="space-y-6">
       <div class="space-y-2">
-        <p class="max-w-xl text-base text-[var(--muted)]">
-          Opisz krótko potrzeby, termin i budżet. Jeśli masz brief, link do inspiracji albo obecnej strony,
-          podaj je w wiadomości. Odezwiemy się z propozycją dalszych kroków, wstępną wyceną oraz planem działań.
+        <p class="max-w-xl font-semibold text-3xl">
+          Opisz krótko potrzeby, termin i budżet
         </p>
-                <p class="max-w-xl text-base text-[var(--muted)]">
-          Opisz krótko potrzeby, termin i budżet. Jeśli masz brief, link do inspiracji albo obecnej strony,
-          podaj je w wiadomości. Odezwiemy się z propozycją dalszych kroków, wstępną wyceną oraz planem działań.
+        <p class="max-w-xl text-base text-[var(--muted)]">
+          Jeśli masz brief, link do inspiracji albo obecnej strony,
+          podaj je w wiadomości. Odezwę się z propozycją dalszych kroków, wstępną wyceną oraz planem działań.
         </p>
       </div>
-      <div class="grid gap-4 sm:grid-cols-2">
-        <div class="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5">
+      <div class="space-y-4">
+        <div class="rounded-2xl border border-[var(--border)] bg-[#fbfbff] px-5 py-6">
           <p class="text-xs uppercase tracking-[0.2em] text-[var(--muted)]">Email</p>
-          <a class="mt-3 block text-lg font-semibold text-[var(--text)]" href={`mailto:${contact.email}`} title="Napisz email">
+          <a class="mt-3 block text-lg text-[var(--text)]" href={`mailto:${contact.email}`} title="Napisz email">
             {contact.email}
           </a>
         </div>
-        <div class="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5">
+        <div class="rounded-2xl border border-[var(--border)] bg-[#fbfbff] px-5 py-6">
           <p class="text-xs uppercase tracking-[0.2em] text-[var(--muted)]">Telefon</p>
-          <a class="mt-3 block text-lg font-semibold text-[var(--text)]" href={`tel:${contact.phone.replace(/\s/g, "")}`} title="Zadzwon">
+          <a class="mt-3 block text-lg text-[var(--text)]" href={`tel:${contact.phone.replace(/\s/g, "")}`} title="Zadzwon">
             {contact.phone}
           </a>
         </div>
-        <div class="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5">
-          <p class="text-xs uppercase tracking-[0.2em] text-[var(--muted)]">Adres</p>
+        <div class="rounded-2xl border border-[var(--border)] bg-[#fbfbff] px-5 py-6">
+          <p class="text-xs uppercase tracking-[0.2em] text-[var(--muted)]">Lokalizacja</p>
           <p class="mt-3 text-base text-[var(--text)]">{contact.address}</p>
-          <a class="mt-3 inline-flex text-sm font-semibold text-[var(--accent)] hover:brightness-95" href={contact.mapUrl} rel="noopener" target="_blank" title="Zobacz na mapie">
-            Zobacz na mapie
-          </a>
         </div>
-        <div class="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-5">
-          <p class="text-xs uppercase tracking-[0.2em] text-[var(--muted)]">Godziny</p>
+        <div class="rounded-2xl border border-[var(--border)] bg-[#fbfbff] px-5 py-6">
+          <p class="text-xs uppercase tracking-[0.2em] text-[var(--muted)]">Dostępność</p>
           <p class="mt-3 text-base text-[var(--text)]">{contact.hours}</p>
         </div>
       </div>
     </div>
 
-    <div class="rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-6 lg:sticky lg:top-8">
-      <h2 class="text-2xl font-semibold tracking-tight">Formularz kontaktowy</h2>
+    <div class="rounded-2xl border border-[var(--border)] bg-[#fbfbff] p-6 lg:sticky lg:top-8">
       <form class="mt-6 grid gap-4" id="contactForm">
         <div class="grid gap-3 sm:grid-cols-2">
           <label class="grid gap-2 text-sm font-semibold text-[var(--muted)]" for="contact-name">
             Imię i nazwisko
-            <input id="contact-name" class="w-full box-border rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="name" type="text" placeholder="Jan Kowalski" required />
+            <input
+              id="contact-name"
+              class="w-full box-border rounded-xl font-normal border border-[var(--border)] bg-[#fff] px-4 py-3 text-base text-[var(--text)]"
+              name="form-name"
+              type="text"
+              placeholder="Jan Kowalski"
+              required
+            />
           </label>
           <label class="grid gap-2 text-sm font-semibold text-[var(--muted)]" for="contact-email">
             Email
-            <input id="contact-email" class="w-full box-border rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="email" type="email" placeholder="jan@firma.pl" required />
+            <input
+              id="contact-email"
+              class="w-full box-border rounded-xl font-normal border border-[var(--border)] bg-[#fff] px-4 py-3 text-base text-[var(--text)]"
+              name="form-mail"
+              type="email"
+              placeholder="jan@firma.pl"
+              required
+            />
           </label>
         </div>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <label class="grid gap-2 text-sm font-semibold text-[var(--muted)]" for="contact-phone">
+            Telefon
+            <input
+              id="contact-phone"
+              class="w-full box-border rounded-xl font-normal border border-[var(--border)] bg-[#fff] px-4 py-3 text-base text-[var(--text)]"
+              name="form-phone"
+              type="tel"
+              placeholder="+48 123 456 789"
+            />
+          </label>
+          <label class="grid gap-2 text-sm font-semibold text-[var(--muted)]" for="contact-company">
+            Firma (opcjonalnie)
+            <input
+              id="contact-company"
+              class="w-full box-border rounded-xl font-normal border border-[var(--border)] bg-[#fff] px-4 py-3 text-base text-[var(--text)]"
+              name="form-company"
+              type="text"
+              placeholder="Nazwa firmy"
+            />
+          </label>
+        </div>
+        <label class="grid gap-2 text-sm font-semibold text-[var(--muted)]" for="contact-service">
+          Usługa
+          <input
+            id="contact-service"
+            class="w-full box-border rounded-xl font-normal border border-[var(--border)] bg-[#fff] px-4 py-3 text-base text-[var(--text)]"
+            name="form-service"
+            type="text"
+            placeholder="Co chcesz zrealizować?"
+          />
+        </label>
         <label class="grid gap-2 text-sm font-semibold text-[var(--muted)]" for="contact-message">
           Wiadomość
-          <textarea id="contact-message" class="w-full box-border min-h-[140px] rounded-2xl border border-[var(--border)] bg-[var(--surface-muted)] px-4 py-3 text-base text-[var(--text)]" name="message" placeholder="Napisz, czego potrzebujesz i jaki jest termin." required></textarea>
+          <textarea
+            id="contact-message"
+            class="w-full box-border min-h-[140px] rounded-xl font-normal border border-[var(--border)] bg-[#fff] px-4 py-3 text-base text-[var(--text)]"
+            name="form-message"
+            placeholder="Napisz, czego potrzebujesz i jaki jest termin."
+            required
+          ></textarea>
         </label>
-        <button class="mt-2 inline-flex w-full items-center justify-center rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-95" type="submit">
+        <button
+          class="mt-2 inline-flex w-full items-center justify-center rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-95"
+          type="submit"
+        >
           Wyślij wiadomość
         </button>
         <p id="contact-form-status" class="mt-3 text-sm text-[var(--muted)]" aria-live="polite"></p>
       </form>
     </div>
   </section>
-  <script type="module">
-    const form = document.getElementById("contactForm");
-    const statusEl = document.getElementById("contact-form-status");
-
-    if (form) {
-      form.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        if (statusEl) {
-          statusEl.textContent = "Wysyłam wiadomość...";
-          statusEl.dataset.state = "sending";
-        }
-
-        const formData = new FormData(form);
-
-        try {
-          const response = await fetch("/api/contact", {
-            method: "POST",
-            body: formData,
-          });
-
-          if (!response.ok) {
-            throw new Error("Nie udało się wysłać wiadomości");
-          }
-
-          const result = await response.json();
-          if (statusEl) {
-            statusEl.textContent = result?.message ?? "Wiadomość dotarła - skontaktujemy się wkrótce.";
-            statusEl.dataset.state = "success";
-          }
-
-          form.reset();
-        } catch (error) {
-          console.error("Błąd formularza kontaktowego:", error);
-          if (statusEl) {
-            statusEl.textContent = "Wystąpił problem. Spróbuj ponownie za chwilę.";
-            statusEl.dataset.state = "error";
-          }
-        }
-      });
-    }
-  </script>
 </BaseLayout>
