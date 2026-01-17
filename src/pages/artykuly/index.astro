@@ -41,85 +41,93 @@ const categories = Array.from(
   title="Porady i ciekawostki"
   description="Praktyczne porady, trendy i ciekawostki o stronach, SEO i marketingu."
 >
-  <section class="mb-24 mt-12">
-      <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_260px]">
-        <div class="mt-8 space-y-20 lg:space-y-20">
-          {items.map((artykul) => {
-            const image = resolveArticleImage(artykul.tileImage ?? artykul.thumbnail);
-            const date = artykul.date ? new Date(artykul.date) : null;
-            const formattedDate = date ? date.toLocaleDateString("pl-PL", { day: "2-digit", month: "short", year: "numeric" }) : null;
-            const tag = Array.isArray(artykul.tags) ? artykul.tags[0] : artykul.tags;
-            const author = artykul.author ?? "Redakcja";
-            const initials = author
-              .split(" ")
-              .filter(Boolean)
-              .slice(0, 2)
-              .map((part) => part[0])
-              .join("")
-              .toUpperCase();
-            return (
-              <article class="relative isolate flex flex-col gap-8 lg:flex-row">
-                <div class="relative aspect-[16/9] sm:aspect-[2/1] lg:w-96 lg:shrink-0">
-                  {image ? (
-                    <Image
-                      class="absolute inset-0 h-full w-full rounded-2xl bg-gray-50 object-cover"
-                      src={image}
-                      alt={artykul.title ?? artykul.slug}
-                      widths={[320, 480, 768, 960]}
-                      sizes="(max-width: 1024px) 100vw, 256px"
-                      loading="lazy"
-                      placeholder="blur"
-                    />
-                  ) : (
-                    <div class="absolute inset-0 grid place-items-center rounded-2xl bg-gray-800 text-xs uppercase tracking-widest text-gray-300">Brak zdjecia</div>
-                  )}
-                  <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
+<section class="mb-24 mt-16 px-4 md:px-0">
+  <div class="grid gap-16 lg:grid-cols-[minmax(0,1fr)_300px]">
+    <div class="space-y-16">
+      {items.map((artykul) => {
+        const image = resolveArticleImage(artykul.tileImage ?? artykul.thumbnail);
+        const date = artykul.date ? new Date(artykul.date) : null;
+        const formattedDate = date ? date.toLocaleDateString("pl-PL", { day: "2-digit", month: "short", year: "numeric" }) : null;
+        const tag = Array.isArray(artykul.tags) ? artykul.tags[0] : artykul.tags;
+        const author = artykul.author ?? "Redakcja";
+        const initials = author.split(" ").filter(Boolean).slice(0, 2).map((part) => part[0]).join("").toUpperCase();
+
+        return (
+          <article class="relative isolate flex flex-col gap-8 lg:flex-row group">
+            {/* Kontener obrazka z hoverem jak na Twojej stronie */}
+            <div class="relative aspect-[16/9] sm:aspect-[2/1] lg:w-80 lg:shrink-0 overflow-hidden rounded-2xl bg-neutral-900">
+              {image ? (
+                <Image
+                  class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105 group-hover:opacity-100"
+                  src={image}
+                  alt={artykul.title ?? artykul.slug}
+                  widths={[320, 480]}
+                  sizes="320px"
+                  loading="lazy"
+                />
+              ) : (
+                <div class="absolute inset-0 grid place-items-center text-[10px] uppercase tracking-widest text-neutral-500">Brak zdjęcia</div>
+              )}
+              <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10"></div>
+            </div>
+
+            <div class="flex flex-col justify-center">
+              <div class="flex items-center gap-x-4 text-[11px] uppercase tracking-wider">
+                {tag ? (
+                  <span class="font-bold text-orange-600">
+                    {tag}
+                  </span>
+                ) : null}
+                {date ? <time datetime={date.toISOString()} class="text-neutral-500">{formattedDate}</time> : null}
+              </div>
+              
+              <div class="relative max-w-xl">
+                <h2 class="mt-3 text-2xl font-semibold leading-tight">
+                  <a href={`/artykuly/${artykul.slug}/`}>
+                    <span class="absolute inset-0"></span>
+                    {artykul.title ?? artykul.slug}
+                  </a>
+                </h2>
+                {artykul.description ? (
+                  <p class="mt-4 text-sm leading-relaxed text-neutral-500 line-clamp-2">{artykul.description}</p>
+                ) : null}
+              </div>
+
+              {/* Autor w stylu minimalistycznym */}
+              <div class="mt-6 flex items-center gap-x-3 text-xs">
+                <div class="flex h-8 w-8 items-center justify-center rounded-full bg-neutral-800 border border-white/10 text-[10px] font-bold text-white">
+                  {initials}
                 </div>
-                <div>
-                  <div class="flex items-center gap-x-4 text-xs">                 
-                    {tag ? (
-                      <span class="relative z-10 rounded-full bg-gray-800 px-3 py-1.5 font-medium text-gray-300">
-                        {tag}
-                      </span>
-                    ) : null}
-                     {date ? <time datetime={date.toISOString()} class="text-gray-400">{formattedDate}</time> : null}
-                  </div>
-                  <div class="group relative max-w-xl">
-                    <h2 class="mt-3 text-2xl font-semibold leading-6 text-[var(--text)] group-hover:text-[var(--muted)]">
-                      <a href={`/artykuly/${artykul.slug}/`} title={`Zobacz artykul: ${artykul.title ?? artykul.slug}`} aria-label={`Zobacz artykul: ${artykul.title ?? artykul.slug}`}>
-                        <span class="absolute inset-0"></span>
-                        {artykul.title ?? artykul.slug}
-                      </a>
-                    </h2>
-                    {artykul.description ? (
-                      <p class="mt-5 text-sm leading-6 text-gray-400">{artykul.description}</p>
-                    ) : null}
-                  </div>
-                  <div class="mt-6 flex border-t border-white/10 pt-6">
-                    <div class="relative flex items-center gap-x-4">
-                      <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-800 text-xs font-bold text-white">{initials}</div>
-                      <div class="text-sm leading-6">
-                        <p class="font-semibold text-gray-400">{author}</p>
-                        {artykul.role ? <p class="text-gray-400">{artykul.role}</p> : null}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            );
-          })} 
-        </div>
-        <aside class="sticky mt-8 top-24 self-start rounded-2xl bg-gray-100 p-6">
-          {categories.length ? (
-            <ul class="mt-4 space-y-3 text-sm">
-              {categories.map((category) => (
-                <li class="rounded-full bg-white px-4 py-3 backdrop-blur-sm">{category}</li>
-              ))}
-            </ul>
-          ) : (
-            <p class="mt-4 text-sm">Brak kategorii</p>
-          )}
-        </aside>
+                <span class="text-neutral-500">{author}</span>
+              </div>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+
+    {/* Sidebar dopasowany do mrocznego stylu */}
+    <aside class="sticky top-34 self-start space-y-8">
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] mb-6 border-l-2 border-orange-600 pl-4">
+          Kategorie
+        </h3>
+        {categories.length ? (
+          <ul class="space-y-2">
+            {categories.map((category) => (
+              <li>
+                <a href="#" class="block rounded-xl bg-gray-100 border border-white/5 px-4 py-3 text-sm text-neutral-600 transition-all hover:border-orange-600/50 hover:text-orange-700">
+                  {category}
+                </a>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="text-sm text-neutral-500">Brak kategorii</p>
+        )}
       </div>
-  </section>
+      
+    </aside>
+  </div>
+</section>
 </BaseLayout>
