@@ -3,7 +3,7 @@ imageGridOne: /content/realizacje/img/moc-awards.jpg
 title: Business Woman Awards
 description: Projekt i kodowanie
 author:
-client:
+client: Business Woman Awards
 category:
   - design
   - interaction

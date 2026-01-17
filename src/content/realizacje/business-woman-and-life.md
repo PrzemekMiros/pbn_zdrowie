@@ -10,7 +10,7 @@ category:
 link: https://businesswomanlife.pl/
 thumbnail: /src/content/realizacje/img/business-thumb-big.jpg
 order: 1
-date: 2022-09-21T20:19:43.571Z
+date: 2022-09-22
 imageMain: /src/content/realizacje/img/business-thumb-big.jpg
 background: "#fffcfb"
 ---

@@ -31,7 +31,7 @@ if (!miasto) {
   <MiastaHero title={miasto.title ?? miasto.slug} lead={miasto.description} />
 
   <section class="py-20 space-y-12">
-    <div class="grid gap-8 md:grid-cols-[minmax(0,1fr)_max-content]">
+    <div class="grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
       {mapUrl ? (
         <div class="aspect-[4/3] w-full rounded-3xl border border-[var(--border)] overflow-hidden bg-black">
           <iframe
@@ -49,11 +49,18 @@ if (!miasto) {
         </div>
       )}
       <div class="space-y-4">
-        <p class="text-xs uppercase tracking-[0.3em] text-[var(--accent)]">Miasto</p>
-        <h2 class="text-3xl font-semibold text-[var(--text)]">{miasto.town ?? miasto.title}</h2>
         {miasto.description ? (
           <p class="text-lg text-[var(--muted)]">{miasto.description}</p>
         ) : null}
+
+    {Content ? (
+      <article class="prose prose-xl prose-slate max-w-none dark:prose-invert">
+        <Content />
+      </article>
+    ) : (
+      <p class="text-[var(--muted)]">Pracuję nad przygotowaniem opisu dla tego miasta.</p>
+    )}
+
         <a
           class="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent)] hover:text-[var(--text)]"
           href="/kontakt"
@@ -64,16 +71,9 @@ if (!miasto) {
       </div>
     </div>
 
-    {Content ? (
-      <article class="prose prose-xl prose-slate max-w-none dark:prose-invert">
-        <Content />
-      </article>
-    ) : (
-      <p class="text-[var(--muted)]">Pracuję nad przygotowaniem opisu dla tego miasta.</p>
-    )}
-
     <a class="text-sm font-semibold text-[var(--muted)] hover:text-[var(--text)]" href="/miasta">
       ← Wróć do listy miast
     </a>
+
   </section>
 </BaseLayout>

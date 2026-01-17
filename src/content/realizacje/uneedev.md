@@ -3,7 +3,7 @@ imageGridOne: /content/realizacje/img/moc-uneedev.jpg
 title: Uneedev
 description: Projekt i kodowanie
 author:
-client:
+client: Uneedev
 category:
   - design
   - interaction

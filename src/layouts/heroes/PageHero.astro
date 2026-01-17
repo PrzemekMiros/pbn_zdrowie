@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import heroImage from "../../assets/images/sections/blog-responsive.jpg";
 const { title, lead } = Astro.props;
 ---
 
@@ -20,7 +21,7 @@ const { title, lead } = Astro.props;
     <div class="relative min-h-[320px] lg:min-h-full">
       <div class="absolute inset-0 right-[-50vw] bg-neutral-900 group overflow-hidden">
       <Image
-          src="/src/assets/images/sections/programowanie-frontend-strony.jpg" 
+          src={ heroImage } 
           alt="Proces projektowy" 
           class="size-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
           widths={[320, 480, 768]}
