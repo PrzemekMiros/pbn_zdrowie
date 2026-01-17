@@ -1,6 +1,6 @@
 ---
 imageGridOne: /content/realizacje/img/moc-congress.jpg
-title: Business Woman Congress
+title: BW Congress
 description: Kodowanie i optymalizacja
 author:
 client: Business Woman Congress

@@ -22,24 +22,26 @@ const items = Object.entries(entries).map(([file, entry]) => {
   description="Galeria wybranych projektow i wdrozen. Zobacz szczegoly realizacji i zakres prac."
 >
 
-<section class="py-16">
-  <div class="grid gap-6 sm:gap-8 lg:gap-12 sm:grid-cols-2">
-    {items.map((realizacja) => {
-      const image = resolveContentImage(
-        realizacja.tileImage ?? realizacja.thumbnail ?? realizacja.imageMain
-      );
-      const tag = Array.isArray(realizacja.category) ? realizacja.category[0] : realizacja.category;
-      const date = realizacja.date ? new Date(realizacja.date) : null;
-      const formattedDate = date ? date.toLocaleDateString('pl-PL', { month: 'long', year: 'numeric' }) : null;
-      const bgColor = realizacja.background ?? realizacja.tileBg;
+<section class="mb-24 mt-16">
+  <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_300px]">
+    {/* Główna lista realizacji */}
+    <div class="grid gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+      {items.map((realizacja) => {
+        const image = resolveContentImage(
+          realizacja.tileImage ?? realizacja.thumbnail ?? realizacja.imageMain
+        );
+        const tag = Array.isArray(realizacja.category) ? realizacja.category[0] : realizacja.category;
+        const date = realizacja.date ? new Date(realizacja.date) : null;
+        const formattedDate = date ? date.toLocaleDateString('pl-PL', { month: 'long', year: 'numeric' }) : null;
+        const bgColor = realizacja.background ?? realizacja.tileBg;
 
-      return (
+        return (
         <article 
           class="group relative overflow-hidden rounded-2xl border border-black/6 transition-all duration-500 hover:border-orange-600/30"
           style={bgColor ? `background-color: ${bgColor};` : undefined}
         >
           {/* Kontener obrazka z Twoim efektem grayscale/zoom */}
-          <div class="relative aspect-[12/9] overflow-hidden">
+          <div class="relative aspect-[12/10] overflow-hidden">
             {image ? (
               <Image
                 class="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-105"
@@ -74,7 +76,7 @@ const items = Object.entries(entries).map(([file, entry]) => {
 
             <div class="flex justify-between items-end gap-4">
               <div class="flex-1">
-                <h3 class="text-xl lg:text-2xl xl:text-3xl font-semibold tracking-tight leading-tight">
+                <h3 class="text-xl lg:text-xl xl:text-2xl font-semibold tracking-tight leading-tight">
                   {realizacja.title ?? realizacja.slug}
                 </h3>
               </div>
@@ -91,8 +93,21 @@ const items = Object.entries(entries).map(([file, entry]) => {
           {/* Cała karta jako link */}
           <a href={`/realizacje/${realizacja.slug}/`} class="absolute inset-0 z-20" aria-label={`Zobacz projekt: ${realizacja.title}`}></a>
         </article>
-      );
-    })}
+        );
+      })}
+    </div>
+
+    {/* Sidebar bez pętli kategorii */}
+    <aside class="sticky top-34 self-start space-y-8">
+      <div class="rounded-2xl bg-neutral-50 p-8 border border-black/5">
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] mb-4 border-l-2 border-orange-600 pl-4">
+          O projektach
+        </h3>
+        <p class="text-sm text-neutral-600 leading-relaxed">
+          W tej sekcji znajdziesz moje wybrane realizacje. Każdy projekt to indywidualne podejście i dbałość o detale.
+        </p>
+      </div>
+    </aside>
   </div>
 </section>
 </BaseLayout>
