@@ -2,7 +2,7 @@
 title: User Experience jest ważne dla SEO
 description: Według badań około 80% osób, które mają telefon komórkowy, używa go
   do łączenia się z Internetem, a połowa z nich korzysta z internetu
-  przynajmniej raz dziennie.
+  przynajmniej raz dziennie
 author: Przemek
 date: 2023-03-19
 tags:

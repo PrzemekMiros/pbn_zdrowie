@@ -3,7 +3,7 @@ title: Wiadomości Google - Jak skonfigurować
 description: Najlepszym miejscem do śledzenia najnowszych wiadomości krajowych i
   międzynarodowych jest obecnie wyszukiwarka Google. Dzięki Wiadomościom Google
   użytkownicy mogą w szybki sposób uzyskać dostęp do potrzebnych informacji,
-  niezależnie od miejsca i czasu.
+  niezależnie od miejsca i czasu
 author: Przemek
 date: 2024-11-03T07:16:59.496Z
 tags:

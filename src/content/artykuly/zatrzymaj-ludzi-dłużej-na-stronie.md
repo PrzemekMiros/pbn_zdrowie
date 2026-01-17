@@ -2,7 +2,7 @@
 title: Zatrzymaj ludzi dłużej na stronie www
 description: Jeśli Twoja witryna nadal jest pełna animowanych obrazów,
   nadmiarowych funkcji projektowych i innych przestarzałych rozwiązań, czas na
-  przeprojektowanie.
+  przeprojektowanie
 author: Przemek
 date: 2025-10-21
 tags:

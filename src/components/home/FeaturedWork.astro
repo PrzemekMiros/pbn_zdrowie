@@ -41,13 +41,13 @@ const works = Object.entries(entries)
   <div class="relative flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
     <div class="space-y-3 max-w-3xl">
       <p class="text-[12px] font-semibold uppercase tracking-[0.1em] text-[var(--accent)]">Wybrane realizacje</p>
-      <h2 class="text-3xl font-semibold tracking-tight text-black sm:text-4xl">Od stron wizytówek po zaawansowane portale i systemy e-commerce <span class="text-black/50">lączące estetykę z wydajnym kodem</span></h2>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-black">Od stron wizytówek po zaawansowane portale i systemy ecommerce <span class="text-black/50">łączące estetykę z funkcjonalnością</span></h2>
     </div>
-    <a class="inline-flex w-fit rounded-full bg-[var(--accent)] px-6 py-3 text-base font-semibold text-white transition hover:brightness-95 sm:inline-flex" href="/realizacje/" title="Wszystkie realizacje">
+    <a class="hidden xl:inline-flex w-fit rounded-full bg-[var(--accent)] px-6 py-3 text-base font-semibold text-white transition hover:brightness-95" href="/realizacje/" title="Wszystkie realizacje">
       Wszystkie realizacje
     </a>
   </div>
-  <div class="relative mt-8 grid gap-6 lg:grid-cols-3">
+  <div class="relative mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
     {works.map((work) => {
       const image = resolveContentImage(work.image);
       const year = work.date ? work.date.getFullYear() : null;
