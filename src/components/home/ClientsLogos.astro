@@ -14,14 +14,19 @@ const logos = Object.entries(logoEntries)
 ---
 
 <section class="relative overflow-hidden bg-white pb-24 pt-20">
-  <div class="relative flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-    <div class="space-y-3">
-      <p class="text-base/7 font-semibold text-[var(--accent)]">Opinie</p>
-      <h2 class="text-3xl font-semibold tracking-tight text-black sm:text-4xl">Zaufali mi</h2>
+  <div class="relative flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+    <div class="space-y-3 max-w-3xl">
+      <p class="text-[12px] font-semibold uppercase tracking-[0.1em] text-[var(--accent)]">Zaufail mi</p>
+      <h2 class="text-3xl font-semibold tracking-tight text-black sm:text-4xl">Pomogłem już ponad 40 firmom zbudować silną obecność w sieci, <span class="text-black/50"> realnie zwiększyć ich zasięgi i zrealizowac cele</span></h2>
     </div>
-    <a class="inline-flex w-fit rounded-full bg-[var(--accent)] px-6 py-3 text-base font-semibold text-white transition hover:brightness-95 sm:inline-flex" href="/realizacje/" title="Wszystkie realizacje">
-      Zobacz opinie
-    </a>
+        <div class="text-left">
+          <div class="mb-1 flex text-[var(--accent)]">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p class="text-sm font-bold text-black">
+            4.8 Ocena <span class="ml-2 font-normal text-gray-600">10+ Opinii</span>
+          </p>
+        </div>
   </div>
   <div class="mt-10 grid gap-4 text-center sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
     {logos.map((logo) => (

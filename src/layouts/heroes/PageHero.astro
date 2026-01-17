@@ -2,13 +2,57 @@
 const { title, lead } = Astro.props;
 ---
 
-<section class="relative pt-42 pb-20">
-    <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 bg-black"></div>
-  <div class="relative space-y-4">
-    <p class="text-xs font-semibold text-[var(--accent)]">Strona główna | {title}</p>
-    <h1 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-      {title}
-    </h1>
-    {lead ? <p class="max-w-2xl text-base text-gray-400">{lead}</p> : null}
+<section class="relative">
+  <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 bg-black"></div>
+  <div class="grid grid-cols-1 gap-y-8 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] min-h-[360px]">
+    <div class="relative flex flex-col justify-center pt-32 md:pt-18 z-10">
+
+      <div class="flex items-center space-x-2 text-[10px] uppercase tracking-[0.2em] text-gray-500 mb-6 font-bold">
+        <span>Główna</span>
+        <span class="text-orange-600">></span>
+        <span class="text-white">{title}</span>
+      </div>
+      
+      <h1 class="text-4xl md:text-5xl font-semibold leading-[1.1] tracking-tight text-white max-w-2xl">
+        {title}
+      </h1>
+
+      <div class="hidden lg:block absolute right-0 bottom-0 w-24 h-24 bg-[var(--accent)] z-20"></div>
+    </div>
+    <div class="relative min-h-[350px] lg:min-h-full">
+      <div class="absolute inset-0 bg-neutral-900 group overflow-hidden">
+        <img 
+          src="https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1000" 
+          alt="Proces projektowy" 
+          class="size-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+        />
+        <div class="lg:hidden absolute right-0 top-0 w-24 h-24 bg-[var(--accent)] z-20"></div>
+      </div>
+    </div>
   </div>
+
 </section>
+
+
+  <section class="relative py-5 flex flex-col md:flex-row items-center justify-between border-b border-gray-200">
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-2 md:mb-0">
+      <span class="text-[10px] mt-1 md:mt-0 text-gray-400 uppercase font-bold tracking-tighter">Średnia opinia w </span>
+      
+      <div class="flex items-center gap-3">
+        <span class="text-xl font-black text-[#002B49] tracking-tighter">Google</span>
+        <div class="flex items-center gap-1">
+          <div class="flex text-orange-400 text-xs">★★★★★</div>
+          <span class="text-gray-900 font-bold text-xs ml-1">5.0</span>
+        </div>
+      </div>
+
+      <span class="text-[11px] text-gray-500 font-medium hidden sm:block">
+        w tworzeniu stron www
+      </span>
+    </div>
+
+    <a href="/kontakt/" class="flex items-center gap-3 group text-gray-900 font-extrabold text-[11px] uppercase tracking-widest hover:text-orange-600 transition-colors  hidden md:block">
+      Bezpłatna konsultacja
+      <span class="text-orange-600 text-lg -translate-y-0.5 group-hover:translate-x-1 transition-transform">»»»</span>
+    </a>
+  </section>

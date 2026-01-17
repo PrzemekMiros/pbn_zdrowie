@@ -19,13 +19,11 @@ const mobileLinkClass = (href) =>
 		: "text-xl bg-white px-5 py-4 text-base font-semibold text-black/80 hover:bg-black/5";
 ---
 
-<header class="absolute left-0 right-0 top-0 z-50 pt-[30px]">
-	<div class="relative mx-auto w-full max-w-[1320px] px-6 sm:px-10 lg:px-12">
-		<nav
-			class="flex items-center justify-between gap-4 rounded-full border border-white/15 bg-black/80 px-4 py-2 backdrop-blur"
-		>
-		<a href="/" class="text-white no-underline" aria-label="Logo" title="Strona glowna">
-			<svg
+<header class="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-black/80 py-4 backdrop-blur-md">
+    <div class="mx-auto w-full max-w-[1240px] px-6 sm:px-10 md:px-10 xl:px-0">
+        <nav class="flex items-center justify-between gap-4">
+            <a href="/" class="text-xl font-bold tracking-tighter text-white no-underline" aria-label="Logo">
+            <svg
 				class="h-9 w-auto text-white sm:h-10"
 				viewBox="0 0 971 234"
 				fill="none"
@@ -136,88 +134,105 @@ const mobileLinkClass = (href) =>
 					d="M356.391 117.272V224.545H357.56H358.73L358.763 223.442C358.763 222.874 358.763 208.604 358.763 191.795C358.73 124.591 358.797 36.4004 358.897 33.5598C359.031 29.9841 358.997 31.0869 358.997 19.4239L358.964 9.99998H357.694H356.391V117.272Z"
 					fill="currentColor"></path>
 			</svg>
-		</a>
-		<div class="hidden flex-1 items-center justify-center gap-6 text-sm font-semibold sm:flex">
-			{
-				navItems.map((item) => (
-					<a
-						class={linkClass(item.href)}
-						href={item.href}
-						aria-current={isActive(item.href) ? "page" : undefined}
-						title={item.label}
-					>
-						{item.label}
-					</a>
-				))
-			}
-		</div>
-		<a
-			class="hidden items-center rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-white transition hover:brightness-95 sm:inline-flex"
-			href="/kontakt/"
-			title="Umow konsultacje"
-		>
-			Umów konsultacje
-		</a>
-		<button
-			class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-white/20 sm:hidden"
-			type="button"
-			aria-controls="mobile-menu"
-			aria-expanded="false"
-			data-mobile-toggle
-		>
-			Menu
-		</button>
-		</nav>
-		<div
-			class="fixed inset-0 z-40 flex translate-y-0 flex-col gap-4 overflow-y-auto rounded-2xl bg-white m-6 pt-24 text-black opacity-0 shadow-2xl transition duration-300 pointer-events-none sm:hidden"
-			id="mobile-menu"
-			data-mobile-menu
-		>
-			<button
-				class="absolute right-6 top-6 inline-flex items-center justify-center rounded-full border border-black/10 bg-white px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-black transition hover:bg-black/5"
-				type="button"
-				aria-label="Zamknij menu"
-				data-mobile-close
-			>
-				Zamknij
-			</button>
-		{
-			navItems.map((item) => (
-				<a
-					class={mobileLinkClass(item.href)}
-					href={item.href}
-					aria-current={isActive(item.href) ? "page" : undefined}
-					title={item.label}
-				>
-					{item.label}
-				</a>
-			))
-		}
-		</div>
-	</div>
+            </a>
+
+            <div class="hidden items-center justify-center gap-8 text-sm font-medium md:flex">
+                {
+                    navItems.map((item) => (
+                        <a
+                            class={`${linkClass(item.href)} transition-colors hover:text-white`}
+                            href={item.href}
+                            aria-current={isActive(item.href) ? "page" : undefined}
+                        >
+                            {item.label}
+                        </a>
+                    ))
+                }
+            </div>
+
+            <a
+                class="hidden items-center rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-white transition hover:bg-orange-700 hover:text-white md:inline-flex"
+                href="/kontakt/"
+            >
+                Bezpłatna wycena
+            </a>
+
+            <button
+                class="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white transition hover:bg-white/10 md:hidden"
+                type="button"
+                data-mobile-toggle
+            >
+                Menu
+            </button>
+        </nav>
+
+        <div
+            class="fixed inset-x-4 top-4 z-[60] flex flex-col gap-6 overflow-hidden rounded-3xl border border-white/10 bg-[#0a0a0a] p-8 text-white shadow-2xl transition-all duration-300 pointer-events-none opacity-0 -translate-y-4 md:hidden"
+            id="mobile-menu"
+            data-mobile-menu
+        >
+            <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-500">Nawigacja</span>
+                <button
+                    class="text-[10px] font-bold uppercase tracking-widest text-orange-500"
+                    type="button"
+                    data-mobile-close
+                >
+                    Zamknij
+                </button>
+            </div>
+
+            <div class="flex flex-col gap-6 pt-4">
+                {
+                    navItems.map((item) => (
+                        <a
+                            class="text-2xl font-semibold tracking-tight text-white no-underline"
+                            href={item.href}
+                            data-mobile-link
+                        >
+                            {item.label}
+                        </a>
+                    ))
+                }
+            </div>
+
+            <a
+                class="mt-4 flex items-center justify-center rounded-2xl bg-orange-600 py-4 text-center font-bold text-white no-underline"
+                href="/kontakt/"
+            >
+                Umów konsultację
+            </a>
+        </div>
+    </div>
 </header>
 
+<style>
+    /* Klasa pomocnicza dla otwartego menu */
+    #mobile-menu.is-open {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+</style>
+
 <script is:inline>
-	const toggle = document.querySelector("[data-mobile-toggle]");
-	const menu = document.querySelector("[data-mobile-menu]");
-	const closeBtn = document.querySelector("[data-mobile-close]");
+    const toggle = document.querySelector("[data-mobile-toggle]");
+    const menu = document.querySelector("[data-mobile-menu]");
+    const closeBtn = document.querySelector("[data-mobile-close]");
+    const links = document.querySelectorAll("[data-mobile-link]");
 
-	if (toggle && menu) {
-		const setOpen = (isOpen) => {
-			menu.classList.toggle("is-open", isOpen);
-			toggle.setAttribute("aria-expanded", String(isOpen));
-			menu.classList.toggle("opacity-0", !isOpen);
-			menu.classList.toggle("opacity-100", isOpen);
-			menu.classList.toggle("translate-y-0", isOpen);
-			menu.classList.toggle("-translate-y-2", !isOpen);
-			menu.classList.toggle("pointer-events-none", !isOpen);
-			menu.classList.toggle("pointer-events-auto", isOpen);
-		};
+    if (toggle && menu) {
+        const setOpen = (isOpen) => {
+            menu.classList.toggle("is-open", isOpen);
+            document.body.style.overflow = isOpen ? "hidden" : "";
+        };
 
-		toggle.addEventListener("click", () => {
-			setOpen(!menu.classList.contains("is-open"));
-		});
-
-		closeBtn?.addEventListener("click", () => setOpen(false));
-	}
+        toggle.addEventListener("click", () => setOpen(true));
+        closeBtn?.addEventListener("click", () => setOpen(false));
+        
+        // Zamknij po kliknięciu w link
+        links.forEach(link => {
+            link.addEventListener("click", () => setOpen(false));
+        });
+    }
 </script>
