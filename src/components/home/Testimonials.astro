@@ -31,8 +31,8 @@ const testimonials = Object.values(entries)
   });
 ---
 
-<section class="relative pb-20 pt-20 md:pb-28 md:pt-24">
-  <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 rounded-2xl bg-black"></div>
+<section class="relative pb-28 pt-20 md:pb-24 md:pt-24">
+  <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 rounded-4xl bg-black"></div>
   <div class="relative text-white">
     <div class="mb-12 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
       <div class="max-w-3xl space-y-3">
@@ -79,25 +79,6 @@ const testimonials = Object.values(entries)
             </div>
             <div class="mt-12 flex items-center justify-between">
               <div class="flex items-center space-x-4">
-                {resolveOpinionImage(item.clientavatar) ? (
-                  <Image
-                    src={resolveOpinionImage(item.clientavatar)}
-                    alt={`Logo ${item.role ?? item.name}`}
-                    class={`h-12 w-12 rounded-full border-2 ${avatarBorder}`}
-                    widths={[48]}
-                    sizes="48px"
-                    loading="lazy"
-                  />
-                ) : (
-                  <Image
-                    src={avatarImage}
-                    alt={`Zdjecie ${item.name}`}
-                    class={`h-12 w-12 rounded-full ${avatarBorder}`}
-                    widths={[48]}
-                    sizes="48px"
-                    loading="lazy"
-                  />
-                )}
                 <div>
                   <p class="font-bold">{item.name}</p>
                   {item.role ? <p class={`text-sm ${roleClass}`}>{item.role}</p> : null}
