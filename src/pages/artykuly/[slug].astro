@@ -39,7 +39,7 @@ if (!artykul) {
 ---
 
 <BaseLayout
-  title={artykul.title ?? artykul.slug}
+  title={artykul.title ?? artykul.slug} 
   description={artykul.description}
   showHero={false}
 >
@@ -81,9 +81,16 @@ if (!artykul) {
       </section>
     ) : null}
     {Content ? (
-      <section class="mx-auto max-w-3xl space-y-6 text-[17px] leading-8 text-[var(--text)] sm:text-lg sm:leading-8 [&>a]:underline [&>a]:decoration-[var(--accent)] [&>a]:underline-offset-4 [&>blockquote]:border-l-4 [&>blockquote]:border-[var(--border)] [&>blockquote]:pl-6 [&>blockquote]:text-[var(--muted)] [&>h2]:mt-10 [&>h2]:text-2xl [&>h2]:font-semibold [&>h2]:text-[var(--text)] [&>h3]:mt-8 [&>h3]:text-xl [&>h3]:font-semibold [&>h3]:text-[var(--text)] [&>hr]:border-[var(--border)] [&>li]:mt-2 [&>ol]:list-decimal [&>ol]:pl-6 [&>p]:leading-8 [&>ul]:list-disc [&>ul]:pl-6">
-        <Content />
-      </section>
+<section class="mx-auto max-w-3xl space-y-6 text-[17px] leading-relaxed text-[var(--text)] sm:text-lg sm:leading-loose 
+  [&>a]:underline [&>a]:decoration-[var(--accent)] [&>a]:underline-offset-4 [&>a]:font-medium hover:[&>a]:text-[var(--accent)]
+  [&>blockquote]:border-l-4 [&>blockquote]:border-[var(--accent)] [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-[var(--muted)] 
+  [&>h2]:mt-12 [&>h2]:mb-4 [&>h2]:text-2xl [&>h2]:font-semibold [&>h2]:tracking-tight [&>h2]:text-[var(--text)] 
+  [&>h3]:mt-8 [&>h3]:mb-3 [&>h3]:text-2xl [&>h3]:font-semibold [&>h3]:text-[var(--text)] 
+  [&>hr]:my-10 [&>hr]:border-[var(--border)] 
+  [&>li]:mt-3 [&>ol]:list-decimal [&>ol]:pl-6 [&>ul]:list-disc [&>ul]:pl-6
+  [&>p]:mb-4 [&>p]:last:mb-0">
+  <Content />
+</section>
     ) : null}
   </article>
 </BaseLayout>
