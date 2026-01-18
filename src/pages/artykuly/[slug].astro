@@ -45,7 +45,7 @@ if (!artykul) {
 >
   <ArticlesHero title={artykul.title ?? artykul.slug} lead={artykul.description} />
   <article class="-mt-24 md:-mt-60 mb-18 space-y-12 z-50">
-    <header class="mb-16">
+    <header class="mb-8 md:mb-16">
       <div class="mx-auto max-w-3xl space-y-12">
         <div class="space-y-4 text-sm text-[var(--muted)]">
           {artykul.role ? <p>{artykul.role}</p> : null}
@@ -61,7 +61,7 @@ if (!artykul) {
       </div>
       {headerImage ? (
         <Image
-          class="aspect-[16/9] rounded-2xl border border-[var(--border)] object-cover"
+          class="aspect-[16/9] rounded-xl border border-[var(--border)] object-cover"
           src={headerImage}
           alt={artykul.title ?? artykul.slug}
           widths={[480, 768, 960, 1100, 1400, 1680]}
@@ -70,7 +70,7 @@ if (!artykul) {
           placeholder="blur"
         />
       ) : (
-        <div class="grid aspect-[16/9] w-5xl place-items-center rounded-2xl border border-dashed border-[var(--border)] bg-[var(--surface-muted)] text-xs uppercase tracking-widest text-[var(--muted)]">Brak zdjecia</div>
+        <div class="grid aspect-[16/9] w-5xl place-items-center rounded-xl border border-dashed border-[var(--border)] bg-[var(--surface-muted)] text-xs uppercase tracking-widest text-[var(--muted)]">Brak zdjecia</div>
       )}
     </header>
 
