@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 
-import mobileImage from "../../assets/images/sections/bento-03-mobile-friendly3.png";
+import mobileImage from "../../assets/images/sections/bento-03-mobile-friendly.png";
 import performanceImage from "../../assets/images/sections/dark-bento-03-performance2.png";
 import securityImage from "../../assets/images/sections/dark-bento-03-security.png";
 ---
@@ -67,7 +67,7 @@ import securityImage from "../../assets/images/sections/dark-bento-03-security.p
             <Image
               src={securityImage}
               alt="Ikona bezpieczeństwa"
-              class="h-42 w-auto object-contain opacity-70 group-hover:scale-105 transition-transform duration-500"
+              class="h-42 w-auto object-contain opacity-70 group-hover:scale-105 transition-transform duration-500 invert-50"
             />
           </div>
         </div>
@@ -88,17 +88,17 @@ import securityImage from "../../assets/images/sections/dark-bento-03-security.p
                 <div class="px-4 py-2 text-xs font-medium text-gray-500">App.jsx</div>
               </div>
               <div class="p-6 font-mono text-sm leading-relaxed">
-<div class="pb-6 font-mono text-xs sm:text-sm leading-relaxed overflow-hidden">
-  <span class="text-purple-400">import</span> &#123; <span class="text-blue-300">useState</span> &#125; <span class="text-purple-400">from</span> <span class="text-gray-300">"react"</span>; <br/>
+<div class="pb-6 font-mono text-xs sm:text-sm leading-relaxed text-white overflow-hidden">
+  <span class="text-white/70">import</span> &#123; <span class="text-blue-300">useState</span> &#125; <span class="text-white/70">from</span> <span class="text-gray-300">"react"</span>; <br/>
   <br/>
-  <span class="text-purple-400">export const</span> <span class="text-orange-600">ContactForm</span> = () <span class="text-purple-400">=&gt;</span> &#123; <br/>
-  <span class="text-orange-600">useState</span>(<span class="text-gray-300">"idle"</span>); <br/>
+  <span class="text-white/70">export const</span> <span class="text-[#ff816a]">ContactForm</span> = () <span class="text-white/70">=&gt;</span> &#123; <br/>
+  <span class="text-[#ff816a]">useState</span>(<span class="text-gray-300">"idle"</span>); <br/>
   <br/>
-  &nbsp;<span class="text-purple-400">const</span> <span class="text-orange-600">handleSubmit</span> = <span class="text-purple-400">async</span> (<span class="text-blue-300">data</span>) <span class="text-purple-400">=&gt;</span> &#123; <br/>
+  &nbsp;<span class="text-white/70">const</span> <span class="text-[#ff816a]">handleSubmit</span> = <span class="text-white/70">async</span> (<span class="text-blue-300">data</span>) <span class="text-white/70">=&gt;</span> &#123; <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-400">setStatus</span>(<span class="text-gray-300">"loading"</span>); <br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">await</span> <span class="text-orange-600">fetch</span>(<span class="text-gray-300">"/api/send"</span>, &#123; <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-white/70">await</span> <span class="text-[#ff816a]">fetch</span>(<span class="text-gray-300">"/api/send"</span>, &#123; <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-300">method</span>: <span class="text-gray-300">"POST"</span>, <br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-300">body</span>: <span class="text-blue-300">JSON</span>.<span class="text-orange-600">stringify</span>(<span class="text-blue-300">data</span>) <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-300">body</span>: <span class="text-blue-300">JSON</span>.<span class="text-[#ff816a]">stringify</span>(<span class="text-blue-300">data</span>) <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;&#125;);  
 </div>
               </div>
