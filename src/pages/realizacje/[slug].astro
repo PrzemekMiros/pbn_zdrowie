@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import RealizacjeHero from "../../layouts/heroes/RealizacjeHero.astro";
 
 export const prerender = true;
 
@@ -39,9 +38,8 @@ if (!realizacja) {
   description={realizacja.description}
   showHero={false}
 >
-  <RealizacjeHero title={realizacja.title ?? realizacja.slug} lead={realizacja.description} />
 
-<section class="py-16 md:py-24 grid gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-start">
+<section class="pb-16 pt-26 md:pb-20 md:pt-38 grid gap-12 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-start">
   {/* Lewa kolumna: Obrazek z Twoim charakterystycznym obramowaniem i lekkim desaturatem */}
   <div class="relative group">
     {headerImage ? (
@@ -86,7 +84,7 @@ if (!realizacja) {
 
     {/* Dynamiczna treść MDX/Content */}
     {Content ? (
-      <div class="prose prose-invert prose-sm max-w-none text-neutral-400 
+      <div class="prose prose-invert prose-sm max-w-none text-neutral-500 
         [&>p]:leading-relaxed [&>p]:mb-4
         [&>h2]:text-white [&>h2]:text-xl [&>h2]:font-bold [&>h2]:mt-8 [&>h2]:mb-4
         [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:space-y-2

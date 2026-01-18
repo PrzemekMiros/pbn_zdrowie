@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 
 import mobileImage from "../../assets/images/sections/bento-03-mobile-friendly.png";
-import performanceImage from "../../assets/images/sections/dark-bento-03-performance.png";
+import performanceImage from "../../assets/images/sections/dark-bento-03-performance2.png";
 import securityImage from "../../assets/images/sections/dark-bento-03-security.png";
 ---
 
@@ -63,11 +63,11 @@ import securityImage from "../../assets/images/sections/dark-bento-03-security.p
             <p class="mt-2 text-xl font-medium tracking-tight text-white">Bezpieczeństwo</p>
             <p class="mt-2 max-w-lg text-sm/6 text-gray-400">Pewne wdrożenie, certyfikaty SSL i aktualne standardy bezpieczeństwa.</p>
           </div>
-          <div class="flex flex-1 items-center justify-center py-6">
+          <div class="flex flex-1 items-center justify-center py-4">
             <Image
               src={securityImage}
               alt="Ikona bezpieczeństwa"
-              class="h-32 w-auto object-contain opacity-70 group-hover:scale-105 transition-transform duration-500"
+              class="h-42 w-auto object-contain opacity-70 group-hover:scale-105 transition-transform duration-500"
             />
           </div>
         </div>
@@ -89,16 +89,16 @@ import securityImage from "../../assets/images/sections/dark-bento-03-security.p
               </div>
               <div class="p-6 font-mono text-sm leading-relaxed">
 <div class="pb-6 font-mono text-xs sm:text-sm leading-relaxed overflow-hidden">
-  <span class="text-purple-400">import</span> &#123; <span class="text-blue-300">useState</span> &#125; <span class="text-purple-400">from</span> <span class="text-green-400">"react"</span>; <br/>
+  <span class="text-purple-400">import</span> &#123; <span class="text-blue-300">useState</span> &#125; <span class="text-purple-400">from</span> <span class="text-gray-300">"react"</span>; <br/>
   <br/>
-  <span class="text-purple-400">export const</span> <span class="text-yellow-200">ContactForm</span> = () <span class="text-purple-400">=&gt;</span> &#123; <br/>
-  <span class="text-yellow-200">useState</span>(<span class="text-green-400">"idle"</span>); <br/>
+  <span class="text-purple-400">export const</span> <span class="text-orange-600">ContactForm</span> = () <span class="text-purple-400">=&gt;</span> &#123; <br/>
+  <span class="text-orange-600">useState</span>(<span class="text-gray-300">"idle"</span>); <br/>
   <br/>
-  &nbsp;<span class="text-purple-400">const</span> <span class="text-yellow-200">handleSubmit</span> = <span class="text-purple-400">async</span> (<span class="text-blue-300">data</span>) <span class="text-purple-400">=&gt;</span> &#123; <br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-400">setStatus</span>(<span class="text-green-400">"loading"</span>); <br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">await</span> <span class="text-yellow-200">fetch</span>(<span class="text-green-400">"/api/send"</span>, &#123; <br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-300">method</span>: <span class="text-green-400">"POST"</span>, <br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-300">body</span>: <span class="text-blue-300">JSON</span>.<span class="text-yellow-200">stringify</span>(<span class="text-blue-300">data</span>) <br/>
+  &nbsp;<span class="text-purple-400">const</span> <span class="text-orange-600">handleSubmit</span> = <span class="text-purple-400">async</span> (<span class="text-blue-300">data</span>) <span class="text-purple-400">=&gt;</span> &#123; <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-400">setStatus</span>(<span class="text-gray-300">"loading"</span>); <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">await</span> <span class="text-orange-600">fetch</span>(<span class="text-gray-300">"/api/send"</span>, &#123; <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-300">method</span>: <span class="text-gray-300">"POST"</span>, <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-blue-300">body</span>: <span class="text-blue-300">JSON</span>.<span class="text-orange-600">stringify</span>(<span class="text-blue-300">data</span>) <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;&#125;);  
 </div>
               </div>
