@@ -9,7 +9,7 @@ import min from 'astro-min';
 
 export default defineConfig({
   site: 'https://przemekmiros.pl/',
-  output: 'hybrid',
+  output: 'static',
   adapter: netlify(),
   integrations: [
     react(),
