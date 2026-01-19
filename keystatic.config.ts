@@ -39,7 +39,6 @@ export default config({
     }),
   },
 
-  // --- KOLEKCJE (Twoje dotychczasowe osobistości) ---
   collections: {
     opinie: collection({
       label: 'Opinie',
