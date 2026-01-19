@@ -21,7 +21,7 @@ export default defineConfig({
       ],
       sitemap: 'https://astrokeystat.netlify.app/sitemap-index.xml'
     }),
-    min()
+    // min()
   ],
 
   vite: {

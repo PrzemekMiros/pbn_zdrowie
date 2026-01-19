@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
-    "@casoon/astro-webvitals": "github:casoon/astro-webvitals",
     "@keystatic/astro": "^5.0.6",
     "@keystatic/core": "^0.5.48",
     "@tailwindcss/vite": "^4.1.18",
