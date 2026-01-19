@@ -8,7 +8,7 @@ import sitemap from 'astro-sitemap';
 import min from 'astro-min';
 
 export default defineConfig({
-  site: 'https://astrokeystat.netlify.app/',
+  site: 'https://przemekmiros.pl/',
   output: 'static',
   adapter: netlify(),
   integrations: [
@@ -19,7 +19,7 @@ export default defineConfig({
       policy: [
         { userAgent: '*', allow: '/' }
       ],
-      sitemap: 'https://astrokeystat.netlify.app/sitemap-index.xml'
+      sitemap: 'https://przemekmiros.pl/sitemap-index.xml'
     }),
     // min()
   ],
