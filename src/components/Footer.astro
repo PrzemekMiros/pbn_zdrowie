@@ -287,7 +287,7 @@ document.addEventListener("astro:page-load", function(event) {
 		let offset = 50;
 		let circlePath = document.querySelector('.circle-container path');
 		let pathLength = circlePath.getTotalLength();
-		circlePath.style.transition = 					circlePath.style.WebkitTransition = 'none';
+		circlePath.style.transition = circlePath.style.WebkitTransition = 'none';
 		circlePath.style.strokeDasharray = pathLength;
 		circlePath.style.strokeDashoffset = pathLength;
 		circlePath.getBoundingClientRect();
@@ -306,20 +306,15 @@ document.addEventListener("astro:page-load", function(event) {
 				circleContainer.classList.add("active");
 			} else {
 				circleContainer.classList.remove("active");
-			}
-            
+			}         
 		}
-
 	circleContainer.onclick = function(){
 		window.scrollTo({ top: 0, behavior: 'smooth'});
 	}
-
 	window.onscroll = () => {
 		updateLoader();
 	}
-
 	updateLoader();
-
 });
 </script>
 

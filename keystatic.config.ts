@@ -54,7 +54,7 @@ export default config({
         }),
         quote: fields.text({ label: 'Opinia', multiline: true }),
         order: fields.integer({
-          label: 'Kolejnosc na liscie',
+          label: 'Kolejność na liscie',
           validation: { isRequired: false },
         }),
       },
