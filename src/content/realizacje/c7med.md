@@ -8,7 +8,6 @@ link: https://c7med.pl/
 thumbnail: /src/content/realizacje/img/c7med-thumb-big.jpg
 order: 16
 date: 2021-06-14T22:00:00.000Z
-imageMain: /src/content/realizacje/img/c7med-thumb-big.jpg
 category:
   - Strona internetowa
 background: "#fffcfb"

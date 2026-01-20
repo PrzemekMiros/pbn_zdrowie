@@ -1,5 +1,4 @@
 ---
-imageGridOne: /content/realizacje/img/egp-1.jpg
 title: Producent nanokoloidów
 description: Strona i sklep interentowy dla producenta nanokoloidów. Systemem
   zarządzania treścią Wordpress, sklep oparty na Woocommerce, integracja z
@@ -11,7 +10,6 @@ link: https://egp-system.com/
 thumbnail: /src/content/realizacje/img/egp-thumb-big.jpg
 order: 80
 date: 2021-08-29T22:00:00.000Z
-imageMain: /src/content/realizacje/img/egp-thumb-big.jpg
 imageMobile: /content/realizacje/img/egp-mobile.jpg
 category:
   - Sklep internetowy

@@ -1,5 +1,4 @@
 ---
-imageGridOne: /content/realizacje/img/moc-uneedev.jpg
 title: Uneedev
 description: Projekt i kodowanie
 author: Przemek
@@ -10,7 +9,6 @@ link: https://uneedev.pl/
 thumbnail: /src/content/realizacje/img/moc-uneedev.jpg
 order: 20
 date: 2025-01-01T00:00:00.000Z
-imageMain: /src/content/realizacje/img/moc-uneedev.jpg
 background: "#fffcfb"
 ---
 

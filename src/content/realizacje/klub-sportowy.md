@@ -10,7 +10,6 @@ thumbnail: /src/content/realizacje/img/victoria-thumb-big.jpg
 order: 22
 title: Klub sportowy
 date: 2024-04-28T19:21:41.426Z
-imageMain: /src/content/realizacje/img/victoria-thumb-big.jpg
 background: "#fffcfb"
 ---
 Strona www dla klubu sportowego w Warszawie. Indywidualny projekt graficzny, CMS Wordpress, zoptymalizowana pod wyszukiwarki.

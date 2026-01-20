@@ -8,7 +8,6 @@ category:
   - Strona internetowa
 link: https://kajaki24.com.pl/
 thumbnail: /src/content/realizacje/img/kajaki-thumb-big.jpg
-imageMain: /src/content/realizacje/img/kajaki-thumb-big.jpg
 order: 7
 background: "#fffcfb"
 ---

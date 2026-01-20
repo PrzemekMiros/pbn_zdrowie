@@ -1,5 +1,4 @@
 ---
-imageGridOne: /content/realizacje/img/longscroll-1.jpg
 title: Wypożyczalnia namiotów
 description: Strona internetowa dla firmy zajmującej się wynajmem namiotów i
   obsługą imprez. Indywidualny projekt graficzny i optymalizacja techniczna pod
@@ -11,7 +10,6 @@ link: https://imprezowe-namioty.pl/
 thumbnail: /src/content/realizacje/img/namioty-thumb-big.jpg
 order: 14
 date: 2023-01-19T23:00:00.000Z
-imageMain: /src/content/realizacje/img/namioty-thumb-big.jpg
 imageMobile: /content/realizacje/img/longscroll-mobile.jpg
 category:
   - Strona internetowa

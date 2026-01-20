@@ -1,5 +1,4 @@
 ---
-imageGridOne: /content/realizacje/img/staltom-1.jpg
 title: Producent konstrukcji
 description: Strona internetowa dla producenta konstrukcji stalowych.
   Indywidualny projekt graficzny. Oparta na systemie zarządzania treścią
@@ -11,7 +10,6 @@ link: https://staltom.com.pl/
 thumbnail: /src/content/realizacje/img/staltom-thumb-big.jpg
 order: 23
 date: 2022-02-02T23:00:00.000Z
-imageMain: /src/content/realizacje/img/staltom-thumb-big.jpg
 imageMobile: /content/realizacje/img/staltom-mobile.jpg
 category:
   - Strona internetowa

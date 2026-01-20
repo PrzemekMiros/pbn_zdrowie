@@ -1,5 +1,4 @@
 ---
-imageGridOne: /content/realizacje/img/master-1.jpg
 title: Klub networkingowy
 description: Landing page dla klubu networkingowego. Według dostarczonego
   projektu graficznego (Figma). System zarządzania treścią Wordpress.
@@ -10,7 +9,6 @@ link: https://mastermatch.online/
 thumbnail: /src/content/realizacje/img/master-thumb-big.jpg
 order: 16
 date: 2022-06-23T22:00:00.000Z
-imageMain: /src/content/realizacje/img/master-thumb-big.jpg
 imageMobile: /content/realizacje/img/master-mobile.jpg
 category:
   - Strona internetowa
