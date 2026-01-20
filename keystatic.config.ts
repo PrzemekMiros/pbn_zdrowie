@@ -40,45 +40,7 @@ export default config({
   },
 
   collections: {
-    opinie: collection({
-      label: 'Opinie',
-      slugField: 'slug',
-      path: 'src/content/opinie/*',
-      format: { data: 'json' },
-      schema: {
-        slug: fields.slug({ name: { label: 'Nazwa klienta' } }),
-        name: fields.text({ label: 'Imie i nazwisko / Firma' }),
-        role: fields.text({
-          label: 'Stanowisko / Rola',
-          validation: { isRequired: false },
-        }),
-        quote: fields.text({ label: 'Opinia', multiline: true }),
-        order: fields.integer({
-          label: 'Kolejność na liscie',
-          validation: { isRequired: false },
-        }),
-      },
-    }),
-    osobistosci: collection({
-      label: 'Osobistości',
-      slugField: 'tytul_wpisu',
-      path: 'src/content/osobistosci/*',
-      format: { data: 'json' },
-      schema: {
-        tytul_wpisu: fields.slug({ name: { label: 'Imię i Nazwisko (Tytuł)' } }),
-        zdjecie: fields.image({
-          label: 'Zdjęcie profilowe',
-          directory: 'src/assets/images/osobistosci',
-          publicPath: '/assets/images/osobistosci/',
-        }),
-        tytul_naukowy: fields.text({ label: 'Funkcja zawodowa / Tytuł naukowy' }),
-        stanowisko: fields.text({ label: 'Stanowisko i instytucja', multiline: true }),
-        biografia: fields.text({ label: 'Biografia zawodowa', multiline: true }),
-        osiagniecia: fields.text({ label: 'Najważniejsze osiągnięcia', multiline: true }),
-        wklad_branza: fields.text({ label: 'Wkład w rozwój branży', multiline: true }),
-        motto: fields.text({ label: 'Ulubione motto lub cytat' }),
-      },
-    }),
+
     realizacje: collection({
       label: 'Realizacje',
       slugField: 'title',
