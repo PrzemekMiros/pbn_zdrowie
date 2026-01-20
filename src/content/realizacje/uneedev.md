@@ -6,7 +6,7 @@ client: Uneedev
 category:
   - Strona internetowa
 link: https://uneedev.pl/
-thumbnail: /src/content/realizacje/img/moc-uneedev.jpg
+thumbnail: moc-uneedev.jpg
 order: 20
 date: 2025-01-01T00:00:00.000Z
 background: "#fffcfb"

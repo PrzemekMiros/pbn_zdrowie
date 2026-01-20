@@ -1,13 +1,6 @@
 ---
 import { Image } from "astro:assets";
-
-const imageEntries = import.meta.glob("/src/content/realizacje/img/**/*", { eager: true });
-const resolveContentImage = (path) => {
-  if (!path) return null;
-  const normalized = path.startsWith("/src/") ? path : `/src${path}`;
-  const entry = imageEntries[normalized];
-  return entry?.default ?? null;
-};
+import { resolveContentImage } from '../../utils/resolveContentImage';
 
 const entries = import.meta.glob("../../content/realizacje/*.md", { eager: true });
 const works = Object.entries(entries)

@@ -7,7 +7,7 @@ author: Przemek
 imageGridTwo: /content/realizacje/img/egp--thumb-big.jpg
 client: EGP System
 link: https://egp-system.com/
-thumbnail: /src/content/realizacje/img/egp-thumb-big.jpg
+thumbnail: egp-thumb-big.jpg
 order: 80
 date: 2021-08-29T22:00:00.000Z
 imageMobile: /content/realizacje/img/egp-mobile.jpg

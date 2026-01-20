@@ -6,7 +6,7 @@ author: Przemek Miros
 imageGridTwo: /content/realizacje/img/soul-2.jpg
 client: Call Your Soul
 link: https://callyoursoul.pl/
-thumbnail: /src/content/realizacje/img/soul-thumb-big.jpg
+thumbnail: soul-thumb-big.jpg
 order: 8
 date: 2022-11-15T23:00:00.000Z
 imageMobile: /content/realizacje/img/soul-mobile.jpg

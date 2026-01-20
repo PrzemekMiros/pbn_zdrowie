@@ -3,7 +3,7 @@ author: Przemek
 imageGridTwo: /content/realizacje/img/ecotech-2.jpg
 client: Eco Tech Group
 date: 2021-01-19
-thumbnail: /src/content/realizacje/img/ecotech-thumb-big.jpg
+thumbnail: ecotech-thumb-big.jpg
 title: Dystrybutor rur stalowych
 description: Wykonana według dostarczonego projektu graficznego. Oparta na systemie zarządzania treścią Wordpress. Katalog produktów z intuicyjna wyszukiwarką i filtrowaniem.
 link: https://ecotechgroup.pl/

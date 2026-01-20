@@ -7,7 +7,7 @@ date: 2023-11-08T20:37:29.896Z
 category:
   - Strona internetowa
 link: https://zlomowanie24h.com/
-thumbnail: /src/content/realizacje/img/zlom-thumb-big.jpg
+thumbnail: zlom-thumb-big.jpg
 order: 9
 background: "#fffcfb"
 ---

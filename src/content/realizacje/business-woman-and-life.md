@@ -7,7 +7,7 @@ client: Business Woman
 category:
   - Portal internetowy
 link: https://businesswomanlife.pl/
-thumbnail: /src/content/realizacje/img/business-thumb-big.jpg
+thumbnail: business-thumb-big.jpg
 order: 100
 date: 2022-09-22
 background: "#fffcfb"

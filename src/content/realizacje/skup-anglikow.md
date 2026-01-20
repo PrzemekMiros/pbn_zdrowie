@@ -5,7 +5,7 @@ description: Strona www oparta na CMS Wordpress. Indywidualny projekt graficzny
 author: Przemek
 category:
   - Strona internetowa
-thumbnail: /src/content/realizacje/img/angliki-thumb-big.jpg
+thumbnail: angliki-thumb-big.jpg
 order: 7
 title: Skup aut z Anglii
 date: 2023-08-02T13:25:45.709Z

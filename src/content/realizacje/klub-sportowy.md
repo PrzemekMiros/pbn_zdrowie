@@ -6,7 +6,7 @@ author: Przemek
 category:
   - Strona internetowa
 link: https://victoriagrochow.pl/
-thumbnail: /src/content/realizacje/img/victoria-thumb-big.jpg
+thumbnail: victoria-thumb-big.jpg
 order: 22
 title: Klub sportowy
 date: 2024-04-28T19:21:41.426Z

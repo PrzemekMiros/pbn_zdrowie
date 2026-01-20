@@ -1,16 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { resolveContentImage } from '../../utils/resolveContentImage';
 
 export const prerender = true;
-
-const imageEntries = import.meta.glob("/src/content/realizacje/img/**/*", { eager: true });
-const resolveContentImage = (path) => {
-  if (!path) return null;
-  const normalized = path.startsWith("/src/") ? path : `/src${path}`;
-  const entry = imageEntries[normalized];
-  return entry?.default ?? null;
-};
 
 export function getStaticPaths() {
   const entries = import.meta.glob('../../content/realizacje/*.md', { eager: true });
@@ -55,7 +48,7 @@ if (!realizacja) {
         />
       </div>
     ) : (
-      <div class="grid aspect-square place-items-center rounded-2xl border border-dashed border-white/10 bg-neutral-900 text-[10px] uppercase tracking-widest text-neutral-500">
+      <div class="grid aspect-square place-items-center rounded-2xl border border-dashed border-white/10 bg-neutral-100 text-[10px] uppercase tracking-widest text-neutral-500">
         Brak wizualizacji projektu
       </div>
     )}

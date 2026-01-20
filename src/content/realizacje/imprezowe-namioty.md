@@ -7,7 +7,7 @@ author: Przemek Miros
 imageGridTwo: /content/realizacje/img/longscroll-2.jpg
 client: Namioty
 link: https://imprezowe-namioty.pl/
-thumbnail: /src/content/realizacje/img/namioty-thumb-big.jpg
+thumbnail: namioty-thumb-big.jpg
 order: 14
 date: 2023-01-19T23:00:00.000Z
 imageMobile: /content/realizacje/img/longscroll-mobile.jpg

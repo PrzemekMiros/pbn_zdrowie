@@ -5,7 +5,7 @@ description: Strona internetowa dla centrum rehabilitacji w Pruszczu Gdańskim.
 author: Przemek Miros
 client: C7Med
 link: https://c7med.pl/
-thumbnail: /src/content/realizacje/img/c7med-thumb-big.jpg
+thumbnail: c7med-thumb-big.jpg
 order: 16
 date: 2021-06-14T22:00:00.000Z
 category:
