@@ -45,7 +45,7 @@ export default config({
       label: 'Realizacje',
       slugField: 'title',
       path: 'src/content/realizacje/*',
-      media: '/content/realizacje/img/',
+      media: 'src/content/realizacje/img/',
       format: { data: 'yaml', contentField: 'content' },
       schema: {
         title: fields.text({ label: 'Tytul realizacji' }),
