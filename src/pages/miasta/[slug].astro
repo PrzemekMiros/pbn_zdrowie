@@ -38,7 +38,7 @@ if (!miasto) {
 
 ---
 
-<BaseLayout title={miasto.title ?? miasto.slug} description={miasto.description} showHero={false}>
+<BaseLayout title={miasto.title ?? miasto.slug} description={miasto.description} showHero={false} robots={miasto.robots}>
 <section class="relative bg-black pb-20 pt-32 md:pb-34 md:pt-50 text-white">
   <div class="absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 bg-black"></div>
   <div class="relative grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">

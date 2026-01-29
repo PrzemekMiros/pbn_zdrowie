@@ -18,7 +18,7 @@ const resolveAsset = (path) => {
   return entry?.default ?? null;
 };
 
-const { title, description, showHero = true } = Astro.props;
+const { title, description, showHero = true, robots } = Astro.props;
 const { site, url } = Astro;
 const pageTitle = title ? ` ${title} - ${settings.siteTitle}` : settings.siteTitle;
 const metaDescription = description ?? settings.metaDescription;
@@ -34,6 +34,8 @@ const ogImageUrl = site ? new URL(processedOgImage.src, site).toString() : proce
     <link rel="icon" type="image/png" href={faviconPng.src} />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content={robots === 'noindex' ? 'noindex' : 'index'} />
+    
     <title>{pageTitle}</title>
     <meta name="description" content={metaDescription} />
     <meta property="og:title" content={pageTitle} />
