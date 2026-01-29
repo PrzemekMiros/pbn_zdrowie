@@ -4,7 +4,7 @@ description: Wyświetlanie powiązanych wpisów z miniaturami w Wordpressie
 date: 2023-01-18T19:34:41.039Z
 author: Przemek Miros
 tags: 
-  - wordpress
+  - Wordpress
 thumbnail: /content/posts/img/wordpress-kurs-powiazane-wpisy.jpg
 ---
 

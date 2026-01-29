@@ -7,7 +7,7 @@ description: Wizytówka Google to narzędzie, które pozwala przedsiębiorcom na
 author: Przemek Miros
 date: 2023-07-09T18:41:48.902Z
 tags:
-  - pozycjonowanie
+  - Pozycjonowanie
 thumbnail: /content/posts/img/mapy.jpg
 ---
 Wizytówka Google, zwana również Google My Business (GMB), to darmowe narzędzie od Google, które umożliwia przedsiębiorcom prezentację ich firmy w wynikach wyszukiwania oraz w Google Maps. Umożliwia udostępnienie kluczowych informacji, takich jak:

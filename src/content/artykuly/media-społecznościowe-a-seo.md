@@ -6,7 +6,7 @@ description: Wobec coraz większej ilości danych i sposobów łączenia się,
 author: Przemek Miros
 date: 2022-11-19T22:33:50.159Z
 tags:
-  - pozycjonowanie
+  - Pozycjonowanie
 thumbnail: /content/posts/img/blog-media-seo.jpg
 ---
 W erze cyfryzacji, w której Google obsługuje ponad 11 miliardów zapytań miesięcznie, a media społecznościowe gromadzą miliardy użytkowników, wpływ, jaki mają one na pozycjonowanie w wyszukiwarkach, staje się coraz bardziej widoczny. 

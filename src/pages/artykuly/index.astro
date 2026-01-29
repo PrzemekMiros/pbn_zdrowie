@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { slugifyTitle } from "../../lib/slugifyTitle";
 
 const imageEntries = import.meta.glob("/src/content/artykuly/img/**/*", { eager: true });
 const resolveArticleImage = (path) => {
@@ -28,18 +29,25 @@ const items = Object.entries(entries)
     return dateB - dateA;
   });
 
+const articlesCount = items.length;
+const articlesLabel = articlesCount === 1 ? "artykuł" : "artykułów";
+const heroMeta = `${articlesCount} ${articlesLabel}`;
+
 const categories = Array.from(
   items.reduce((set, item) => {
     const tags = Array.isArray(item.tags) ? item.tags : item.tags ? [item.tags] : [];
     tags.forEach((tag) => set.add(tag));
     return set;
   }, new Set())
-).sort((a, b) => a.localeCompare(b, "pl-PL"));
+)
+  .map((label) => ({ label, slug: slugifyTitle(label) }))
+  .sort((a, b) => a.label.localeCompare(b.label, "pl-PL"));
 ---
 
 <BaseLayout
   title="Porady i ciekawostki"
   description="Praktyczne porady, trendy i ciekawostki o stronach, SEO i marketingu."
+  heroMeta={heroMeta}
 >
 <section class="mb-16 mt-12 md:mb-24 md:mt-16">
   <div class="grid gap-16 lg:grid-cols-[minmax(0,1fr)_300px]">
@@ -115,9 +123,12 @@ const categories = Array.from(
         {categories.length ? (
           <ul class="space-y-2">
             {categories.map((category) => (
-              <li>
-                <a href="#" class="block rounded-xl bg-gray-100 border border-white/5 px-4 py-3 text-sm text-neutral-600 transition-all hover:border-orange-600/50 hover:text-orange-700">
-                  {category}
+              <li key={category.slug}>
+                <a
+                  href={`/tags/${category.slug}/`}
+                  class="block rounded-xl bg-gray-100 border border-white/5 px-4 py-3 text-sm text-neutral-600 transition-all hover:border-orange-600/50 hover:text-orange-700"
+                >
+                  {category.label}
                 </a>
               </li>
             ))}

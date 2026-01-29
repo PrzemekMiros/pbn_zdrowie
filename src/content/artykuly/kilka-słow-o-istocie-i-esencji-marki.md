@@ -6,7 +6,7 @@ description: Jeśli chodzi o branding firmy, posiadanie odpowiedniej marki jest
 author: Przemek Miros
 date: 2021-11-19T22:37:00.000Z
 tags:
-  - marketing
+  - Marketing
 thumbnail: /content/posts/img/blog-brand-essence.jpg
 ---
 Możesz zrozumieć związek między odnoszącymi sukcesy biznesami a silnym brandingiem, a branding to znacznie więcej niż tylko logo lub sposób, w jaki Twoja firma jest postrzegana na zewnątrz. Niewiele osób zdaje sobie sprawę, że firmy odnoszące sukcesy stawiają branding na pierwszym miejscu.

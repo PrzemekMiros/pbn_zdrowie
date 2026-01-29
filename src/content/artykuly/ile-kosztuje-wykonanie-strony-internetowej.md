@@ -7,7 +7,7 @@ description: Tworzenie strony internetowej to proces, który wymaga sporo pracy 
 author: Przemek
 date: 2025-10-08
 tags:
-  - strony www
+  - Strony www
 thumbnail: /content/posts/img/wykonanie-strony.jpg
 ---
 Tworzenie stron internetowych to proces wymagający nie tylko pracy i zaangażowania, ale także znacznych nakładów finansowych. Wiele czynników wpływa na koszt wykonania strony internetowej, a ich zrozumienie jest kluczowe do podjęcia właściwej decyzji inwestycyjnej. 

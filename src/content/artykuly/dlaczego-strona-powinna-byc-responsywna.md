@@ -6,7 +6,7 @@ description: Według badań około 80% osób, które mają telefon komórkowy, u
 author: Przemek
 date: 2025-11-15
 tags:
-  - strony www
+  - Strony www
 thumbnail: /content/posts/img/blog-responsive.jpg
 ---
 W dzisiejszych czasach, posiadanie responsywnej strony internetowej to nie luksus, lecz konieczność. Ale co to dokładnie oznacza i dlaczego strona powinna być responsywna? 

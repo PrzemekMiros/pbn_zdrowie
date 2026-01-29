@@ -5,7 +5,7 @@ date: 2021-07-23T12:39:03.586Z
 author: Przemek Miros
 thumbnail: /content/posts/img/blog.jpg
 tags:
-  - strony www
+  - Strony www
 ---
 Wraz z początkiem XXI wieku nadeszła era tzw. Web 2.0. Termin ten opisuje nowe wykorzystanie Internetu: druga generacja sieci World Wide Web koncentruje się na zdolności ludzi do współpracy i udostępniania informacji online. Web 2.0 jest głównie kojarzony ze stronami internetowymi, które zawierają silny element społecznościowy, obejmujący profile użytkowników i linki do znajomych.
 

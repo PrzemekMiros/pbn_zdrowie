@@ -6,7 +6,7 @@ description: Według badań około 80% osób, które mają telefon komórkowy, u
 author: Przemek
 date: 2023-03-19
 tags:
-  - pozycjonowanie
+  - Pozycjonowanie
 thumbnail: /content/posts/img/blog-ux-seo.jpg
 ---
 ## Poznaj fakty na temat SEO

@@ -6,7 +6,7 @@ description: Czy wiesz, że szybkość ładowania strony jest jednym z kluczowyc
 author: Przemek Miros
 date: 2023-03-02T14:03:57.668Z
 tags:
-  - pozycjonowanie
+  - Pozycjonowanie
 thumbnail: /content/posts/img/page-speed.png
 ---
 ## Czym jest Page Speed Insight?

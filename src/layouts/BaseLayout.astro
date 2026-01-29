@@ -18,7 +18,7 @@ const resolveAsset = (path) => {
   return entry?.default ?? null;
 };
 
-const { title, description, showHero = true, robots } = Astro.props;
+const { title, description, showHero = true, robots, heroMeta } = Astro.props;
 const { site, url } = Astro;
 const pageTitle = title ? ` ${title} - ${settings.siteTitle}` : settings.siteTitle;
 const metaDescription = description ?? settings.metaDescription;
@@ -72,7 +72,7 @@ const ogImageUrl = site ? new URL(processedOgImage.src, site).toString() : proce
   <body class="min-h-screen bg-[var(--bg)] font-sans text-[var(--text)]">
     <main class="mx-auto flex min-h-screen w-full max-w-[1320px] flex-col px-4 sm:px-10 lg:px-12">
       <Header settings={settings} logoAsset={logoAsset} />
-      {showHero && title ? <PageHero title={title} lead={description} /> : null}
+      {showHero && title ? <PageHero title={title} lead={description} meta={heroMeta} /> : null}
       <slot />
       <Footer/>
     </main>

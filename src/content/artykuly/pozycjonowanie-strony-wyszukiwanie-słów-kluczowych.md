@@ -6,7 +6,7 @@ description: Ważne jest, aby Twoja strona internetowa była widoczna na
 author: Przemek Miros
 date: 2023-02-28T12:59:32.236Z
 tags:
-  - pozycjonowanie
+  - Pozycjonowanie
 thumbnail: /content/posts/img/keyword.jpg
 ---
 W dzisiejszych czasach większość użytkowników internetu korzysta z wyszukiwarek, takich jak Google, aby znaleźć informacje, produkty lub usługi, które ich interesują. Dlatego ważne jest, aby Twoja strona internetowa była widoczna na pierwszych pozycjach w wynikach wyszukiwania. 

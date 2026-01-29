@@ -6,7 +6,7 @@ description: Bootstrap jest popularnym frameworkiem css do budowania
 author: Przemek Miros
 date: 2023-03-22T19:52:00.000Z
 tags:
-  - strony www
+  - Strony www
 thumbnail: /content/posts/img/bootstrap.png
 ---
 Bootstrap jest popularnym frameworkiem front-endowym do budowania responsywnych stron internetowych. Został stworzony przez programistów Twittera i udostępniony jako projekt open-source.

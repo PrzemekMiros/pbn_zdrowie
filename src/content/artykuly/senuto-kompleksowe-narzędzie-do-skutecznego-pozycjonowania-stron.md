@@ -5,7 +5,7 @@ description: To narzędzie, które umożliwia szeroką analizę widoczności w
 author: Przemek
 date: 2024-11-03T08:03:18.338Z
 tags:
-  - strony www
+  - Strony www
 thumbnail: /content/posts/img/senut-ekran-startowy.png
 ---
 Senuto to polska platforma SEO, która w ostatnich latach zyskała popularność wśród specjalistów ds. marketingu internetowego, agencji, właścicieli stron oraz e-commerce. To narzędzie, które umożliwia szeroką analizę widoczności w wyszukiwarce Google, optymalizację treści oraz śledzenie wyników działań SEO. 
