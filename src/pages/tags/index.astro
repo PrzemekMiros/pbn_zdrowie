@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { slugifyTitle } from "../../lib/slugifyTitle";
 
 const entries = import.meta.glob("../../content/artykuly/*.md", { eager: true });
 const totalPosts = Object.keys(entries).length;
@@ -45,6 +46,7 @@ postsWithTags.forEach((post) => {
 
 const categories = Array.from(tagGroups.values()).map((group) => ({
   name: group.name,
+  slug: slugifyTitle(group.name),
   posts: [...group.posts].sort((a, b) => {
     const aTime = a._date ? a._date.getTime() : 0;
     const bTime = b._date ? b._date.getTime() : 0;
@@ -81,13 +83,13 @@ export const prerender = true;
   title="Kategorie artykułów"
   description="Zobacz, do jakich kategorii przypisałem dotychczasowe artykuły i szybko przejdź do tych, które najbardziej Cię interesują."
 >
-  <section class="mx-auto flex max-w-9xl flex-col gap-10 py-24">
+  <section class="flex max-w-9xl flex-col gap-10 py-18">
 
     {sortedCategories.length ? (
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {sortedCategories.map((category) => {
           return (
-            <article key={category.name} class="group rounded-3xl border border-[var(--border)] bg-white/70 p-6 shadow-sm transition hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-lg">
+            <article key={category.name} class="group relative rounded-3xl border border-[var(--border)] bg-white/70 p-6 shadow-sm transition hover:-translate-y-1 hover:border-[var(--accent)] hover:shadow-lg">
                 <div>
                 <span class="rounded-full border px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.4em] text-[var(--accent)]">
                   {category.posts.length} {pluralizePosts(category.posts.length)}
@@ -98,6 +100,7 @@ export const prerender = true;
                 Ostatni wpis: {formatDate(category.posts[0]?._date)}
               </p>
               <div class="mt-6 h-[120px] rounded-2xl border border-dashed border-[var(--border)] bg-[var(--surface-muted)]/40"></div>
+              <a href={`/tags/${category.slug}/`} class="absolute inset-0" aria-label={`Zobacz kategorię: ${category.name}`}></a>
             </article>
           );
         })}
