@@ -61,6 +61,13 @@ body {
   overflow-x: hidden;
 }
 
+pre.astro-code {
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
 
 .circle-container {
   background: transparent;
