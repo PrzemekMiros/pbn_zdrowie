@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { slugifyTitle } from "../../lib/slugifyTitle";
 import { resolveContentImage } from '../../utils/resolveContentImage';
 
 // 1. Pobieramy kolekcję
@@ -11,6 +12,16 @@ const allRealizacje = await getCollection('realizacje');
 // Dzięki temu numer 1 będzie na samym końcu listy.
 const items = allRealizacje.sort((a, b) => b.data.order - a.data.order);
 
+const categories = Array.from(
+  items.reduce((set, item) => {
+    const tags = Array.isArray(item.data.category) ? item.data.category : item.data.category ? [item.data.category] : [];
+    tags.forEach((tag) => set.add(tag));
+    return set;
+  }, new Set())
+)
+  .map((label) => ({ label, slug: slugifyTitle(label) }))
+  .sort((a, b) => a.label.localeCompare(b.label, "pl-PL"));
+
 ---
 
 <BaseLayout
@@ -19,7 +30,7 @@ const items = allRealizacje.sort((a, b) => b.data.order - a.data.order);
 >
 
 <section class="mb-16 mt-12 md:mb-24 md:mt-16">
-  <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_300px]">
+  <div class="grid gap-8 md:gap-12 lg:grid-cols-[minmax(0,1fr)_300px]">
     {/* Główna lista realizacji */}
     <div class="grid gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
       {items.map((realizacja) => {
@@ -96,7 +107,29 @@ const items = allRealizacje.sort((a, b) => b.data.order - a.data.order);
     </div>
 
     <aside class="sticky top-34 self-start space-y-8">
-      <div class="rounded-2xl bg-neutral-50 p-8 border border-black/5">
+      <div>
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] mb-6 border-l-2 border-orange-600 pl-4">
+          Archiwa: Rodzaj
+        </h3>
+        {categories.length ? (
+          <ul class="space-y-2">
+            {categories.map((category) => (
+              <li key={category.slug}>
+                <a
+                  href={`/realizacje/rodzaj/${category.slug}/`}
+                  class="block rounded-xl bg-gray-100 border border-white/5 px-4 py-3 text-sm text-neutral-600 transition-all hover:border-orange-600/50 hover:text-orange-700"
+                >
+                  {category.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p class="text-sm text-neutral-500">Brak kategorii</p>
+        )}
+      </div>
+      <!--
+      <div class="">
         <h3 class="text-xs font-bold uppercase tracking-[0.2em] mb-4 border-l-2 border-orange-600 pl-4">
           O projektach
         </h3>
@@ -104,6 +137,7 @@ const items = allRealizacje.sort((a, b) => b.data.order - a.data.order);
           W tej sekcji znajdziesz moje wybrane realizacje. Każdy projekt to indywidualne podejście i dbałość o detale.
         </p>
       </div>
+       -->
     </aside>
   </div>
 </section>
