@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import settings from "../../content/ustawienia.json";
 
 const contact = {
   name: "Przemek Miros",
@@ -10,11 +11,13 @@ const contact = {
   address: "ul Orzeszkowej 5, 05-660 Warka",
   hours: "Pn - Pt: 9.00-17.00",
   mapUrl: "https://maps.google.com/?q=Przykladowa+12+Miasto",
+  priceRange: "1000-10000 PLN",
 };
 
 const { site } = Astro;
 const baseUrl = site ? site.toString().replace(/\/$/, "") : "";
 const contactUrl = baseUrl ? `${baseUrl}/kontakt/` : "/kontakt/";
+const imageUrl = settings.logo ? (baseUrl ? `${baseUrl}${settings.logo}` : settings.logo) : "";
 
 const addressParts = contact.address.split(",").map((part) => part.trim()).filter(Boolean);
 const streetAddress = addressParts[0] ?? contact.address;
@@ -47,6 +50,8 @@ if (addressParts[1]) {
       <meta itemprop="email" content={contact.email} />
       <meta itemprop="telephone" content={contact.phone} />
       <meta itemprop="hasMap" content={contact.mapUrl} />
+      {imageUrl ? <meta itemprop="image" content={imageUrl} /> : null}
+      <meta itemprop="priceRange" content={contact.priceRange} />
       <div itemprop="contactPoint" itemscope itemtype="https://schema.org/ContactPoint">
         <meta itemprop="contactType" content="customer support" />
         <meta itemprop="email" content={contact.email} />
