@@ -7,6 +7,12 @@ import CallToAction from "../components/home/CallToAction.astro";
 import BentoGrid from "../components/home/BentoGrid.astro";
 import LatestPosts from "../components/home/LatestPosts.astro";
 import ClientsLogos from "../components/home/ClientsLogos.astro";
+import settings from "../content/ustawienia.json";
+
+const { site } = Astro;
+const baseUrl = site ? site.toString().replace(/\/$/, "") : "";
+const siteUrl = baseUrl ? `${baseUrl}/` : "/";
+const siteLogo = settings.logo ? (baseUrl ? `${baseUrl}${settings.logo}` : settings.logo) : "";
 ---
 
 <BaseLayout
@@ -14,6 +20,14 @@ import ClientsLogos from "../components/home/ClientsLogos.astro";
   description="Nowoczesne strony internetowe: strategia, design, wdrozenie i wsparcie. Minimalistycznie, szybko i z mysla o wynikach."
   showHero={false}
 >
+  <div itemscope itemtype="https://schema.org/WebSite">
+    <meta itemprop="name" content={settings.siteTitle} />
+    <meta itemprop="url" content={siteUrl} />
+    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content={settings.siteTitle} />
+      {siteLogo ? <meta itemprop="logo" content={siteLogo} /> : null}
+    </div>
+  </div>
 	<Hero />
 	<ClientsLogos />
 	<BentoGrid />

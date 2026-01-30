@@ -1,14 +1,16 @@
 ---
+import { Image } from "astro:assets";
+import heroImage from "../../assets/images/sections/blog-responsive.jpg";
+
 const cta = {
   title: "Gotowy na nową stronę?",
   description: "Zadzwoń lub napisz do mnie, żeby omówić swój projekt i otrzymać wycenę.",
   button: { label: "Skontaktuj się", href: "/kontakt/" },
-  heroImage: "/src/assets/images/sections/blog-responsive.jpg"
 };
 ---
 
 <section class="relative mb-20 md:mb-24 overflow-hidden rounded-2xl">
-  <div class="grid grid-cols-1 lg:grid-cols-[2fr_1fr]">
+  <div class="grid grid-cols-1 lg:grid-cols-[2.1fr_1fr]">
     
     <div class="relative flex flex-col justify-center bg-black px-8 py-18 md:pb-20 md:pt-18 md:px-16 z-10">
       <div class="max-w-xl">
@@ -31,10 +33,13 @@ const cta = {
 
     <div class="hidden md:block relative min-h-[250px] lg:min-h-full bg-gray-100">
       <div class="absolute inset-0 overflow-hidden">
-        <img 
-          src={cta.heroImage} 
-          alt="CTA Background" 
+        <Image
+          src={heroImage}
+          alt="CTA Background"
           class="size-full object-cover grayscale opacity-90"
+          widths={[480, 768, 1024]}
+          sizes="(max-width: 1024px) 100vw, 480px"
+          loading="lazy"
         />
       </div>
       

@@ -28,17 +28,34 @@ const logos = Object.entries(logoEntries)
           </p>
         </div>
   </div>
-  <div class="mt-10 grid gap-2 md:gap-4 text-center grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-    {logos.map((logo) => (
-      <div class="flex items-center justify-center border border-gray-300 rounded-md px-6 py-5">
-        <Image
-          class="max-h-16 w-auto object-contain grayscale opacity-90 transition hover:opacity-100"
-          src={logo.src}
-          alt={logo.label}
-          loading="lazy"
-          width={200}
-          height={64}
-        />
+  <div
+    class="mt-10 grid gap-2 md:gap-4 text-center grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"
+    itemscope
+    itemtype="https://schema.org/ItemList"
+  >
+    <meta itemprop="name" content="Klienci" />
+    <meta itemprop="itemListOrder" content="https://schema.org/ItemListOrderAscending" />
+    <meta itemprop="numberOfItems" content={String(logos.length)} />
+    {logos.map((logo, index) => (
+      <div
+        class="flex items-center justify-center border border-gray-300 rounded-md px-6 py-5"
+        itemprop="itemListElement"
+        itemscope
+        itemtype="https://schema.org/ListItem"
+      >
+        <meta itemprop="position" content={String(index + 1)} />
+        <div itemprop="item" itemscope itemtype="https://schema.org/Organization">
+          <meta itemprop="name" content={logo.label} />
+          <Image
+            class="max-h-16 w-auto object-contain grayscale opacity-90 transition hover:opacity-100"
+            src={logo.src}
+            alt={logo.label}
+            loading="lazy"
+            width={200}
+            height={64}
+            itemprop="logo"
+          />
+        </div>
       </div>
     ))}
   </div>

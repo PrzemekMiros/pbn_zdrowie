@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import avatarImage from "../../assets/images/global/avatar.jpg";
+import settings from "../../content/ustawienia.json";
 
 const entries = import.meta.glob("../../content/opinie/*.md", { eager: true });
 const imageEntries = import.meta.glob("/src/content/opinie/img/**/*", { eager: true });
@@ -29,9 +30,22 @@ const testimonials = Object.values(entries)
     if (orderA !== orderB) return orderA - orderB;
     return String(a.name).localeCompare(String(b.name));
   });
+
+const ratingValue = 5;
+const ratingCount = 15;
 ---
 
-<section class="relative pb-28 pt-20 md:pb-24 md:pt-24">
+<section
+  class="relative pb-28 pt-20 md:pb-24 md:pt-24"
+  itemscope
+  itemtype="https://schema.org/Organization"
+>
+  <meta itemprop="name" content={settings.siteTitle} />
+  <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+    <meta itemprop="ratingValue" content={String(ratingValue)} />
+    <meta itemprop="bestRating" content="5" />
+    <meta itemprop="ratingCount" content={String(ratingCount)} />
+  </div>
   <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 rounded-2xl bg-black"></div>
   <div class="relative text-white">
     <div class="mb-12 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
@@ -63,7 +77,12 @@ const testimonials = Object.values(entries)
         const brandClass = isAccent ? 'text-black' : 'text-white';
 
         return (
-          <div class={`flex min-h-[400px] flex-col justify-between rounded-2xl py-8 px-5 md:px-12 ${cardClass}`}>
+          <div
+            class={`flex min-h-[400px] flex-col justify-between rounded-2xl py-8 px-5 md:px-12 ${cardClass}`}
+            itemprop="review"
+            itemscope
+            itemtype="https://schema.org/Review"
+          >
             <div>
               <div class="mb-12 flex items-center justify-between">
                 <span class={`rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-wider ${pillClass}`}>
@@ -75,12 +94,14 @@ const testimonials = Object.values(entries)
                   <div class={`h-1.5 w-1.5 rounded-full ${dotMuted}`}></div>
                 </div>
               </div>
-              <blockquote class="text-xl font-semibold leading-snug">"{item.quote}"</blockquote>
+              <blockquote class="text-xl font-semibold leading-snug" itemprop="reviewBody">"{item.quote}"</blockquote>
             </div>
             <div class="mt-12 flex items-center justify-between">
               <div class="flex items-center space-x-4">
                 <div>
-                  <p class="font-bold">{item.name}</p>
+                  <p class="font-bold" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <span itemprop="name">{item.name}</span>
+                  </p>
                   {item.role ? <p class={`text-sm ${roleClass}`}>{item.role}</p> : null}
                 </div>
               </div>
