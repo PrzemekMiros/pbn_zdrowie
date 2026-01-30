@@ -12,6 +12,10 @@ const contact = {
   mapUrl: "https://maps.google.com/?q=Przykladowa+12+Miasto",
 };
 
+const { site } = Astro;
+const baseUrl = site ? site.toString().replace(/\/$/, "") : "";
+const contactUrl = baseUrl ? `${baseUrl}/kontakt/` : "/kontakt/";
+
 const addressParts = contact.address.split(",").map((part) => part.trim()).filter(Boolean);
 const streetAddress = addressParts[0] ?? contact.address;
 let postalCode = "";
@@ -37,8 +41,9 @@ if (addressParts[1]) {
     itemtype="https://schema.org/ContactPage"
   >
     <meta itemprop="name" content="Kontakt" />
-    <div class="space-y-6" itemscope itemtype="https://schema.org/Person" itemprop="mainEntity">
+    <div class="space-y-6" itemscope itemtype="https://schema.org/LocalBusiness" itemprop="mainEntity">
       <meta itemprop="name" content={contact.name} />
+      <meta itemprop="url" content={contactUrl} />
       <meta itemprop="email" content={contact.email} />
       <meta itemprop="telephone" content={contact.phone} />
       <meta itemprop="hasMap" content={contact.mapUrl} />
