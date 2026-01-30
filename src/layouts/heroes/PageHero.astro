@@ -9,7 +9,20 @@ const currentUrl = baseUrl ? new URL(url.pathname, baseUrl).toString() : url.pat
 ---
 
 <section class="relative">
-  <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 bg-black"></div>
+<div class="absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 bg-black overflow-hidden" style="perspective: 1000px;">
+  <div class="absolute inset-0 opacity-50" 
+       style="
+         background-image: radial-gradient(circle, #ffffff34 1px, transparent 1px);
+         background-size: 10px 10px;
+         transform: rotateX(0deg) translateY(-10%) scale(2);
+         transform-origin: top;
+         /* Maska: biały (widoczne) do przezroczystego (niewidoczne) */
+         -webkit-mask-image: linear-gradient(to bottom, white 20%, transparent 90%);
+         mask-image: linear-gradient(to bottom, white 20%, transparent 90%);
+       ">
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+</div>
   <div class="grid grid-cols-1 md:grid-cols-[minmax(0,1.66fr)_minmax(0,1fr)] min-h-[320px] relative">
     <div class="relative flex flex-col justify-center pb-8 pt-28 md:pb-16 md:pt-32 z-10">
       <nav
