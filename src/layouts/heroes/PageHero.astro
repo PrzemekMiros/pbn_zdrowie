@@ -10,7 +10,7 @@ const currentUrl = baseUrl ? new URL(url.pathname, baseUrl).toString() : url.pat
 
 <section class="relative">
 <div class="absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 bg-black overflow-hidden" style="perspective: 1000px;">
-  <div class="absolute inset-0 opacity-50" 
+  <div class="hidden md:block absolute inset-0 opacity-50" 
        style="
          background-image: radial-gradient(circle, #ffffff34 1px, transparent 1px);
          background-size: 10px 10px;

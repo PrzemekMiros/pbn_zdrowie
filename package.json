@@ -3,17 +3,16 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "tinacms dev -c \"astro dev\"",
+    "dev:astro": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/markdoc": "^0.15.10",
     "@astrojs/react": "^4.4.2",
-    "@keystatic/astro": "^5.0.6",
-    "@keystatic/core": "^0.5.48",
     "@tailwindcss/vite": "^4.1.18",
+    "@tinacms/cli": "^2.1.2",
     "astro": "^5.16.9",
     "astro-indexnow": "^2.1.0",
     "astro-loading-indicator": "^0.7.1",
@@ -21,11 +20,11 @@
     "astro-opengraph-images": "^1.14.0",
     "astro-robots-txt": "^1.0.0",
     "astro-sitemap": "^1.0.0",
-    "decap-cms-app": "^3.10.0",
     "nodemailer": "^7.0.12",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.1.18",
+    "tinacms": "^3.3.2"
   },
   "devDependencies": {
     "@astrojs/netlify": "^6.6.3"
