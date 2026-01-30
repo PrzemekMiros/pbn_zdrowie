@@ -67,7 +67,7 @@ Regularne utrzymywanie strony internetowej zapewnia ochronę przed zagrożeniami
 
 ## Strona internetowa - inwestycja w przyszłość Twojej firmy
 
-Tworzenie profesjonalnej strony internetowej to inwestycja, która może przynieść znaczne korzyści dla Twojego biznesu. [Koszt stworzenia strony firmowej](https://przemekmiros.pl/blog/ile-kosztuje-wykonanie-strony-internetowej/) zaczyna się od około 2 000 złotych.
+Tworzenie profesjonalnej strony internetowej to inwestycja, która może przynieść znaczne korzyści dla Twojego biznesu. [Koszt stworzenia strony firmowej](https://przemekmiros.pl/artykuly/ile-kosztuje-wykonanie-strony-internetowej/) zaczyna się od około 2 000 złotych.
 
 Różne typy stron internetowych, jak małe strony biznesowe, korporacyjne, sklepy e-commerce oraz aplikacje webowe, wiążą się z zróżnicowanymi kosztami opartymi na potrzebnych funkcjonalnościach i wielkości. Inwestycja w profesjonalnie wykonaną stronę internetową może przynieść przedsiębiorstwu korzyści długoterminowe, np. poprzez:
 

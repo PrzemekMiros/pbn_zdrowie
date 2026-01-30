@@ -39,6 +39,42 @@ const artykuly = defineCollection({
 });
 
 export const collections = {
-  'realizacje': realizacje,
-  'artykuly': artykuly,
+  realizacje,
+  artykuly,
+  miasta: defineCollection({
+    type: 'content',
+    schema: z.object({
+      town: z.string(),
+      title: z.string(),
+      description: z.string(),
+      maplink: z.string(),
+    }),
+  }),
+  faq: defineCollection({
+    type: 'content',
+    schema: z.object({
+      title: z.string(),
+      answer: z.string(),
+    }),
+  }),
+  opinie: defineCollection({
+    type: 'content',
+    schema: z.object({
+      title: z.string(),
+      client: z.string().optional(),
+      industry: z.string().optional(),
+      review: z.string(),
+      clientlogo: z.string().optional(),
+      clientavatar: z.string().optional(),
+      addate: z.string().optional(),
+      order: z.number().optional(),
+    }),
+  }),
+  klienci: defineCollection({
+    type: 'content',
+    schema: z.object({
+      title: z.string(),
+      logo: z.string().optional(),
+    }),
+  }),
 };
