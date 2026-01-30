@@ -34,8 +34,9 @@ const articlesCount = items.length;
 const articlesLabel = articlesCount === 1 ? "artykuł" : "artykułów";
 const heroMeta = `${articlesCount} ${articlesLabel}`;
 
-const { site } = Astro;
+const { site, url } = Astro;
 const baseUrl = site ? site.toString().replace(/\/$/, "") : "";
+const pageUrl = baseUrl ? new URL(url.pathname, baseUrl).toString() : url.pathname;
 const siteName = settings.siteTitle ?? "Strona";
 const siteLogo = settings.logo ? (baseUrl ? `${baseUrl}${settings.logo}` : settings.logo) : "";
 
@@ -57,6 +58,7 @@ const categories = Array.from(
 >
 <section class="mb-16 mt-12 md:mb-24 md:mt-16" itemscope itemtype="https://schema.org/CollectionPage">
   <meta itemprop="name" content="Porady i ciekawostki" />
+  <meta itemprop="url" content={pageUrl} />
   <div class="grid gap-16 lg:grid-cols-[minmax(0,1fr)_300px]">
     <div class="space-y-16" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
       <meta itemprop="itemListOrder" content="https://schema.org/ItemListOrderDescending" />

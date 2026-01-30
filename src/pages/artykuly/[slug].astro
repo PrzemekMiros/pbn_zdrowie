@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import ArticlesHero from "../../layouts/heroes/ArticlesHero.astro";
+import settings from "../../content/ustawienia.json";
 
 export const prerender = true;
 
@@ -32,6 +33,14 @@ export function getStaticPaths() {
 
 const { artykul, Content } = Astro.props;
 const headerImage = resolveArticleImage(artykul?.tileImage ?? artykul?.thumbnail);
+const { site } = Astro;
+const baseUrl = site ? site.toString().replace(/\/$/, "") : "";
+const articleUrl = baseUrl ? `${baseUrl}/artykuly/${artykul?.slug ?? ""}/` : `/artykuly/${artykul?.slug ?? ""}/`;
+const siteName = settings.siteTitle ?? "Strona";
+const siteLogo = settings.logo ? (baseUrl ? `${baseUrl}${settings.logo}` : settings.logo) : "";
+const authorName = artykul?.author ?? "Redakcja";
+const datePublished = artykul?.date ? new Date(artykul.date) : null;
+const dateModified = artykul?.updated ? new Date(artykul.updated) : datePublished;
 
 if (!artykul) {
   return Astro.redirect('/artykuly');
@@ -50,7 +59,24 @@ if (!artykul) {
     tags={artykul.tags}
     date={artykul.date}
   />
-  <article class="-mt-24 md:-mt-82 mb-18 space-y-12 z-50">
+  <article
+    class="-mt-24 md:-mt-82 mb-18 space-y-12 z-50"
+    itemscope
+    itemtype="https://schema.org/BlogPosting"
+  >
+    <meta itemprop="mainEntityOfPage" content={articleUrl} />
+    <meta itemprop="url" content={articleUrl} />
+    <meta itemprop="headline" content={artykul.title ?? artykul.slug} />
+    {artykul.description ? <meta itemprop="description" content={artykul.description} /> : null}
+    {datePublished ? <meta itemprop="datePublished" content={datePublished.toISOString()} /> : null}
+    {dateModified ? <meta itemprop="dateModified" content={dateModified.toISOString()} /> : null}
+    <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+      <meta itemprop="name" content={authorName} />
+    </div>
+    <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content={siteName} />
+      {siteLogo ? <meta itemprop="logo" content={siteLogo} /> : null}
+    </div>
     <header class="mb-8 md:mb-16">
       <div class="mx-auto max-w-3xl space-y-12">
         <div class="space-y-4 text-sm text-[var(--muted)]">
@@ -74,6 +100,7 @@ if (!artykul) {
           sizes="(max-width: 1320px) 100vw, 1320px"
           loading="lazy"
           placeholder="blur"
+          itemprop="image"
         />
       ) : (
         <div class="grid aspect-[16/9] w-5xl place-items-center rounded-xl border border-dashed border-[var(--border)] bg-[var(--surface-muted)] text-xs uppercase tracking-widest text-[var(--muted)]">Brak zdjecia</div>

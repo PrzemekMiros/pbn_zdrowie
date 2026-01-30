@@ -9,6 +9,7 @@ const contact = {
   email: "kontakt@przemekmiros.pl",
   phone: "+48 788 660 190",
   address: "ul Orzeszkowej 5, 05-660 Warka",
+  country: "PL",
   hours: "Pn - Pt: 9.00-17.00",
   mapUrl: "https://maps.google.com/?q=Przykladowa+12+Miasto",
   priceRange: "1000-10000 PLN",
@@ -101,6 +102,7 @@ if (addressParts[1]) {
             <span itemprop="streetAddress">{streetAddress}</span>
             {postalCode ? <meta itemprop="postalCode" content={postalCode} /> : null}
             {addressLocality ? <meta itemprop="addressLocality" content={addressLocality} /> : null}
+            {contact.country ? <meta itemprop="addressCountry" content={contact.country} /> : null}
           </div>
         </div>
         <div class="rounded-2xl border border-[var(--border)] bg-[#fbfbff] px-5 py-6">
