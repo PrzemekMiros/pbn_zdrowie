@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/home/Hero.astro";
+import HeroFull from "../components/home/HeroFull.astro";
 import FeaturedWork from "../components/home/FeaturedWork.astro";
 import Testimonials from "../components/home/Testimonials.astro";
 import CallToAction from "../components/home/CallToAction.astro";
@@ -28,11 +29,11 @@ const siteLogo = settings.logo ? (baseUrl ? `${baseUrl}${settings.logo}` : setti
       {siteLogo ? <meta itemprop="logo" content={siteLogo} /> : null}
     </div>
   </div>
-	<Hero />
+	<HeroFull />
 	<ClientsLogos />
 	<BentoGrid />
 	<FeaturedWork />
-	<Testimonials />
+	<Testimonials limit={2} />
 	<LatestPosts />
 	<CallToAction />
 </BaseLayout>
