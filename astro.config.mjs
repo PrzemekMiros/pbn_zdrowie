@@ -12,7 +12,9 @@ export default defineConfig({
   adapter: netlify(),
   integrations: [
     react(),
-    sitemap(),
+    sitemap({
+      filter: (page) => !page.includes('/realizacje/'),
+    }),
     robots({
       policy: [
         { userAgent: '*', allow: '/' }
