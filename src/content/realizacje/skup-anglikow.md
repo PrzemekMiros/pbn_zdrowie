@@ -1,13 +1,13 @@
 ---
-client: Skup Anglików
+client: Skup aut z Anglii
 description: Strona www oparta na CMS Wordpress. Indywidualny projekt graficzny
   i optymalizacja pod wyszukiwarki
 author: Przemek
 category:
   - Strona internetowa
-thumbnail: angliki-thumb-big.jpg
+thumbnail: /content/realizacje/img/angliki-thumb-big.jpg
 order: 7
-title: Skup aut z Anglii
+title: Skup Anglików 
 date: 2023-08-02T13:25:45.709Z
 link: https://skup-anglikow.pl/
 background: "#fffcfb"

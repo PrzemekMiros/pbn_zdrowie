@@ -7,7 +7,7 @@ description: Strona internetowa ze sklepem dla producenta mebli z drewna.
 author: Przemek Miros
 category:
   - Sklep internetowy
-thumbnail: moneso-thumb-big.jpg
+thumbnail: /content/realizacje/img/moneso-thumb-big.jpg
 order: 36
 title: Producent mebli z drewna
 date: 2023-05-22T13:42:19.166Z

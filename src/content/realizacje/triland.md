@@ -6,7 +6,7 @@ description: Strona internetowa dla firmy zajmującej sie doradztwem w zakresie
 author: Przemek Miros
 category:
   - Strona internetowa
-thumbnail: triland-thumb-big.jpg
+thumbnail: /content/realizacje/img/triland-thumb-big.jpg
 order: 27
 title: Doradztwo środowiskowe
 date: 2024-02-27T23:00:00.000Z

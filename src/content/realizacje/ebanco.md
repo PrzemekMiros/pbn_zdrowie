@@ -1,12 +1,12 @@
 ---
-title: Ebanco
+title: Pożyczki online
 description: Projekt i wdrożenie
 author: Przemek
-client:
+client: Ebanco
 category:
   - Strona internetowa
 link: https://ebanco.pl/
-thumbnail: ebanco-mockup.jpg
+thumbnail: /content/realizacje/img/ebanco-mockup.jpg
 order: 88
 date: 2025-01-01T00:00:00.000Z
 background: "#fffcfb"

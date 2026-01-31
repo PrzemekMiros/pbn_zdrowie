@@ -4,13 +4,11 @@ description: Strona i sklep interentowy dla producenta nanokoloidów. Systemem
   zarządzania treścią Wordpress, sklep oparty na Woocommerce, integracja z
   Baselinker.
 author: Przemek
-imageGridTwo: /content/realizacje/img/egp--thumb-big.jpg
 client: EGP System
 link: https://egp-system.com/
-thumbnail: egp-thumb-big.jpg
+thumbnail: /content/realizacje/img/egp-thumb-big.jpg
 order: 80
 date: 2021-08-29T22:00:00.000Z
-imageMobile: /content/realizacje/img/egp-mobile.jpg
 category:
   - Sklep internetowy
 background: "#fffcfb"

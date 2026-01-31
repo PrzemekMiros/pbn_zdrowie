@@ -7,7 +7,7 @@ author: Przemek
 category:
   - Strona internetowa
 link: https://ideal-lift.pl/
-thumbnail: idealift-thumb-big.jpg
+thumbnail: /content/realizacje/img/idealift-thumb-big.jpg
 order: 5
 title: Podnośniki warsztatowe
 date: 2024-07-09T19:21:41.426Z
