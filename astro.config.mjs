@@ -19,7 +19,7 @@ export default defineConfig({
       ],
       sitemap: 'https://przemekmiros.pl/sitemap-index.xml'
     }),
-    // min()
+    min()
   ],
 
   vite: {
