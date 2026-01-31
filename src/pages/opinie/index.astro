@@ -39,11 +39,11 @@ const ratingCount = 15;
 ---
 
 <BaseLayout
-  title="O mnie"
+  title="Opinie klientów"
   description="Napisz lub zadzwon, opowiedz o projekcie i otrzymaj odpowiedz w 24-48h."
 >
   <section
-    class="relative py-16"
+    class="relative pb-16 pt-14"
     itemscope
     itemtype="https://schema.org/Organization"
   >
@@ -77,12 +77,9 @@ const ratingCount = 15;
         </div>
       </div>
 
-      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
         {testimonials.map((item) => {
           const cardClass = "bg-white text-black";
-          const pillClass = "bg-white text-black";
-          const dotActive = "bg-black";
-          const dotMuted = "bg-gray-500";
           const roleClass = "text-gray-500";
           const brandClass = "text-black";
 
@@ -95,11 +92,11 @@ const ratingCount = 15;
             >
               <div>
                 <div class="mb-12">
-                  <span class="rounded-full px-4 py-1.5 border border-black/30 text-sm font-bold uppercase tracking-wider bg-white text-[var(--accent)]">
+                  <span class="rounded-full px-4 py-1.5 border border-black/20 text-sm font-bold uppercase tracking-wider bg-white text-[var(--accent)]">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                   </span>
                 </div>
-                <blockquote class="text-xl font-medium leading-snug" itemprop="reviewBody">
+                <blockquote class="text-xl font-medium text-black/90 leading-snug" itemprop="reviewBody">
                   "{item.quote}"
                 </blockquote>
               </div>
