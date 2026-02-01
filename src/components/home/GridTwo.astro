@@ -69,16 +69,8 @@ const getPostUrl = (post) => `/artykuly/${post.categorySlug}/${post.slug}/`;
 <div class="relative max-w-7xl mx-auto pb-20 pt-18 bg-gray-100">
   <div class="absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 bg-gray-100 overflow-hidden -z-1" style="perspective: 1000px;">
 </div>
-  <div class="flex justify-between items-center mb-8 border-b pb-4">
+  <div class="mb-8 border-b pb-4">
     <h2 class="text-2xl font-bold text-gray-900 uppercase tracking-tight">Problemy trawienne</h2>
-    <div class="flex gap-2">
-      <button class="p-2 border rounded-full hover:bg-gray-50 transition">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
-      </button>
-      <button class="p-2 border rounded-full hover:bg-gray-50 transition">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-      </button>
-    </div>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {posts.map((post) => {
