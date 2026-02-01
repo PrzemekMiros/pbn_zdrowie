@@ -43,7 +43,7 @@ const ratingCount = 15;
   description="Napisz lub zadzwon, opowiedz o projekcie i otrzymaj odpowiedz w 24-48h."
 >
   <section
-    class="relative pb-16 pt-14"
+    class="relative pb-16 pt-16"
     itemscope
     itemtype="https://schema.org/Organization"
   >
@@ -55,28 +55,6 @@ const ratingCount = 15;
     </div>
     <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 rounded-2xl bg-white"></div>
     <div class="relative text-black">
-      <div class="mb-12 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-end">
-        <div class="max-w-3xl space-y-3">
-<p class="text-[12px] font-semibold uppercase tracking-[0.1em] text-[var(--accent)]">
-  Co mówią klienci?
-</p>
-<h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
-  Historie firm, dla których strona internetowa stała się
-  <span class="text-black/50"> kluczowym narzędziem do pozyskiwania klientów</span>
-</h2>
-        </div>
-        <div class="flex items-center space-x-4">
-          <div class="text-left">
-            <div class="mb-1 flex text-[var(--accent)]">
-              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-            </div>
-            <p class="text-sm font-bold text-black">
-              5/5 Ocena <span class="ml-2 font-normal text-gray-600">15+ Opinii</span>
-            </p>
-          </div>
-        </div>
-      </div>
-
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
         {testimonials.map((item) => {
           const cardClass = "bg-white text-black";

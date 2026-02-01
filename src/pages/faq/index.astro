@@ -14,16 +14,7 @@ const questions = Object.entries(entries)
   title="Zadawane pytania"
   description="Napisz lub zadzwon, opowiedz o projekcie i otrzymaj odpowiedz w 24-48h."
 >
-  <section class="relative pb-16 pt-14" itemscope itemtype="https://schema.org/FAQPage">
-  <div class="max-w-3xl space-y-3 mb-12">
-<p class="text-[12px] font-semibold uppercase tracking-[0.1em] text-[var(--accent)]">
-  Co mówią klienci?
-</p>
-<h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
-  Najczęściej zadawane pytania dotyczące tworzenia stron internetowych 
-  <span class="text-black/50"> etapy tworzenia, koszt i czas realizacji</span>
-</h2>
-    </div>
+  <section class="relative pb-16 pt-16" itemscope itemtype="https://schema.org/FAQPage">
     <div class="grid gap-4 md:grid-cols-2">
       {questions.map((item) => {
         const hasAnswer = typeof item.answer === "string" && item.answer.trim().length > 0;
