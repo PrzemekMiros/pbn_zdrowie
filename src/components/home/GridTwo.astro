@@ -1,0 +1,121 @@
+---
+import { Image } from "astro:assets";
+import { slugifyTitle } from "../../lib/slugifyTitle";
+
+const imageEntries = import.meta.glob("/src/content/artykuly/img/**/*", { eager: true });
+const resolveArticleImage = (path) => {
+  if (!path) return null;
+  let normalized = path;
+  if (normalized.startsWith("/content/posts/img/")) {
+    const relativePath = normalized.slice("/content/posts/img/".length);
+    normalized = `/src/content/artykuly/img/${relativePath}`;
+  } else if (normalized.startsWith("/content/")) {
+    normalized = `/src${normalized}`;
+  }
+  const entry = imageEntries[normalized];
+  return entry?.default ?? null;
+};
+
+const entries = import.meta.glob("../../content/artykuly/**/*.md", { eager: true });
+const getSlugPathFromFile = (file) =>
+  file.replace(/^.*content\/artykuly\//, "").replace(/\.md$/, "");
+const getCategorySlug = (frontmatter, slugPath) => {
+  const parts = slugPath.split("/");
+  if (parts.length > 1) return parts[0];
+  const categoryValue = Array.isArray(frontmatter?.category)
+    ? frontmatter.category[0]
+    : frontmatter?.category;
+  return categoryValue ? slugifyTitle(categoryValue) : "artykuly";
+};
+const getArticleSlug = (slugPath) => {
+  const parts = slugPath.split("/");
+  return parts.length > 1 ? parts.slice(1).join("/") : slugPath;
+};
+const normalizeCategories = (category) =>
+  Array.isArray(category) ? category : category ? [category] : [];
+
+const posts = Object.entries(entries)
+  .map(([file, entry]) => {
+    const slugPath = getSlugPathFromFile(file);
+    const categorySlug = getCategorySlug(entry.frontmatter ?? {}, slugPath);
+    const slug = getArticleSlug(slugPath);
+    const date = entry.frontmatter?.date ? new Date(entry.frontmatter.date) : null;
+    return {
+      slug,
+      categorySlug,
+      ...entry.frontmatter,
+      date,
+    };
+  })
+  .filter((post) =>
+    normalizeCategories(post.category).some(
+      (category) => slugifyTitle(category) === "problemy-trawienne"
+    )
+  )
+  .sort((a, b) => {
+    const aTime = a.date ? a.date.getTime() : 0;
+    const bTime = b.date ? b.date.getTime() : 0;
+    return bTime - aTime;
+  })
+  .slice(0, 6);
+
+const formatDate = (value) =>
+  value
+    ? value.toLocaleDateString("pl-PL", { day: "2-digit", month: "long", year: "numeric" })
+    : null;
+const getPostUrl = (post) => `/artykuly/${post.categorySlug}/${post.slug}/`;
+---
+
+<div class="relative max-w-7xl mx-auto pb-20 pt-20 bg-gray-100">
+  <div class="absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 bg-gray-100 overflow-hidden -z-1" style="perspective: 1000px;">
+</div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {posts.map((post) => {
+      const image = resolveArticleImage(post.tileImage ?? post.thumbnail);
+      const dateLabel = post.date ? formatDate(post.date) : null;
+      return (
+        <a
+          class="flex border border-gray-100 p-4 gap-4 items-center bg-white group cursor-pointer hover:shadow-sm transition-shadow"
+          href={getPostUrl(post)}
+        >
+          <div class="w-1/3 shrink-0 overflow-hidden rounded-sm">
+            {image ? (
+              <Image
+                src={image}
+                alt={post.title ?? post.slug}
+                class="w-full h-24 object-cover transition-transform duration-500 group-hover:scale-110"
+                widths={[240, 360]}
+                sizes="120px"
+                loading="lazy"
+              />
+            ) : (
+              <div class="w-full h-24 bg-neutral-200"></div>
+            )}
+          </div>
+          <div class="w-2/3 flex flex-col justify-between h-full">
+            <h3 class="font-bold text-gray-900 leading-snug group-hover:text-sky-500 transition-colors line-clamp-2">
+              {post.title ?? post.slug}
+            </h3>
+            <div class="flex justify-between items-center mt-3 text-[11px] text-gray-400 font-medium">
+              {dateLabel ? (
+                <span class="flex items-center gap-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  {dateLabel}
+                </span>
+              ) : (
+                <span></span>
+              )}
+              <button class="hover:text-sky-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </a>
+      );
+    })}
+  </div>
+</div>

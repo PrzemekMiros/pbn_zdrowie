@@ -1,13 +1,14 @@
 ---
 import { Image } from "astro:assets";
+import { slugifyTitle } from "../../lib/slugifyTitle";
 
 const imageEntries = import.meta.glob("/src/content/artykuly/img/**/*", { eager: true });
 const resolveArticleImage = (path) => {
   if (!path) return null;
   let normalized = path;
   if (normalized.startsWith("/content/posts/img/")) {
-    const filename = normalized.split("/").pop();
-    normalized = `/src/content/artykuly/img/${filename}`;
+    const relativePath = normalized.slice("/content/posts/img/".length);
+    normalized = `/src/content/artykuly/img/${relativePath}`;
   } else if (normalized.startsWith("/content/")) {
     normalized = `/src${normalized}`;
   }
@@ -15,10 +16,32 @@ const resolveArticleImage = (path) => {
   return entry?.default ?? null;
 };
 
-const entries = import.meta.glob("../../content/artykuly/*.md", { eager: true });
+const entries = import.meta.glob("../../content/artykuly/**/*.md", { eager: true });
+const getSlugFromFile = (file) =>
+  file.replace(/^.*content\/artykuly\//, "").replace(/\.md$/, "");
+const toCategorySlug = (item, slugPath) => {
+  const parts = slugPath.split("/");
+  if (parts.length > 1) return parts[0];
+  const categoryValue = Array.isArray(item.category)
+    ? item.category[0]
+    : item.category
+    ? item.category
+    : null;
+  return categoryValue ? slugifyTitle(categoryValue) : "artykuly";
+};
+const toArticleSlug = (slugPath) => {
+  const parts = slugPath.split("/");
+  return parts.length > 1 ? parts.slice(1).join("/") : slugPath;
+};
+
 const items = Object.entries(entries).map(([file, entry]) => {
-  const slug = file.split("/").pop().replace(".md", "");
-  return { slug, ...entry.frontmatter };
+  const slugPath = getSlugFromFile(file);
+  return {
+    slugPath,
+    slug: toArticleSlug(slugPath),
+    categorySlug: toCategorySlug(entry.frontmatter ?? {}, slugPath),
+    ...entry.frontmatter,
+  };
 });
 
 const articles = items
@@ -68,13 +91,13 @@ const baseUrl = site ? site.toString().replace(/\/$/, "") : "";
         >
           <meta itemprop="position" content="1" />
           <div itemprop="item" itemscope itemtype="https://schema.org/BlogPosting">
-            <meta itemprop="url" content={baseUrl ? `${baseUrl}/artykuly/${first.slug}/` : `/artykuly/${first.slug}/`} />
+            <meta itemprop="url" content={baseUrl ? `${baseUrl}/artykuly/${first.categorySlug}/${first.slug}/` : `/artykuly/${first.categorySlug}/${first.slug}/`} />
             <meta itemprop="headline" content={first.title ?? first.slug} />
             {first.description ? <meta itemprop="description" content={first.description} /> : null}
             {first.date ? <meta itemprop="datePublished" content={new Date(first.date).toISOString()} /> : null}
           </div>
           <a
-            href={`/artykuly/${first.slug}/`}
+            href={`/artykuly/${first.categorySlug}/${first.slug}/`}
             aria-label={`Zobacz artykul: ${first.title ?? first.slug}`}
             class="group flex h-full w-full flex-col rounded-2xl bg-[#FF6B52] px-5 py-10 md:px-6 transition-transform hover:scale-[1.02]"
           >
@@ -127,13 +150,13 @@ const baseUrl = site ? site.toString().replace(/\/$/, "") : "";
         >
           <meta itemprop="position" content="2" />
           <div itemprop="item" itemscope itemtype="https://schema.org/BlogPosting">
-            <meta itemprop="url" content={baseUrl ? `${baseUrl}/artykuly/${second.slug}/` : `/artykuly/${second.slug}/`} />
+            <meta itemprop="url" content={baseUrl ? `${baseUrl}/artykuly/${second.categorySlug}/${second.slug}/` : `/artykuly/${second.categorySlug}/${second.slug}/`} />
             <meta itemprop="headline" content={second.title ?? second.slug} />
             {second.description ? <meta itemprop="description" content={second.description} /> : null}
             {second.date ? <meta itemprop="datePublished" content={new Date(second.date).toISOString()} /> : null}
           </div>
           <a
-            href={`/artykuly/${second.slug}/`}
+            href={`/artykuly/${second.categorySlug}/${second.slug}/`}
             aria-label={`Zobacz artykul: ${second.title ?? second.slug}`}
             class="flex h-full w-full flex-col rounded-2xl bg-[#7C4DFF] px-5 py-10 md:px-6 text-white transition-transform hover:scale-[1.02]"
           >
@@ -186,13 +209,13 @@ const baseUrl = site ? site.toString().replace(/\/$/, "") : "";
         >
           <meta itemprop="position" content="3" />
           <div itemprop="item" itemscope itemtype="https://schema.org/BlogPosting">
-            <meta itemprop="url" content={baseUrl ? `${baseUrl}/artykuly/${third.slug}/` : `/artykuly/${third.slug}/`} />
+            <meta itemprop="url" content={baseUrl ? `${baseUrl}/artykuly/${third.categorySlug}/${third.slug}/` : `/artykuly/${third.categorySlug}/${third.slug}/`} />
             <meta itemprop="headline" content={third.title ?? third.slug} />
             {third.description ? <meta itemprop="description" content={third.description} /> : null}
             {third.date ? <meta itemprop="datePublished" content={new Date(third.date).toISOString()} /> : null}
           </div>
           <a
-            href={`/artykuly/${third.slug}/`}
+            href={`/artykuly/${third.categorySlug}/${third.slug}/`}
             aria-label={`Zobacz artykul: ${third.title ?? third.slug}`}
             class="flex h-full w-full flex-col rounded-2xl bg-black px-5 py-10 md:px-6 text-white transition-transform hover:scale-[1.02]"
           >

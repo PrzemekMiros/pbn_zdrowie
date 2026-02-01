@@ -9,8 +9,8 @@ const resolveArticleImage = (path) => {
   if (!path) return null;
   let normalized = path;
   if (normalized.startsWith("/content/posts/img/")) {
-    const filename = normalized.split("/").pop();
-    normalized = `/src/content/artykuly/img/${filename}`;
+    const relativePath = normalized.slice("/content/posts/img/".length);
+    normalized = `/src/content/artykuly/img/${relativePath}`;
   } else if (normalized.startsWith("/content/")) {
     normalized = `/src${normalized}`;
   }
@@ -18,11 +18,35 @@ const resolveArticleImage = (path) => {
   return entry?.default ?? null;
 };
 
-const entries = import.meta.glob('../../content/artykuly/*.md', { eager: true });
+const entries = import.meta.glob('../../content/artykuly/**/*.md', { eager: true });
+const getSlugFromFile = (file) =>
+  file.replace(/^.*content\/artykuly\//, "").replace(/\.md$/, "");
+const toCategorySlug = (item, slugPath) => {
+  const parts = slugPath.split("/");
+  if (parts.length > 1) {
+    return parts[0];
+  }
+  const categoryValue = Array.isArray(item.category)
+    ? item.category[0]
+    : item.category
+    ? item.category
+    : null;
+  return categoryValue ? slugifyTitle(categoryValue) : "artykuly";
+};
+const toArticleSlug = (slugPath) => {
+  const parts = slugPath.split("/");
+  return parts.length > 1 ? parts.slice(1).join("/") : slugPath;
+};
+
 const items = Object.entries(entries)
   .map(([file, entry]) => {
-    const slug = file.split('/').pop().replace('.md', '');
-    return { slug, ...entry.frontmatter };
+    const slugPath = getSlugFromFile(file);
+    return {
+      slugPath,
+      slug: toArticleSlug(slugPath),
+      categorySlug: toCategorySlug(entry.frontmatter ?? {}, slugPath),
+      ...entry.frontmatter,
+    };
   })
   .sort((a, b) => {
     const dateA = a.date ? new Date(a.date).getTime() : 0;
@@ -42,8 +66,12 @@ const siteLogo = settings.logo ? (baseUrl ? `${baseUrl}${settings.logo}` : setti
 
 const categories = Array.from(
   items.reduce((set, item) => {
-    const tags = Array.isArray(item.tags) ? item.tags : item.tags ? [item.tags] : [];
-    tags.forEach((tag) => set.add(tag));
+    const categoryValues = Array.isArray(item.category)
+      ? item.category
+      : item.category
+      ? [item.category]
+      : [];
+    categoryValues.forEach((category) => set.add(category));
     return set;
   }, new Set())
 )
@@ -71,7 +99,9 @@ const categories = Array.from(
         const tag = Array.isArray(artykul.tags) ? artykul.tags[0] : artykul.tags;
         const author = artykul.author ?? "Redakcja";
         const initials = author.split(" ").filter(Boolean).slice(0, 2).map((part) => part[0]).join("").toUpperCase();
-        const articleUrl = baseUrl ? `${baseUrl}/artykuly/${artykul.slug}/` : `/artykuly/${artykul.slug}/`;
+        const articleUrl = baseUrl
+          ? `${baseUrl}/artykuly/${artykul.categorySlug}/${artykul.slug}/`
+          : `/artykuly/${artykul.categorySlug}/${artykul.slug}/`;
 
         return (
           <article
@@ -118,7 +148,7 @@ const categories = Array.from(
                 
                 <div class="relative max-w-xl">
                   <h2 class="mt-3 text-xl md:text-2xl font-semibold leading-tight" itemprop="headline">
-                    <a href={`/artykuly/${artykul.slug}/`} itemprop="url">
+                    <a href={`/artykuly/${artykul.categorySlug}/${artykul.slug}/`} itemprop="url">
                       <span class="absolute inset-0"></span>
                       {artykul.title ?? artykul.slug}
                     </a>
@@ -175,7 +205,7 @@ const categories = Array.from(
               >
                 <meta itemprop="position" content={String(index + 1)} />
                 <a
-                  href={`/tags/${category.slug}/`}
+                  href={`/${category.slug}/`}
                   itemprop="item"
                   class="block rounded-xl bg-gray-100 border border-white/5 px-4 py-3 text-sm text-neutral-600 transition-all hover:border-orange-600/50 hover:text-orange-700"
                 >
