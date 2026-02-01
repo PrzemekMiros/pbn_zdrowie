@@ -15,5 +15,8 @@ background: "#fffcfb"
 ---
 
 
-Strona i sklep interentowy dla producenta nanokoloidów. System zarządzania treścią Wordpress, sklep oparty na Woocommerce, integracja z Baselinker, płatności online. Szybka, zapezpieczona i zoptymalizowana pod wyszukiwarki.
+Strona i sklep interentowy dla producenta nanokoloidów, której głównym celem jest czytelna prezentacja oferty oraz budowanie wiarygodności marki wśród klientów B2B. 
 
+System zarządzania treścią Wordpress, sklep oparty na Woocommerce, integracja z Baselinker, płatności online. 
+
+W pełni zoptymalizowana pod kątem urządzeń mobilnych oraz przygotowana zgodnie z dobrymi praktykami SEO, dzięki czemu stanowi solidną podstawę do dalszych działań marketingowych i zwiększania widoczności w Google.

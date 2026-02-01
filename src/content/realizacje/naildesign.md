@@ -13,5 +13,8 @@ link: https://naildesign.com.pl/
 background: "#fffcfb"
 ---
 
+Strona internetowa dla marki Nail Design specjalizującej się w kursach stylizacji paznokci. Serwis został zaprojektowany z naciskiem na czytelną prezentację szkoleń, kursów oraz informacji dla przyszłych kursantek.
 
-Strona internetowa do sprzedaży kursów stylizacji paznokci online. Projekt graficzny, system zarządzania Wordpress.
+Strona została wdrożona w oparciu o system WordPress, co pozwala na samodzielne zarządzanie ofertą. Projekt skupia się na estetyce dopasowanej do branży beauty, intuicyjnej nawigacji oraz pełnej responsywności. 
+
+Całość została przygotowana zgodnie z dobrymi praktykami SEO, żeby wspierać widoczność Google i pozyskiwać nowych klientów.

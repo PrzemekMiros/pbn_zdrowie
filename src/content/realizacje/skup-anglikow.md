@@ -13,4 +13,10 @@ link: https://skup-anglikow.pl/
 background: "#fffcfb"
 ---
 
-Strona www oparta na CMS Wordpress. Indywidualny projekt graficzny i optymalizacja pod wyszukiwarki
+Prosta strona usługowa, nastawiona na szybkie decyzje i natychmiastowy kontakt z klientem.
+
+Jasno komunikuje zakres działalności, obejmujący skup aut z Anglii na terenie całej Polski, niezależnie od marki, modelu czy stanu pojazdu. 
+
+Układ strony prowadzi użytkownika krok po kroku przez proces wyceny, formalności i płatności, akcentując szybkie działanie, własny transport oraz wypłatę gotówki od ręki.
+
+Całość pełni rolę narzędzia stricte transakcyjnego, zaprojektowanego pod wygodę użytkownika i wysoką skuteczność konwersji, bez rozpraszania uwagi zbędnymi treściami czy elementami wizualnymi.

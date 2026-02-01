@@ -14,4 +14,6 @@ category:
 background: "#fffcfb"
 ---
 
-Strona internetowa dla producenta konstrukcji stalowych. Indywidualny projekt graficzny. Oparta na systemie zarządzania treścią Wordpress. Bez builderów.
+Strona internetowa dla producenta konstrukcji stalowych. Indywidualny projekt graficzny. Oparta na systemie zarządzania treścią Wordpress. 
+
+Całość została przygotowana zgodnie z dobrymi praktykami SEO, co wspiera lokalną widoczność w Google i buduje zaufanie w branży.

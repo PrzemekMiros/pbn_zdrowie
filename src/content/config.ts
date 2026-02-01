@@ -13,6 +13,7 @@ const realizacje = defineCollection({
     thumbnail: z.string().optional(),
     tileImage: z.string().optional(),
     imageMain: z.string().optional(),
+    link: z.string().optional(),
     background: z.string().optional(),
     tileBg: z.string().optional(),
     robots: z.string().optional(),
