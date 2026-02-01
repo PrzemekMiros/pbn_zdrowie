@@ -37,7 +37,7 @@ function getArticleSlug(slugPath) {
   return parts.length > 1 ? parts.slice(1).join("/") : slugPath;
 }
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
   const getSlugPathFromFileLocal = (file) =>
     file.replace(/^.*content\/artykuly\//, "").replace(/\.md$/, "");
   const getCategorySlugLocal = (frontmatter, slugPath) => {
@@ -53,21 +53,28 @@ export function getStaticPaths() {
     return parts.length > 1 ? parts.slice(1).join("/") : slugPath;
   };
   const entries = import.meta.glob("../../../content/artykuly/**/*.md", { eager: true });
-  return Object.entries(entries).map(([file, entry]) => {
-    const slugPath = getSlugPathFromFileLocal(file);
-    const categorySlug = getCategorySlugLocal(entry.frontmatter ?? {}, slugPath);
-    const slug = getArticleSlugLocal(slugPath);
-    return {
-      params: { category: categorySlug, slug },
-      props: {
-        artykul: { slug, categorySlug, ...entry.frontmatter },
-        Content: entry.Content,
-      },
-    };
-  });
+  const paths = await Promise.all(
+    Object.entries(entries).map(async ([file, entry]) => {
+      const slugPath = getSlugPathFromFileLocal(file);
+      const categorySlug = getCategorySlugLocal(entry.frontmatter ?? {}, slugPath);
+      const slug = getArticleSlugLocal(slugPath);
+      const entryHeadings = typeof entry.getHeadings === "function"
+        ? await entry.getHeadings()
+        : entry.headings ?? [];
+      return {
+        params: { category: categorySlug, slug },
+        props: {
+          artykul: { slug, categorySlug, ...entry.frontmatter },
+          Content: entry.Content,
+          headings: entryHeadings,
+        },
+      };
+    })
+  );
+  return paths;
 }
 
-const { artykul, Content } = Astro.props;
+const { artykul, Content, headings } = Astro.props;
 const allArticleEntries = import.meta.glob("../../../content/artykuly/**/*.md", { eager: true });
 const allArticles = Object.entries(allArticleEntries).map(([file, entry]) => {
   const slugPath = getSlugPathFromFile(file);
@@ -129,7 +136,7 @@ if (!artykul) {
     date={artykul.date}
   />
   <article
-    class="-mt-30 md:-mt-85 mb-18 space-y-12 z-50"
+    class="mb-18 pt-20 z-50"
     itemscope
     itemtype="https://schema.org/BlogPosting"
   >
@@ -146,116 +153,190 @@ if (!artykul) {
       <meta itemprop="name" content={siteName} />
       {siteLogo ? <meta itemprop="logo" content={siteLogo} /> : null}
     </div>
-    <header class="mb-8 md:mb-16">
-      <div class="mx-auto max-w-3xl space-y-12">
-        <div class="space-y-4 text-sm text-[var(--muted)]">
-          {artykul.role ? <p>{artykul.role}</p> : null}
-          {artykul.year ? <p>{artykul.year}</p> : null}
-          {artykul.href ? (
-            <p>
-              <a class="underline decoration-[var(--accent)] underline-offset-4 hover:text-[var(--text)]" href={artykul.href} rel="noopener" target="_blank" title={`Otworz strone: ${artykul.href}`}>
-                {artykul.href}
-              </a>
-            </p>
-          ) : null}
+    <div class="grid gap-10 lg:grid-cols-[250px_minmax(0,1fr)_280px]">
+      <aside class="hidden lg:block">
+        <div class="sticky top-38 space-y-4">
+          <h3 class="mb-4 text-sm font-semibold text-[var(--text)] uppercase tracking-wider">Spis treści</h3>
+          {headings?.length ? (
+            <ol class="space-y-2 text-sm text-[var(--muted)]" data-toc>
+              {headings
+                .filter((h) => h.depth === 2)
+                .map((heading) => (
+                  <li>
+                    <a
+                      class="transition-colors"
+                      href={`#${heading.slug}`}
+                      data-toc-link
+                      data-toc-target={heading.slug}
+                    >
+                      {heading.text}
+                    </a>
+                  </li>
+                ))}
+            </ol>
+          ) : (
+            <p class="text-xs text-[var(--muted)]">Brak spisu treści</p>
+          )}
         </div>
+      </aside>
+
+      <div class="space-y-12">
+        <header class="mb-8 md:mb-16">
+          <div class="mx-auto max-w-3xl space-y-12">
+            <div class="space-y-4 text-sm text-[var(--muted)]">
+              {artykul.role ? <p>{artykul.role}</p> : null}
+              {artykul.year ? <p>{artykul.year}</p> : null}
+              {artykul.href ? (
+                <p>
+                  <a class="underline decoration-[var(--accent)] underline-offset-4 hover:text-[var(--text)]" href={artykul.href} rel="noopener" target="_blank" title={`Otworz strone: ${artykul.href}`}>
+                    {artykul.href}
+                  </a>
+                </p>
+              ) : null}
+            </div>
+          </div>
+          {headerImage ? (
+            <Image
+              class="aspect-[16/9] rounded-xl border border-[var(--border)] object-cover"
+              src={headerImage}
+              alt={artykul.title ?? artykul.slug}
+              widths={[480, 768, 960, 1100, 1400, 1680]}
+              sizes="(max-width: 1320px) 100vw, 1320px"
+              loading="lazy"
+              placeholder="blur"
+              itemprop="image"
+            />
+          ) : (
+            <div class="grid aspect-[16/9] w-5xl place-items-center rounded-xl border border-dashed border-[var(--border)] bg-[var(--surface-muted)] text-xs uppercase tracking-widest text-[var(--muted)]">Brak zdjecia</div>
+          )}
+        </header>
+
+        {artykul.classes?.length ? (
+          <section class="mx-auto max-w-3xl space-y-2">
+            <h2 class="text-lg font-semibold text-[var(--text)]">Zakres</h2>
+            <p class="text-sm leading-6 text-[var(--muted)]">{artykul.classes.join(", ")}</p>
+          </section>
+        ) : null}
+        {Content ? (
+  <section
+    id="article-content"
+    class="mx-auto max-w-2xl space-y-6 text-[16px] leading-relaxed text-[var(--text)] sm:text-[17px] sm:leading-relaxed 
+    [&>a]:underline [&>a]:decoration-[var(--accent)] [&>a]:underline-offset-4 [&>a]:font-medium hover:[&>a]:text-[var(--accent)]
+    [&>blockquote]:border-l-4 [&>blockquote]:border-[var(--accent)] [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-[var(--muted)] 
+    [&>h2]:mt-10 [&>h2]:mb-4 [&>h2]:text-2xl [&>h2]:font-semibold [&>h2]:tracking-tight [&>h2]:text-[var(--text)] [&>h2]:scroll-mt-[144px]
+    [&>h3]:mt-7 [&>h3]:mb-3 [&>h3]:text-xl [&>h3]:font-semibold [&>h3]:text-[var(--text)] 
+    [&>hr]:my-8 [&>hr]:border-[var(--border)] 
+    [&>li]:mt-3 [&>ol]:list-decimal [&>ol]:pl-6 [&>ul]:list-disc [&>ul]:pl-6
+    [&>p]:mb-5 [&>p]:last:mb-0"
+  >
+    <Content />
+  </section>
+        ) : null}
       </div>
-      {headerImage ? (
-        <Image
-          class="aspect-[16/9] rounded-xl border border-[var(--border)] object-cover"
-          src={headerImage}
-          alt={artykul.title ?? artykul.slug}
-          widths={[480, 768, 960, 1100, 1400, 1680]}
-          sizes="(max-width: 1320px) 100vw, 1320px"
-          loading="lazy"
-          placeholder="blur"
-          itemprop="image"
-        />
-      ) : (
-        <div class="grid aspect-[16/9] w-5xl place-items-center rounded-xl border border-dashed border-[var(--border)] bg-[var(--surface-muted)] text-xs uppercase tracking-widest text-[var(--muted)]">Brak zdjecia</div>
-      )}
-    </header>
 
-    {artykul.classes?.length ? (
-      <section class="mx-auto max-w-3xl space-y-2">
-        <h2 class="text-lg font-semibold text-[var(--text)]">Zakres</h2>
-        <p class="text-sm leading-6 text-[var(--muted)]">{artykul.classes.join(", ")}</p>
-      </section>
-    ) : null}
-    {Content ? (
-<section class="mx-auto max-w-2xl space-y-6 text-[16px] leading-relaxed text-[var(--text)] sm:text-[17px] sm:leading-relaxed 
-  [&>a]:underline [&>a]:decoration-[var(--accent)] [&>a]:underline-offset-4 [&>a]:font-medium hover:[&>a]:text-[var(--accent)]
-  [&>blockquote]:border-l-4 [&>blockquote]:border-[var(--accent)] [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-[var(--muted)] 
-  [&>h2]:mt-10 [&>h2]:mb-4 [&>h2]:text-2xl [&>h2]:font-semibold [&>h2]:tracking-tight [&>h2]:text-[var(--text)] 
-  [&>h3]:mt-7 [&>h3]:mb-3 [&>h3]:text-xl [&>h3]:font-semibold [&>h3]:text-[var(--text)] 
-  [&>hr]:my-8 [&>hr]:border-[var(--border)] 
-  [&>li]:mt-3 [&>ol]:list-decimal [&>ol]:pl-6 [&>ul]:list-disc [&>ul]:pl-6
-  [&>p]:mb-5 [&>p]:last:mb-0">
-  <Content />
-</section>
-    ) : null}
-
-    {relatedArticles.length ? (
-      <section class="mx-auto max-w-7xl space-y-6 pt-6 mt-16 border-t border-black/10">
-        <div class="flex items-center justify-between">
-          <h2 class="text-lg font-semibold text-[var(--text)]">Przeczytaj też</h2>
-          <a href="/artykuly/" class="flex items-center gap-3 group text-black/90 font-bold text-[11px] uppercase tracking-widest hover:text-orange-600 transition-colors  hidden md:block">Wszystkie wpisy <span class="text-orange-600 text-lg -translate-y-0.5 group-hover:translate-x-1 transition-transform">»»»</span>
-  </a>
-        </div>
-        <div class="grid gap-5 md:grid-cols-3">
-          {relatedArticles.map((item) => {
-            const itemImage = resolveArticleImage(item?.tileImage ?? item?.thumbnail);
-            const itemUrl = baseUrl
-              ? `${baseUrl}/artykuly/${item?.categorySlug ?? ""}/${item?.slug ?? ""}/`
-              : `/artykuly/${item?.categorySlug ?? ""}/${item?.slug ?? ""}/`;
-            return (
-              <a
-                class="group flex h-full w-full flex-col rounded-2xl border border-[var(--border)] bg-white px-5 pb-8 pt-6 md:px-6 transition-transform hover:scale-[1.02]"
-                href={itemUrl}
-              >
-                <div class="mb-4 flex items-start justify-between">
-                  <span class="flex items-center gap-2 rounded-full border border-black/20 px-3 py-1.5 text-[10px] font-bold uppercase text-black">
-                    <span class="flex h-3 w-3 items-center justify-center rounded-sm bg-[var(--accent)] text-[8px] text-white">II</span>
-                    {getTag(item)}
-                  </span>
-                  <div class="rounded-full border border-black/20 p-2">
-                    <svg class="h-3 w-3 text-[var(--accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
-                  </div>
-                </div>
-
-                <div class="mb-6">
-                  {itemImage ? (
-                    <Image
-                      class="h-[185px] w-full rounded-xl border border-black/10 object-cover"
-                      src={itemImage}
-                      alt={item?.title ?? item?.slug}
-                      widths={[360, 520, 720]}
-                      sizes="(max-width: 900px) 100vw, 320px"
-                      loading="lazy"
-                      placeholder="blur"
-                    />
-                  ) : (
-                    <div class="grid h-[185px] w-full place-items-center rounded-xl border border-black/10 bg-black/5 text-[11px] uppercase tracking-widest text-black/60">
-                      Brak zdjecia
+      <aside class="space-y-6">
+        {relatedArticles.length ? (
+          <div class="sticky top-38 space-y-5">
+            <div class="flex items-center justify-between">
+              <h3 class="text-sm font-semibold text-[var(--text)] uppercase tracking-wider">Podobne wpisy</h3>
+              <a href="/artykuly/" class="text-[11px] uppercase tracking-widest text-[var(--accent)] hover:text-orange-600">Wszystkie</a>
+            </div>
+            <div class="space-y-4">
+              {relatedArticles.map((item) => {
+                const itemImage = resolveArticleImage(item?.tileImage ?? item?.thumbnail);
+                const itemUrl = baseUrl
+                  ? `${baseUrl}/artykuly/${item?.categorySlug ?? ""}/${item?.slug ?? ""}/`
+                  : `/artykuly/${item?.categorySlug ?? ""}/${item?.slug ?? ""}/`;
+                return (
+                  <a class="group flex gap-3 rounded-xl border border-[var(--border)] bg-white/80 p-3 hover:shadow-sm" href={itemUrl}>
+                    <div class="h-16 w-20 shrink-0 overflow-hidden rounded-lg border border-black/10">
+                      {itemImage ? (
+                        <Image
+                          class="h-full w-full object-cover"
+                          src={itemImage}
+                          alt={item?.title ?? item?.slug}
+                          widths={[160, 240]}
+                          sizes="80px"
+                          loading="lazy"
+                          placeholder="blur"
+                        />
+                      ) : (
+                        <div class="h-full w-full bg-black/5"></div>
+                      )}
                     </div>
-                  )}
-                </div>
-
-                <div class="">
-                  <h3 class="mb-3 text-xl font-semibold leading-snug text-black line-clamp-2">
-                    {item?.title ?? item?.slug}
-                  </h3>
-                  {item?.description ? (
-                    <p class="text-sm leading-relaxed text-black/70 line-clamp-3">{item.description}</p>
-                  ) : null}
-                </div>
-              </a>
-            );
-          })}
-        </div>
-      </section>
-    ) : null}
+                    <div class="flex flex-col gap-1">
+                      <span class="text-[10px] uppercase tracking-wide text-[var(--accent)]">{getTag(item)}</span>
+                      <span class="text-sm font-semibold leading-snug text-black line-clamp-2">
+                        {item?.title ?? item?.slug}
+                      </span>
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        ) : null}
+      </aside>
+    </div>
   </article>
+  <script>
+    const tocLinks = Array.from(document.querySelectorAll("[data-toc-link]"));
+    const headings = tocLinks
+      .map((link) => document.getElementById(link.dataset.tocTarget))
+      .filter(Boolean);
+
+    if (tocLinks.length && headings.length) {
+      const offset = 144;
+      const setActive = (id) => {
+        tocLinks.forEach((link) => {
+          const isActive = link.dataset.tocTarget === id;
+          link.classList.toggle("text-[var(--text)]", isActive);
+          link.classList.toggle("font-semibold", isActive);
+        });
+      };
+
+      const updateActive = () => {
+        const scrollPos = window.scrollY + offset + 1;
+        let current = headings[0];
+        for (const heading of headings) {
+          const top = heading.offsetTop;
+          if (top <= scrollPos) {
+            current = heading;
+          } else {
+            break;
+          }
+        }
+        if (current) setActive(current.id);
+      };
+
+      let ticking = false;
+      const onScroll = () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          updateActive();
+          ticking = false;
+        });
+      };
+
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll);
+
+      tocLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          event.preventDefault();
+          const target = document.getElementById(link.dataset.tocTarget);
+          if (target) {
+            const top = target.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: "smooth" });
+            setActive(target.id);
+            history.replaceState(null, "", `#${target.id}`);
+            setTimeout(updateActive, 0);
+          }
+        });
+      });
+
+      updateActive();
+    }
+  </script>
 </BaseLayout>

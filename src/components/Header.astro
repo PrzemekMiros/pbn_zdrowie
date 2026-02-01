@@ -5,11 +5,9 @@ const pathname = Astro.url?.pathname ?? "";
 const isActive = (href) =>
 	href === "/" ? pathname === "/" : pathname.startsWith(href);
 const navItems = [
-	{ href: "/realizacje/", label: "Realizacje" },
-    { href: "/opinie/", label: "Opinie" },
-    { href: "/faq/", label: "Faq" },
-	{ href: "/artykuly/", label: "Poradnik" },
-	{ href: "/kontakt/", label: "Kontakt" },
+	{ href: "/psychosomatyka/", label: "Psychosomatyka" },
+    { href: "/problemy-trawienne/", label: "Trawienie" },
+	{ href: "/artykuly/", label: "Artykuły" },
 ];
 const linkClass = (href) =>
 	isActive(href)
@@ -26,19 +24,14 @@ const mobileLinkClass = (href) =>
         <div class="grid grid-cols-3 gap-4 space-between items-center pb-3">
             <div>
                 <a href="/" class="text-xl font-bold tracking-tighter text-white no-underline" aria-label="Logo">
-                    <img src={logo.src} class="w-38" width="280" height="66" alt="Logo Przemek Miros">
+                    <img src={logo.src} class="w-38" width="280" height="66" alt="Logo Zdrowie bez paniki">
                 </a>
             </div>
             <div>
                 
             </div>
             <div class="flex justify-end">
-              <a
-                class="hidden rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-white transition hover:bg-orange-700 hover:text-white md:inline-block"
-                href="/kontakt/"
-              >
-                Wycena
-              </a>
+              O
             </div>
         </div>
 
