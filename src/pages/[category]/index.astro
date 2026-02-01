@@ -51,6 +51,25 @@ articles.forEach((article) => {
   });
 });
 
+export function getStaticPaths() {
+  const entries = import.meta.glob("../../content/artykuly/**/*.md", { eager: true });
+  const slugSet = new Set();
+  Object.values(entries).forEach((entry) => {
+    const categories = Array.isArray(entry.frontmatter?.category)
+      ? entry.frontmatter.category
+      : entry.frontmatter?.category
+      ? [entry.frontmatter.category]
+      : [];
+    categories.forEach((category) => {
+      if (!category?.trim()) return;
+      slugSet.add(slugifyTitle(category));
+    });
+  });
+  return Array.from(slugSet).map((slug) => ({
+    params: { category: slug },
+  }));
+}
+
 const sortedCategories = Array.from(categoryMap.entries())
   .map(([slug, label]) => ({ slug, label }))
   .sort((a, b) => a.label.localeCompare(b.label, "pl-PL"));
