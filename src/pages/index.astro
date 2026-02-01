@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import GridOne from "../components/home/gridOne.astro";
 import GridTwo from "../components/home/GridTwo.astro";
+import GridThree from "../components/home/GridThree.astro";
 import settings from "../content/ustawienia.json";
 
 const { site } = Astro;
@@ -26,5 +27,6 @@ const siteLogo = settings.logo ? (baseUrl ? `${baseUrl}${settings.logo}` : setti
 
   <GridOne />
   <GridTwo />
+  <GridThree />
 
 </BaseLayout>
