@@ -1,10 +1,8 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import MiastaHero from "../../layouts/heroes/MiastaHero.astro";
-import ClientsLogos from "../../components/home/ClientsLogos.astro";
 import BentoGrid from "../../components/home/BentoGrid.astro";
-import FeaturedWork from "../../components/home/FeaturedWork.astro";
-import Testimonials from "../../components/home/Testimonials.astro";
+import GridTwo from "../../components/home/GridTwo.astro";
 import LatestPosts from "../../components/home/LatestPosts.astro";
 import CallToAction from "../../components/home/CallToAction.astro";
 import { slugifyTitle } from "../../lib/slugifyTitle";
@@ -112,11 +110,9 @@ if (!miasto) {
   </div>
 </section>
 
-  <ClientsLogos />
   <BentoGrid />
-  <FeaturedWork />
-  <Testimonials />
   <LatestPosts />
+  <GridTwo />
   <section class="pb-20 space-y-12">
     <div class="grid gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
       <div class="space-y-4">
