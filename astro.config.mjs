@@ -7,7 +7,7 @@ import sitemap from 'astro-sitemap';
 import min from 'astro-min';
 
 export default defineConfig({
-  site: 'https://przemekmiros.pl/',
+  site: 'https://zdrowiebezpaniki.pl/',
   output: 'static',
   adapter: netlify(),
   integrations: [
@@ -17,7 +17,7 @@ export default defineConfig({
       policy: [
         { userAgent: '*', allow: '/' }
       ],
-      sitemap: 'https://przemekmiros.pl/sitemap-index.xml'
+      sitemap: 'https://zdrowiebezpaniki.pl/sitemap-index.xml'
     }),
     min()
   ],
