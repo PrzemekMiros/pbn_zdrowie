@@ -4,7 +4,6 @@ import MiastaHero from "../../layouts/heroes/MiastaHero.astro";
 import BentoGrid from "../../components/home/BentoGrid.astro";
 import GridTwo from "../../components/home/GridTwo.astro";
 import LatestPosts from "../../components/home/LatestPosts.astro";
-import CallToAction from "../../components/home/CallToAction.astro";
 import { slugifyTitle } from "../../lib/slugifyTitle";
 
 export const prerender = true;
@@ -146,5 +145,4 @@ if (!miasto) {
       )}
     </div>
   </section>
-  <CallToAction />
 </BaseLayout>
