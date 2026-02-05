@@ -81,6 +81,18 @@ pre.astro-code {
   align-items: center;
 }
 
+.pagefind-ui--header .pagefind-ui__form::before {
+  order: 2;
+  margin-left: 0.5rem;
+  margin-right: 0;
+  right: 1em!important;
+  left: auto !important;
+}
+
+.pagefind-ui--header .pagefind-ui__search-input {
+  order: 1;
+}
+
 .pagefind-ui--header .pagefind-ui__search-input {
   padding: 0.55rem 1rem;
   background: rgba(255, 255, 255, 0.75);

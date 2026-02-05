@@ -17,7 +17,7 @@ const navItems = [
 ];
 const linkClass = (href) =>
 	isActive(href)
-		? "px-3 py-2 text-black no-underline transition hover:brightness-15"
+		? "px-3 py-2 text-black no-underline transition"
 		: "px-3 py-2 text-black/70 no-underline transition hover:text-black";
 ---
 
@@ -25,7 +25,7 @@ const linkClass = (href) =>
     <div class="mx-auto w-full max-w-[1240px]">
         <div class="grid grid-cols-3 gap-4 space-between items-center pb-3">
             <div>
-                <a href="/" class="text-xl font-bold tracking-tighter text-white no-underline" aria-label="Logo">
+                <a href="/" class="text-xl font-bold tracking-tighter text-black no-underline" aria-label="Logo">
                     <img src={logo.src} class="w-38" width="280" height="66" alt="Logo Zdrowie bez paniki">
                 </a>
             </div>
@@ -34,7 +34,7 @@ const linkClass = (href) =>
                     <Search
                         id="site-search"
                         className="pagefind-ui pagefind-ui--header"
-                        uiOptions={{ showImages: false }}
+                        uiOptions={{ showImages: true, showDates: true, showCategories: true }}
                     />
                 </div>
             </div>
@@ -48,7 +48,7 @@ const linkClass = (href) =>
                 {
                     navItems.map((item) => (
                         <a
-                            class={`${linkClass(item.href)} transition-colors hover:text-white`}
+                            class={`${linkClass(item.href)} transition-colors hover:text-black`}
                             href={item.href}
                             aria-current={isActive(item.href) ? "page" : undefined}
                         >
