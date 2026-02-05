@@ -1,5 +1,6 @@
 ---
 import logo from "../assets/images/global/logo.png";
+import Search from "astro-pagefind/components/Search";
 const { settings } = Astro.props;
 const pathname = Astro.url?.pathname ?? "";
 const isActive = (href) =>
@@ -18,10 +19,6 @@ const linkClass = (href) =>
 	isActive(href)
 		? "px-3 py-2 text-black no-underline transition hover:brightness-15"
 		: "px-3 py-2 text-black/70 no-underline transition hover:text-black";
-const mobileLinkClass = (href) =>
-	isActive(href)
-		? "text-xl px-5 py-4 text-base font-semibold"
-		: "text-xl bg-white px-5 py-4 text-base font-semibold text-black/80 hover:bg-black/90";
 ---
 
 <header class="fixed left-0 right-0 top-0 z-500 bg-black/05 pt-3 backdrop-blur-md">
@@ -32,8 +29,14 @@ const mobileLinkClass = (href) =>
                     <img src={logo.src} class="w-38" width="280" height="66" alt="Logo Zdrowie bez paniki">
                 </a>
             </div>
-            <div>
-                
+            <div class="hidden md:flex items-center justify-center">
+                <div class="w-full max-w-[420px]">
+                    <Search
+                        id="site-search"
+                        className="pagefind-ui pagefind-ui--header"
+                        uiOptions={{ showImages: false }}
+                    />
+                </div>
             </div>
             <div class="flex justify-end">
               O

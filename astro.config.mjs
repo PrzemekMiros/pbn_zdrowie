@@ -5,6 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 import robots from 'astro-robots-txt';
 import sitemap from 'astro-sitemap';
 import min from 'astro-min';
+import pagefind from 'astro-pagefind';
 
 export default defineConfig({
   site: 'https://zdrowiebezpaniki.pl/',
@@ -19,7 +20,8 @@ export default defineConfig({
       ],
       sitemap: 'https://zdrowiebezpaniki.pl/sitemap-index.xml'
     }),
-    min()
+    min(),
+    pagefind()
   ],
 
   vite: {

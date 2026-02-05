@@ -68,6 +68,24 @@ pre.astro-code {
   line-height: 1.6;
 }
 
+.pagefind-ui--header {
+  --pagefind-ui-primary: #0f172a;
+  --pagefind-ui-text: #0f172a;
+  --pagefind-ui-background: rgba(255, 255, 255, 0.85);
+  --pagefind-ui-border: rgba(15, 23, 42, 0.2);
+  --pagefind-ui-border-radius: 9999px;
+  --pagefind-ui-font: "Zalando Sans SemiExpanded", "Segoe UI", sans-serif;
+}
+
+.pagefind-ui--header .pagefind-ui__form {
+  align-items: center;
+}
+
+.pagefind-ui--header .pagefind-ui__search-input {
+  padding: 0.55rem 1rem;
+  background: rgba(255, 255, 255, 0.75);
+}
+
 
 .circle-container {
   background: transparent;
