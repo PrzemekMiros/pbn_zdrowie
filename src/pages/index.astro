@@ -5,6 +5,7 @@ import GridTwo from "../components/home/GridTwo.astro";
 import GridThree from "../components/home/GridThree.astro";
 import GridFour from "../components/home/GridFour.astro";
 import GridFive from "../components/home/GridFive.astro";
+import GridSix from "../components/home/GridSix.astro";
 import settings from "../content/ustawienia.json";
 
 const { site } = Astro;
@@ -32,5 +33,6 @@ const siteLogo = settings.logo ? (baseUrl ? `${baseUrl}${settings.logo}` : setti
   <GridThree />
   <GridFour />
   <GridFive />
+  <GridSix />
 
 </BaseLayout>
