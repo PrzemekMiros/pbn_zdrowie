@@ -98,6 +98,17 @@ pre.astro-code {
   background: rgba(255, 255, 255, 0.75);
 }
 
+.pagefind-ui__form {
+  position: relative;
+}
+
+.pagefind-ui__drawer {
+  position: absolute;
+  top: 60px;
+  padding: 2em;
+  background: #fff;
+}
+
 
 .circle-container {
   background: transparent;
