@@ -20,7 +20,9 @@ export default defineConfig({
       ],
       sitemap: 'https://zdrowiebezpaniki.pl/sitemap-index.xml'
     }),
-    min(),
+    min({
+      minify_js: false
+    }),
     pagefind()
   ],
 
