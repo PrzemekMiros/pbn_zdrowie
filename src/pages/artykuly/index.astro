@@ -136,11 +136,11 @@ const categories = Array.from(
               <div class="flex flex-col justify-center">
                 <div class="flex items-center gap-x-4 text-[11px] uppercase tracking-wider">
                   {categoryLabel ? (
-                    <span class="font-bold text-orange-600">
+                    <span class="font-bold text-[var(--accent)]">
                       {categoryLabel}
                     </span>
                   ) : tag ? (
-                    <span class="font-bold text-orange-600">
+                    <span class="font-bold text-[var(--accent)]">
                       {tag}
                     </span>
                   ) : null}
@@ -212,7 +212,7 @@ const categories = Array.from(
                 <a
                   href={`/${category.slug}/`}
                   itemprop="item"
-                  class="block rounded-xl bg-gray-100 border border-white/5 px-4 py-3 text-sm text-neutral-600 transition-all hover:border-orange-600/50 hover:text-orange-700"
+                  class="block rounded-xl bg-gray-100 border border-white/5 px-4 py-3 text-sm text-neutral-600 transition-all hover:border-orange-600/50 hover:text-[var(--accent)]"
                 >
                   <span itemprop="name">{category.label}</span>
                 </a>

@@ -14,7 +14,7 @@ const currentUrl = baseUrl ? new URL(url.pathname, baseUrl).toString() : url.pat
     <img
       src={heroImage.src}
       alt=""
-      class=""
+      class="grayscale-[0.5] sepia-10"
       loading="lazy"
       decoding="async"
     />
@@ -75,7 +75,7 @@ const currentUrl = baseUrl ? new URL(url.pathname, baseUrl).toString() : url.pat
     )}
 
     <a href="/kontakt/" class="flex items-center gap-3 group text-gray-900 font-extrabold text-[11px] uppercase tracking-widest hover:text-orange-600 transition-colors  hidden md:block">
-      Bezpłatna konsultacja
+      
       <span class="text-orange-600 text-lg -translate-y-0.5 group-hover:translate-x-1 transition-transform">»»»</span>
     </a>
   </section>

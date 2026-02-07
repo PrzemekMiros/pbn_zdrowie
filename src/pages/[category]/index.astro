@@ -75,6 +75,7 @@ const sortedCategories = Array.from(categoryMap.entries())
   .sort((a, b) => a.label.localeCompare(b.label, "pl-PL"));
 
 const currentSlug = Astro.params.category;
+const currentCategoryLabel = categoryMap.get(currentSlug) ?? currentSlug;
 const filteredArticles = articles.filter((article) => {
   const categories = Array.isArray(article.category)
     ? article.category
@@ -119,7 +120,7 @@ export const prerender = true;
 ---
 
 <BaseLayout
-  title={`${currentSlug}`}
+  title={currentCategoryLabel}
   description={`Lista wszystkich artyku��w w kategorii ${currentSlug}.`}
   heroMeta={heroMeta}
 >
@@ -164,7 +165,7 @@ export const prerender = true;
 
                 <div class="flex flex-col justify-center">
                   <div class="flex items-center gap-x-4 text-[11px] uppercase tracking-wider">
-                    {category ? <span class="font-bold text-orange-600">{category}</span> : null}
+                    {category ? <span class="font-bold text-[var(--accent)]">{category}</span> : null}
                     {displayDate ? (
                       <time datetime={artykul.date?.toISOString()} class="text-neutral-500">
                         {displayDate}
@@ -207,7 +208,7 @@ export const prerender = true;
 
       <aside class="sticky top-34 self-start space-y-8">
         <div>
-          <h3 class="text-xs font-bold uppercase tracking-[0.2em] mb-6 border-l-2 border-orange-600 pl-4">Kategorie</h3>
+          <h3 class="text-xs font-bold uppercase tracking-[0.2em] mb-6 border-l-2 border-blue-600 pl-4">Kategorie</h3>
           {sortedCategories.length ? (
             <ul class="space-y-2">
               {sortedCategories.map((category) => {
@@ -215,8 +216,8 @@ export const prerender = true;
                 const linkClass = [
                   "block rounded-xl border px-4 py-3 text-sm transition-all",
                   isActive
-                    ? "bg-orange-50 border-orange-500/40 text-orange-700"
-                    : "bg-gray-100 border-white/5 text-neutral-600 hover:border-orange-600/50 hover:text-orange-700",
+                    ? "bg-blue-50 border-blue-500/40 text-[var(--accent)]"
+                    : "bg-gray-100 border-white/5 text-neutral-600 hover:border-blue-600/50 hover:text-[var(--accent)]",
                 ].join(" ");
                 return (
                   <li key={category.slug}>
