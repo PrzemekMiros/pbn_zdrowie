@@ -2,7 +2,7 @@
 title: Dlaczego przewlekły stres rozregulowuje jelita i wpływa na całe zdrowie
 description: Przewlekły stres zaburza pracę jelit, mikrobiotę i oś mózg–jelita. Sprawdź, jak napięcie nerwowe wpływa na trawienie, odporność i hormony oraz jak to odwrócić.
 author: Przemek
-date: 2026-02-07T20:02:39.125Z
+date: 2025-01-13T14:32:10.146Z
 category:
   - Problemy trawienne
 thumbnail: /content/artykuly/img/dlaczego-przewlekly-stres-rozregulowuje-jelita-i-wplywa-na-cale-zdrowie.png

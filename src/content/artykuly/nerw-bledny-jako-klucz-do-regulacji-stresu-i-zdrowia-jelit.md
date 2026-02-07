@@ -2,7 +2,7 @@
 title: Nerw błędny jako klucz do regulacji stresu i zdrowia jelit
 description: Artykuł wyjaśnia rolę nerwu błędnego w regulacji stresu, pracy jelit i odporności. Omawia objawy dysregulacji oraz praktyczne metody wspierania równowagi układu nerwowego.
 author: Przemek
-date: 2026-02-07T20:36:28.871Z
+date: 2025-08-25T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-jako-klucz-do-regulacji-stresu-i-zdrowia-jelit.png

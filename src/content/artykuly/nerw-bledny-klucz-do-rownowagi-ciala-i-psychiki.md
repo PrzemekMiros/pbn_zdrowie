@@ -2,7 +2,7 @@
 title: Nerw błędny klucz do równowagi ciała i psychiki
 description: Artykuł wyjaśnia rolę nerwu błędnego w regulacji stresu, trawienia i emocji oraz pokazuje, jak wspierać jego funkcje prostymi i bezpiecznymi metodami.
 author: Przemek
-date: 2026-02-05T16:09:47.277Z
+date: 2025-09-19T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-klucz-do-rownowagi-ciala-i-psychiki.png

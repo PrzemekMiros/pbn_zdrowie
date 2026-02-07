@@ -2,7 +2,7 @@
 title: Napięcie nerwu błędnego a objawy lękowe
 description: Artykuł wyjaśnia, jak napięcie nerwu błędnego wpływa na objawy lękowe, regulację układu nerwowego i reakcje stresowe oraz jakie strategie wspierają jego prawidłowe funkcjonowanie.
 author: Przemek
-date: 2026-02-05T17:37:13.730Z
+date: 2025-05-31T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/napiecie-nerwu-blednego-a-objawy-lekowe.png

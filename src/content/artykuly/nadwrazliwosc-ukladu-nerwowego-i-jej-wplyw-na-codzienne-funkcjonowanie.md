@@ -2,7 +2,7 @@
 title: Nadwrażliwość układu nerwowego i jej wpływ na codzienne funkcjonowanie
 description: Artykuł wyjaśnia czym jest nadwrażliwość układu nerwowego, jakie daje objawy oraz jak regulować reakcje stresowe i wspierać stabilność emocjonalną.
 author: Przemek
-date: 2026-02-07T15:22:41.166Z
+date: 2025-05-15T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nadwrazliwosc-ukladu-nerwowego-i-jej-wplyw-na-codzienne-funkcjonowanie.png

@@ -2,7 +2,7 @@
 title: Jak przewlekły stres rozstraja układ nerwowy
 description: Przewlekły stres może prowadzić do trwałych zmian w funkcjonowaniu układu nerwowego, powodując objawy psychosomatyczne, bóle, lęk i spadek odporności organizmu.
 author: Przemek
-date: 2026-02-07T15:42:39.286Z
+date: 2025-02-10T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/jak-przewlekly-stres-rozstraja-uklad-nerwowy.png

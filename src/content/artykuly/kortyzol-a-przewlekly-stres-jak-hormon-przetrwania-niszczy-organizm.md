@@ -2,7 +2,7 @@
 title: Kortyzol a przewlekły stres jak hormon przetrwania niszczy organizm
 description: Artykuł wyjaśnia, jak przewlekle podwyższony kortyzol wpływa na ciało i psychikę, zaburzając sen, odporność, trawienie i równowagę emocjonalną.
 author: Przemek
-date: 2026-02-07T19:22:39.750Z
+date: 2025-03-27T14:32:10.146Z
 category:
   - Hormony
 thumbnail: /content/artykuly/img/kortyzol-a-przewlekly-stres-jak-hormon-przetrwania-niszczy-organizm.png

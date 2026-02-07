@@ -1,4 +1,6 @@
 ---
+import shape31 from "../../assets/images/sections/shape-32.jpg";
+
 const { title, lead, tags, date } = Astro.props;
 const formattedDate = date ? new Date(date).toLocaleDateString('pl-PL', {
   year: 'numeric',
@@ -9,7 +11,17 @@ const formattedDate = date ? new Date(date).toLocaleDateString('pl-PL', {
 
  
 <section class="relative pt-42 pb-16">
-  <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 bg-gray-100"></div>
+  <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 bg-gray-100">
+   <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 overflow-hidden">
+    <img
+      src={shape31.src}
+      alt=""
+      class=""
+      loading="lazy"
+      decoding="async"
+    />
+   </div>
+  </div>
   <div class="relative space-y-4 mx-auto max-w-2xl">
         <div class="text-[8px] md:text-[10px] uppercase tracking-[0.1em] text-gray-400 mb-3 md:mb-6 font-semibold">
         <span>Główna</span>

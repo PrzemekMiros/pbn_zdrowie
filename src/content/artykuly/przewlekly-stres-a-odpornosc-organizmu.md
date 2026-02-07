@@ -2,7 +2,7 @@
 title: Przewlekły stres a odporność organizmu
 description: Długotrwały stres obniża odporność poprzez hormony i układ nerwowy. Sprawdź, jak mechanizmy stresowe wpływają na ciało i co skutecznie wspiera regenerację.
 author: Przemek
-date: 2026-02-06T17:52:19.297Z
+date: 2025-12-09T14:32:10.146Z
 category:
   - Odporność
 thumbnail: /content/artykuly/img/przewlekly-stres-a-odpornosc-organizmu.png

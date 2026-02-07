@@ -2,7 +2,7 @@
 title: Nerw błędny i jego wpływ na zdrowie psychiczne i trawienie
 description: Artykuł wyjaśnia, czym jest nerw błędny, jak reguluje układ nerwowy, emocje i trawienie oraz w jaki sposób jego prawidłowa aktywność wspiera regenerację organizmu.
 author: Przemek
-date: 2026-02-05T21:54:42.571Z
+date: 2025-07-24T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-i-jego-wplyw-na-zdrowie-psychiczne-i-trawienie.png

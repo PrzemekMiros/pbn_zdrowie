@@ -2,7 +2,7 @@
 title: Kortyzol pod kontrolą Jak stres wpływa na zdrowie i energię
 description: Artykuł wyjaśnia rolę kortyzolu w organizmie, jego wpływ na zdrowie, sen i odporność oraz pokazuje, jak przewlekły stres zaburza równowagę hormonalną.
 author: Przemek
-date: 2026-02-07T18:02:41.096Z
+date: 2025-04-21T14:32:10.146Z
 category:
   - Hormony
 thumbnail: /content/artykuly/img/kortyzol-pod-kontrola-jak-stres-wplywa-na-zdrowie-i-energie.png

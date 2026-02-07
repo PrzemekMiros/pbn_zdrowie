@@ -2,7 +2,7 @@
 title: Przewlekły stres i regulacja układu nerwowego jelito mózg
 description: Artykuł wyjaśnia, jak przewlekły stres wpływa na układ nerwowy oraz oś jelito–mózg, zaburzając trawienie, odporność i emocje. Poznasz mechanizmy, objawy i skuteczne strategie regulacji.
 author: Przemek
-date: 2026-02-05T17:08:48.610Z
+date: 2026-01-03T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/przewlekly-stres-i-regulacja-ukladu-nerwowego-jelito-mozg.png

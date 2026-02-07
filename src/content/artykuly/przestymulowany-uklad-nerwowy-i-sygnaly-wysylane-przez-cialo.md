@@ -2,7 +2,7 @@
 title: Przestymulowany układ nerwowy i sygnały wysyłane przez ciało
 description: Artykuł wyjaśnia, jak przewlekła stymulacja układu nerwowego wpływa na ciało, emocje i zdrowie oraz jak rozpoznać objawy przeciążenia i wspierać powrót do równowagi.
 author: Przemek
-date: 2026-02-07T10:22:40.591Z
+date: 2025-12-01T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/przestymulowany-uklad-nerwowy-i-sygnaly-wysylane-przez-cialo.png

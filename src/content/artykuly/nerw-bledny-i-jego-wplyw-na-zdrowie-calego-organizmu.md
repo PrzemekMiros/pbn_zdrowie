@@ -2,7 +2,7 @@
 title: Nerw błędny i jego wpływ na zdrowie całego organizmu
 description: Artykuł wyjaśnia rolę nerwu błędnego w regulacji układu nerwowego, trawienia, odporności i emocji. Dowiesz się, jak jego kondycja wpływa na zdrowie i samopoczucie.
 author: Przemek
-date: 2026-02-05T22:54:40.623Z
+date: 2025-07-15T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-i-jego-wplyw-na-zdrowie-calego-organizmu.png

@@ -2,7 +2,7 @@
 title: Neuroplastyczność a zdrowie psychiczne
 description: Jak zdolność mózgu do zmian wpływa na emocje, odporność psychiczną i proces zdrowienia. Praktyczne spojrzenie na neuroplastyczność w codziennym życiu.
 author: Przemek
-date: 2026-02-06T17:32:14.867Z
+date: 2025-10-13T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/neuroplastycznosc-a-zdrowie-psychiczne.png

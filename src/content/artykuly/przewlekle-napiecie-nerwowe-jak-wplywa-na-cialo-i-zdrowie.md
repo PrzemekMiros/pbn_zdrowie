@@ -2,7 +2,7 @@
 title: Przewlekłe napięcie nerwowe jak wpływa na ciało i zdrowie
 description: Przewlekłe napięcie nerwowe oddziałuje na układ nerwowy, hormony i całe ciało. Sprawdź, jakie są jego objawy, mechanizmy i skuteczne drogi regulacji.
 author: Przemek
-date: 2026-02-07T20:22:40.104Z
+date: 2025-12-05T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/przewlekle-napiecie-nerwowe-jak-wplywa-na-cialo-i-zdrowie.png

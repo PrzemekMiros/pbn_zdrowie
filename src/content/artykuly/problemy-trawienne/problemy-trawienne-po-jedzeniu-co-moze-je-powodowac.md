@@ -2,7 +2,7 @@
 title: Problemy trawienne po jedzeniu – co może je powodować?
 description: "sbsb"
 author: Przemek
-date: 2024-11-05T17:19:42.446Z
+date: 2025-11-03T14:32:10.146Z
 category:
   - Problemy trawienne
 thumbnail: /content/posts/img/problemy-trawienne/jedzenie.jpg

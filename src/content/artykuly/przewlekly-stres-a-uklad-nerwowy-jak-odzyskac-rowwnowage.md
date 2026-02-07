@@ -2,7 +2,7 @@
 title: Przewlekły stres a układ nerwowy jak odzyskać równowagę
 description: Przewlekły stres zaburza pracę układu nerwowego, prowadząc do napięcia, wyczerpania i problemów zdrowotnych. Sprawdź, jak rozpoznać objawy i skutecznie przywracać równowagę.
 author: Przemek
-date: 2026-02-05T21:14:40.846Z
+date: 2025-12-30T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/przewlekly-stres-a-uklad-nerwowy-jak-odzyskac-rowwnowage.png

@@ -2,7 +2,7 @@
 title: Nerw błędny klucz do równowagi organizmu
 description: Nerw błędny odgrywa kluczową rolę w regulacji stresu, trawienia, odporności i emocji. Poznaj jego funkcje, objawy zaburzeń oraz sposoby naturalnego wspierania.
 author: Przemek
-date: 2026-02-06T15:52:10.494Z
+date: 2025-09-23T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-klucz-do-rownowagi-organizmu.png

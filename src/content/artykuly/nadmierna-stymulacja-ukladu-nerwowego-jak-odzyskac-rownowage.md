@@ -2,7 +2,7 @@
 title: Nadmierna stymulacja układu nerwowego jak odzyskać równowagę
 description: Przewlekłe pobudzenie układu nerwowego to częsty problem współczesności. Sprawdź, jakie są jego objawy, przyczyny oraz skuteczne i bezpieczne sposoby regulacji.
 author: Przemek
-date: 2026-02-06T16:12:13.032Z
+date: 2025-04-29T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nadmierna-stymulacja-ukladu-nerwowego-jak-odzyskac-rownowage.png

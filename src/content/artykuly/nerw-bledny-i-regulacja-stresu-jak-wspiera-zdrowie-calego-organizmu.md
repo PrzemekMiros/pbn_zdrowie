@@ -2,7 +2,7 @@
 title: Nerw błędny i regulacja stresu jak wspiera zdrowie całego organizmu
 description: Nerw błędny odgrywa kluczową rolę w regulacji stresu, trawienia i odporności. Sprawdź, jak jego funkcjonowanie wpływa na zdrowie psychiczne i fizyczne.
 author: Przemek
-date: 2026-02-06T18:32:13.222Z
+date: 2025-08-09T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-i-regulacja-stresu-jak-wspiera-zdrowie-calego-organizmu.png

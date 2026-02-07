@@ -2,7 +2,7 @@
 title: Nadwrażliwość jelitowa i oś jelitowo mózgowa
 description: Artykuł wyjaśnia, czym jest nadwrażliwość jelitowa, jak działa oś jelitowo mózgowa oraz dlaczego stres i emocje tak silnie wpływają na trawienie.
 author: Przemek
-date: 2026-02-06T12:52:12.812Z
+date: 2025-05-07T14:32:10.146Z
 category:
   - Problemy trawienne
 thumbnail: /content/artykuly/img/nadwrazliwosc-jelitowa-i-os-jelitowo-mozgowa.png

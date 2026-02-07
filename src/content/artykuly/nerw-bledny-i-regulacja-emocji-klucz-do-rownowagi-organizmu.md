@@ -2,7 +2,7 @@
 title: Nerw błędny i regulacja emocji klucz do równowagi organizmu
 description: Nerw błędny pełni kluczową rolę w regulacji emocji, stresu i procesów regeneracyjnych. Artykuł wyjaśnia jego znaczenie oraz praktyczne sposoby wspierania zdrowia układu nerwowego.
 author: Przemek
-date: 2026-02-06T19:12:11.752Z
+date: 2025-08-05T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-i-regulacja-emocji-klucz-do-rownowagi-organizmu.png

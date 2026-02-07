@@ -2,7 +2,7 @@
 title: Jak przewlekły stres rozregulowuje układ nerwowy i co z tym zrobić
 description: Przewlekły stres może trwale zaburzać pracę układu nerwowego, wpływając na emocje, ciało i odporność. Sprawdź mechanizmy, objawy i skuteczne strategie regulacji.
 author: Przemek
-date: 2026-02-07T10:42:42.058Z
+date: 2025-02-02T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/jak-przewlekly-stres-rozregulowuje-uklad-nerwowy-i-co-z-tym-zrobic.png

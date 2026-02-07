@@ -2,7 +2,7 @@
 title: Jak przewlekły stres niszczy układ pokarmowy
 description: Przewlekły stres może prowadzić do poważnych zaburzeń trawiennych. Wyjaśniam mechanizmy psychosomatyczne, rolę układu nerwowego jelit oraz praktyczne drogi regeneracji.
 author: Przemek
-date: 2026-02-06T00:14:46.357Z
+date: 2025-01-29T14:32:10.146Z
 category:
   - Problemy trawienne
 thumbnail: /content/artykuly/img/jak-przewlekly-stres-niszczy-uklad-pokarmowy.png

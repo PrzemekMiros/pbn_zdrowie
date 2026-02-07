@@ -2,7 +2,7 @@
 title: Nerw błędny i jego wpływ na zdrowie całego ciała
 description: Artykuł wyjaśnia, czym jest nerw błędny, jak wpływa na stres, trawienie, odporność i emocje oraz w jaki sposób jego regulacja może wspierać zdrowie fizyczne i psychiczne.
 author: Przemek
-date: 2026-02-07T08:02:33.453Z
+date: 2025-07-11T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-i-jego-wplyw-na-zdrowie-calego-ciala.png

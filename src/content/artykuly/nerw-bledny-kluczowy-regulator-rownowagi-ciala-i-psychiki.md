@@ -2,7 +2,7 @@
 title: Nerw błędny jako kluczowy regulator równowagi ciała i psychiki
 description: Nerw błędny wpływa na trawienie, emocje, odporność i reakcję na stres. Sprawdź, jak działa i jak świadomie go wspierać.
 author: Przemek
-date: 2026-02-06T16:52:13.404Z
+date: 2025-10-05T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-kluczowy-regulator-rownowagi-ciala-i-psychiki.png

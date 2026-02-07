@@ -2,7 +2,7 @@
 title: Nerw błędny klucz do regulacji zdrowia psychicznego i ciała
 description: Nerw błędny odgrywa kluczową rolę w regulacji stresu, trawienia, emocji i odporności. Sprawdź, jak jego funkcjonowanie wpływa na zdrowie całego organizmu.
 author: Przemek
-date: 2026-02-05T20:14:47.603Z
+date: 2025-09-11T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-klucz-do-regulacji-zdrowia-psychicznego-i-ciala.png

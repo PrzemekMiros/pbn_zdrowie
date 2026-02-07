@@ -2,7 +2,7 @@
 title: Nerw błędny kluczowy regulator zdrowia
 description: Nerw błędny wpływa na trawienie, odporność, tętno i emocje. Sprawdź, jak działa i w jaki sposób możesz wspierać jego równowagę na co dzień.
 author: Przemek
-date: 2026-02-06T17:12:14.914Z
+date: 2025-10-09T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-kluczowy-regulator-zdrowia.png

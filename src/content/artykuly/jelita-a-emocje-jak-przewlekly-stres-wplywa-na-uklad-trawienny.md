@@ -2,7 +2,7 @@
 title: Jelita a emocje jak przewlekły stres wpływa na układ trawienny
 description: Jak stres, napięcie emocjonalne i przeciążenie psychiczne oddziałują na jelita, trawienie i mikrobiotę oraz co zrobić, by przywrócić równowagę.
 author: Przemek
-date: 2026-02-05T16:36:00.807Z
+date: 2025-03-11T14:32:10.146Z
 category:
   - Problemy trawienne
 thumbnail: /content/artykuly/img/jelita-a-emocje-jak-przewlekly-stres-wplywa-na-uklad-trawienny.png

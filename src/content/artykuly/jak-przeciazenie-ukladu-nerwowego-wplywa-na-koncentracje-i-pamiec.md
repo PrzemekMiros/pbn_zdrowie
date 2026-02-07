@@ -2,7 +2,7 @@
 title: Jak przeciążenie układu nerwowego wpływa na koncentrację i pamięć
 description: Przewlekłe przeciążenie układu nerwowego może osłabiać koncentrację, pamięć i jasność myślenia. Sprawdź mechanizmy neurobiologiczne i sposoby regeneracji.
 author: Przemek
-date: 2026-02-07T18:42:42.684Z
+date: 2025-01-25T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/jak-przeciazenie-ukladu-nerwowego-wplywa-na-koncentracje-i-pamiec.png

@@ -2,7 +2,7 @@
 title: Jak regulować nerw błędny aby uspokoić ciało i emocje
 description: Nerw błędny odgrywa kluczową rolę w regulacji stresu, emocji i zdrowia fizycznego. Sprawdź jak działa oraz w jaki sposób możesz go wspierać na co dzień.
 author: Przemek
-date: 2026-02-05T19:14:44.626Z
+date: 2025-02-14T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/jak-regulowac-nerw-bledny-aby-uspokoic-cialo-i-emocje.png

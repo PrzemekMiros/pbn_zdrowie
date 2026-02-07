@@ -2,7 +2,7 @@
 title: Przeciążony układ nerwowy jak rozpoznać i odzyskać równowagę
 description: Przewlekłe napięcie, drażliwość i zmęczenie mogą świadczyć o przeciążeniu układu nerwowego. Sprawdź objawy, przyczyny i skuteczne sposoby regeneracji.
 author: Przemek
-date: 2026-02-06T15:12:16.347Z
+date: 2025-11-23T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/przeciazony-uklad-nerwowy-jak-rozpoznac-i-odzyskac-rownowage.png

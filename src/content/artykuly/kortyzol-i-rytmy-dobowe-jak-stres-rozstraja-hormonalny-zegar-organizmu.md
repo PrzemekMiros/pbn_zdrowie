@@ -2,7 +2,7 @@
 title: Kortyzol i rytmy dobowe jak stres rozstraja hormonalny zegar organizmu
 description: Artykuł wyjaśnia rolę kortyzolu w regulacji rytmu dobowego oraz pokazuje, jak przewlekły stres zaburza gospodarkę hormonalną, energię i zdrowie całego organizmu.
 author: Przemek
-date: 2026-02-07T08:36:03.200Z
+date: 2025-04-17T14:32:10.146Z
 category:
   - Hormony
 thumbnail: /content/artykuly/img/kortyzol-i-rytmy-dobowe-jak-stres-rozstraja-hormonalny-zegar-organizmu.png

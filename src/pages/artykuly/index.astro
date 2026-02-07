@@ -96,6 +96,7 @@ const categories = Array.from(
         const date = artykul.date ? new Date(artykul.date) : null;
         const formattedDate = date ? date.toLocaleDateString("pl-PL", { day: "2-digit", month: "short", year: "numeric" }) : null;
         const updatedDate = artykul.updated ? new Date(artykul.updated) : date;
+        const categoryLabel = Array.isArray(artykul.category) ? artykul.category[0] : artykul.category;
         const tag = Array.isArray(artykul.tags) ? artykul.tags[0] : artykul.tags;
         const author = artykul.author ?? "Redakcja";
         const initials = author.split(" ").filter(Boolean).slice(0, 2).map((part) => part[0]).join("").toUpperCase();
@@ -134,7 +135,11 @@ const categories = Array.from(
 
               <div class="flex flex-col justify-center">
                 <div class="flex items-center gap-x-4 text-[11px] uppercase tracking-wider">
-                  {tag ? (
+                  {categoryLabel ? (
+                    <span class="font-bold text-orange-600">
+                      {categoryLabel}
+                    </span>
+                  ) : tag ? (
                     <span class="font-bold text-orange-600">
                       {tag}
                     </span>

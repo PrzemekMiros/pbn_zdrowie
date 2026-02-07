@@ -2,7 +2,7 @@
 title: Napięcie nerwu błędnego a regulacja emocji i trawienia
 description: Artykuł wyjaśnia, jak napięcie nerwu błędnego wpływa na emocje, stres i trawienie. Omawia objawy dysregulacji oraz skuteczne metody wspierania układu nerwowego.
 author: Przemek
-date: 2026-02-07T08:37:50.609Z
+date: 2025-06-05T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/napiecie-nerwu-blednego-a-regulacja-emocji-i-trawienia.png

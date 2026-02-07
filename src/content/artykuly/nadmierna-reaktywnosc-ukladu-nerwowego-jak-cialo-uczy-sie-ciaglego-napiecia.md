@@ -2,7 +2,7 @@
 title: Nadmierna reaktywność układu nerwowego jak ciało uczy się ciągłego napięcia
 description: Artykuł wyjaśnia, czym jest nadmierna reaktywność układu nerwowego, jakie są jej przyczyny, objawy somatyczne oraz jak poprzez regulację ciała i psychiki można przywrócić równowagę.
 author: Przemek
-date: 2026-02-06T18:12:10.020Z
+date: 2025-04-25T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nadmierna-reaktywnosc-ukladu-nerwowego-jak-cialo-uczy-sie-ciaglego-napiecia.png

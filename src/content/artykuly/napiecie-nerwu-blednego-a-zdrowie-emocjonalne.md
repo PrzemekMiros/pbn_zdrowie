@@ -2,7 +2,7 @@
 title: Napięcie nerwu błędnego a zdrowie emocjonalne
 description: Artykuł wyjaśnia, jak napięcie nerwu błędnego wpływa na emocje, stres, trawienie i odporność oraz jak wspierać jego regulację.
 author: Przemek
-date: 2026-02-06T14:12:15.523Z
+date: 2025-06-09T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/napiecie-nerwu-blednego-a-zdrowie-emocjonalne.png

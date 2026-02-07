@@ -2,7 +2,7 @@
 title: Kortyzol hormon wewnętrznej presji
 description: Kortyzol to nie tylko hormon stresu. Artykuł wyjaśnia jego rolę, wpływ na metabolizm, odporność i emocje oraz jak codzienne napięcie zaburza naturalny rytm hormonalny.
 author: Przemek
-date: 2026-02-07T09:02:39.027Z
+date: 2025-04-08T14:32:10.146Z
 category:
   - Hormony
 thumbnail: /content/artykuly/img/kortyzol-hormon-wewnetrznej-presji.png

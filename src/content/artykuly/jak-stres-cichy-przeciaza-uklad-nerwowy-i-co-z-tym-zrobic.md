@@ -2,7 +2,7 @@
 title: Jak stres cichy przeciąża układ nerwowy i co z tym zrobić
 description: Cichy stres może latami obciążać układ nerwowy, prowadząc do napięcia, zmęczenia i objawów psychosomatycznych. Sprawdź, jak go rozpoznać i przywrócić równowagę.
 author: Przemek
-date: 2026-02-06T14:52:13.437Z
+date: 2025-02-18T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/jak-stres-cichy-przeciaza-uklad-nerwowy-i-co-z-tym-zrobic.png

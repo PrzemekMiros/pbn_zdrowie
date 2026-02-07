@@ -2,7 +2,7 @@
 title: Nerw błędny i jego rola w regulacji stresu i trawienia
 description: Artykuł wyjaśnia, czym jest nerw błędny, jak wpływa na układ nerwowy, trawienie i odporność oraz w jaki sposób jego regulacja może wspierać zdrowie psychiczne i fizyczne.
 author: Przemek
-date: 2026-02-06T15:32:14.403Z
+date: 2025-06-29T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-i-jego-rola-w-regulacji-stresu-i-trawienia.png

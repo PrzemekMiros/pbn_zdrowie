@@ -2,7 +2,7 @@
 title: Oś jelito mózg jak stres zmienia trawienie i apetyt
 description: Artykuł wyjaśnia, jak przewlekły stres wpływa na oś jelito–mózg, zaburza trawienie, apetyt i mikrobiotę oraz jakie strategie pomagają przywrócić równowagę.
 author: Przemek
-date: 2026-02-07T13:42:40.543Z
+date: 2025-10-17T14:32:10.146Z
 category:
   - Problemy trawienne
 thumbnail: /content/artykuly/img/os-jelito-mozg-jak-stres-zmienia-trawienie-i-apetyt.png

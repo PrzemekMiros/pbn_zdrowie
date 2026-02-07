@@ -2,7 +2,7 @@
 title: Nerw błędny klucz do równowagi ciała i emocji
 description: Artykuł wyjaśniający rolę nerwu błędnego w zdrowiu układu nerwowego, trawienia, odporności i regulacji emocji oraz sposoby jego naturalnego wspierania.
 author: Przemek
-date: 2026-02-05T16:58:16.486Z
+date: 2025-09-15T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-klucz-do-rownowagi-ciala-i-emocji.png

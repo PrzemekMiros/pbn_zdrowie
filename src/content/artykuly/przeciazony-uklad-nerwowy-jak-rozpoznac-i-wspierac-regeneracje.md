@@ -2,7 +2,7 @@
 title: Przeciążony układ nerwowy jak rozpoznać i wspierać regenerację
 description: Przeciążenie układu nerwowego to coraz częstszy problem współczesnych ludzi. Sprawdź objawy, przyczyny oraz skuteczne sposoby regulacji i regeneracji nerwów.
 author: Przemek
-date: 2026-02-07T16:42:39.839Z
+date: 2025-11-27T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/przeciazony-uklad-nerwowy-jak-rozpoznac-i-wspierac-regeneracje.png

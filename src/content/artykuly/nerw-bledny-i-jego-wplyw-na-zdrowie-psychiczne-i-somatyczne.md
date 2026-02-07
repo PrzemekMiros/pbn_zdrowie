@@ -2,7 +2,7 @@
 title: Nerw błędny i jego wpływ na zdrowie psychiczne i somatyczne
 description: Nerw błędny jest kluczowym elementem układu nerwowego. Sprawdź, jak wpływa na emocje, trawienie, odporność i regenerację organizmu.
 author: Przemek
-date: 2026-02-05T18:54:42.674Z
+date: 2025-07-19T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-i-jego-wplyw-na-zdrowie-psychiczne-i-somatyczne.png

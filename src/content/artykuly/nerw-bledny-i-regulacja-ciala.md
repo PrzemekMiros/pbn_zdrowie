@@ -5,7 +5,7 @@ description: Nerw błędny odgrywa kluczową rolę w regulacji stresu, trawienia
 
 author: Przemek
 
-date: 2026-02-06T20:12:11.519Z
+date: 2025-08-01T14:32:10.146Z
 
 category:
   - Układ nerwowy

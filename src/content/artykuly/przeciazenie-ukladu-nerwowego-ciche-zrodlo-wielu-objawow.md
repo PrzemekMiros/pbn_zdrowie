@@ -2,7 +2,7 @@
 title: Przeciążenie układu nerwowego ciche źródło wielu objawów
 description: Przeciążenie układu nerwowego może prowadzić do bólu, lęku, problemów trawiennych i chronicznego zmęczenia. Sprawdź, jak je rozpoznać i skutecznie wspierać regenerację.
 author: Przemek
-date: 2026-02-06T19:52:12.546Z
+date: 2025-11-15T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/przeciazenie-ukladu-nerwowego-ciche-zrodlo-wielu-objawow.png

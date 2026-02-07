@@ -2,7 +2,7 @@
 title: Uczucie ciężkości po posiłku – dlaczego się pojawia?
 description: "sbsb"
 author: Przemek
-date: 2024-11-05T17:19:42.446Z
+date: 2025-11-11T14:32:10.146Z
 category:
   - Problemy trawienne
 thumbnail: /content/posts/img/problemy-trawienne/problemy-po-jedzeniu.jpg

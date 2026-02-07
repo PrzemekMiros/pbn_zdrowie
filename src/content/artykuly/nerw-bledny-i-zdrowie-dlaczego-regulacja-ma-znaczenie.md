@@ -2,7 +2,7 @@
 title: Nerw błędny i zdrowie dlaczego regulacja ma znaczenie
 description: Nerw błędny odgrywa kluczową rolę w regulacji stresu, trawienia i odporności. Sprawdź, jak jego prawidłowa aktywność wpływa na zdrowie całego organizmu.
 author: Przemek
-date: 2026-02-06T18:52:12.371Z
+date: 2025-08-17T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-i-zdrowie-dlaczego-regulacja-ma-znaczenie.png

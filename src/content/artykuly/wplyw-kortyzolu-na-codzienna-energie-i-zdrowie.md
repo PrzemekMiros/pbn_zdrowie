@@ -2,7 +2,7 @@
 title: Wpływ kortyzolu na codzienną energię i zdrowie
 description: Kortyzol to kluczowy hormon regulujący energię, stres i odporność. Sprawdź, jak jego nadmiar lub niedobór wpływa na zdrowie fizyczne i psychiczne.
 author: Przemek
-date: 2026-02-07T19:02:41.408Z
+date: 2026-02-01T14:32:10.146Z
 category:
   - Hormony
 thumbnail: /content/artykuly/img/wplyw-kortyzolu-na-codzienna-energie-i-zdrowie.png

@@ -2,7 +2,7 @@
 title: Nerw błędny a zdrowie jak uspokoić ciało i umysł
 description: Nerw błędny odgrywa kluczową rolę w regulacji stresu, trawienia i emocji. Sprawdź, jak działa oraz jak go naturalnie stymulować, by poprawić zdrowie ciała i równowagę układu nerwowego.
 author: Przemek
-date: 2026-02-05T17:34:08.072Z
+date: 2025-06-25T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-a-zdrowie-jak-uspokoic-cialo-i-umysl.png

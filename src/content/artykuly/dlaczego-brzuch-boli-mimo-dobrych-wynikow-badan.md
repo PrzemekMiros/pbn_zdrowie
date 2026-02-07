@@ -2,7 +2,7 @@
 title: Dlaczego brzuch boli mimo dobrych wyników badań
 description: Przewlekły ból brzucha przy prawidłowych wynikach badań to częsty problem. Sprawdź, jakie mechanizmy neurobiologiczne, hormonalne i psychosomatyczne mogą za nim stać.
 author: Przemek
-date: 2026-02-06T13:32:15.195Z
+date: 2025-01-05T14:32:10.146Z
 category:
   - Problemy trawienne
 thumbnail: /content/artykuly/img/dlaczego-brzuch-boli-mimo-dobrych-wynikow-badan.png

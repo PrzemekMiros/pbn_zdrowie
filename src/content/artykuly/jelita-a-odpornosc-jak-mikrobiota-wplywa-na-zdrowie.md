@@ -2,7 +2,7 @@
 title: Jelita a odporność jak mikrobiota wpływa na zdrowie
 description: Artykuł wyjaśnia, jak stan jelit i mikrobioty jelitowej bezpośrednio wpływa na odporność, procesy zapalne oraz podatność na infekcje.
 author: Przemek
-date: 2026-02-07T13:22:39.041Z
+date: 2025-03-19T14:32:10.146Z
 category:
   - Odporność
 thumbnail: /content/artykuly/img/jelita-a-odpornosc-jak-mikrobiota-wplywa-na-zdrowie.png

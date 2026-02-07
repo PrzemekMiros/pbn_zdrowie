@@ -2,7 +2,7 @@
 title: Przewlekły stres a układ nerwowy jak odzyskać równowagę
 description: Przewlekły stres zaburza pracę układu nerwowego, wpływa na zdrowie psychiczne i fizyczne. Sprawdź mechanizmy neurobiologiczne oraz skuteczne strategie regeneracji.
 author: Przemek
-date: 2026-02-07T14:42:40.797Z
+date: 2025-12-26T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/przewlekly-stres-a-uklad-nerwowy-jak-odzyskac-rownowage.png

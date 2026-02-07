@@ -2,7 +2,7 @@
 title: Nerw błędny i zdrowie emocjonalne
 description: Nerw błędny odgrywa kluczową rolę w regulacji stresu, emocji i regeneracji organizmu. Poznaj jego znaczenie, objawy zaburzeń oraz sposoby naturalnego wsparcia.
 author: Przemek
-date: 2026-02-07T15:02:42.314Z
+date: 2025-08-21T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-i-zdrowie-emocjonalne.png

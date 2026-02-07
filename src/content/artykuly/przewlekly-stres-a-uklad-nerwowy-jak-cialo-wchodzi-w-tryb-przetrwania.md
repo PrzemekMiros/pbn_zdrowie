@@ -2,7 +2,7 @@
 title: Przewlekły stres a układ nerwowy jak ciało wchodzi w tryb przetrwania
 description: Przewlekły stres stopniowo przeciąża układ nerwowy, zmienia reakcje ciała i wpływa na zdrowie psychiczne oraz fizyczne. Sprawdź, jak działa tryb przetrwania i jak z niego wyjść.
 author: Przemek
-date: 2026-02-06T20:32:12.605Z
+date: 2025-12-22T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/przewlekly-stres-a-uklad-nerwowy-jak-cialo-wchodzi-w-tryb-przetrwania.png

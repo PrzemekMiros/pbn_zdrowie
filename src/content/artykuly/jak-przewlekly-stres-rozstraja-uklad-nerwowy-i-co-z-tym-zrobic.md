@@ -2,7 +2,7 @@
 title: Jak przewlekły stres rozstraja układ nerwowy i co z tym zrobić
 description: Przewlekły stres stopniowo destabilizuje układ nerwowy, wpływając na zdrowie psychiczne i fizyczne. Sprawdź, jakie są objawy tego procesu i jak skutecznie przywrócić równowagę.
 author: Przemek
-date: 2026-02-07T14:02:42.465Z
+date: 2025-02-06T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/jak-przewlekly-stres-rozstraja-uklad-nerwowy-i-co-z-tym-zrobic.png

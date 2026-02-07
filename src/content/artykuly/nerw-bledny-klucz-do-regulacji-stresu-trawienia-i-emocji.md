@@ -2,7 +2,7 @@
 title: Nerw błędny klucz do regulacji stresu trawienia i emocji
 description: Nerw błędny odgrywa kluczową rolę w regulacji stresu, emocji, trawienia i rytmu serca. Sprawdź, jak jego dysfunkcja wpływa na zdrowie i jak wspierać go naturalnie.
 author: Przemek
-date: 2026-02-07T13:02:39.803Z
+date: 2025-09-06T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-klucz-do-regulacji-stresu-trawienia-i-emocji.png

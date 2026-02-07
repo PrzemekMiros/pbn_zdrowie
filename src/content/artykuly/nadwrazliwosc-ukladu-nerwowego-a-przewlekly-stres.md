@@ -2,7 +2,7 @@
 title: Nadwrażliwość układu nerwowego a przewlekły stres
 description: Artykuł wyjaśnia, czym jest nadwrażliwość układu nerwowego, jak rozwija się pod wpływem przewlekłego stresu oraz jakie objawy somatyczne i psychiczne mogą jej towarzyszyć.
 author: Przemek
-date: 2026-02-07T20:42:40.468Z
+date: 2025-05-11T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nadwrazliwosc-ukladu-nerwowego-a-przewlekly-stres.png

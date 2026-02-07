@@ -2,7 +2,7 @@
 title: Jak układ przywspółczulny wspiera zdrowie i odporność
 description: Układ przywspółczulny odpowiada za regenerację, trawienie i równowagę organizmu. Sprawdź, jak wpływa na zdrowie, odporność i codzienne funkcjonowanie.
 author: Przemek
-date: 2026-02-05T22:34:47.071Z
+date: 2025-03-03T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/jak-uklad-przywspolczulny-wspiera-zdrowie-i-odpornosc.png

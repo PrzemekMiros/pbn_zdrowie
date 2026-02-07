@@ -2,7 +2,7 @@
 title: Nerw błędny jako klucz do równowagi emocjonalnej i trawienia
 description: Nerw błędny odgrywa kluczową rolę w regulacji stresu, emocji i pracy układu pokarmowego. Sprawdź, jak wspiera zdrowie psychiczne i fizyczne.
 author: Przemek
-date: 2026-02-07T11:22:41.926Z
+date: 2025-08-29T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-jako-klucz-do-rownowagi-emocjonalnej-i-trawienia.png

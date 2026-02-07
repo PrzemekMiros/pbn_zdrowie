@@ -2,7 +2,7 @@
 title: Dlaczego jelita wpływają na nastrój i odporność
 description: Jelita to nie tylko trawienie. W artykule wyjaśniam, jak mikrobiota jelitowa wpływa na układ nerwowy, odporność, emocje i ogólne samopoczucie.
 author: Przemek
-date: 2026-02-07T08:22:41.846Z
+date: 2025-01-09T14:32:10.146Z
 category:
   - Problemy trawienne
 thumbnail: /content/artykuly/img/dlaczego-jelita-wplywaja-na-nastroj-i-odpornosc.png

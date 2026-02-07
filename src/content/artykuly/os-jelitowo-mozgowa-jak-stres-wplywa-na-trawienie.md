@@ -2,7 +2,7 @@
 title: Oś jelitowo‑mózgowa jak stres wpływa na trawienie
 description: Artykuł wyjaśnia, czym jest oś jelitowo‑mózgowa i jak stres, emocje oraz napięcie układu nerwowego wpływają na procesy trawienne, mikrobiotę i zdrowie jelit.
 author: Przemek
-date: 2026-02-05T19:54:43.549Z
+date: 2025-10-21T14:32:10.146Z
 category:
   - Problemy trawienne
 thumbnail: /content/artykuly/img/os-jelitowo-mozgowa-jak-stres-wplywa-na-trawienie.png

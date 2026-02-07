@@ -2,7 +2,7 @@
 title: Jelita a zdrowie psychiczne jak mikrobiota wpływa na nastrój
 description: Artykuł wyjaśnia, jak stan jelit i mikrobioty wpływa na psychikę, emocje i odporność na stres, pokazując mechanizmy osi jelita–mózg oraz praktyczne sposoby dbania o równowagę.
 author: Przemek
-date: 2026-02-07T12:02:43.240Z
+date: 2025-03-23T14:32:10.146Z
 category:
   - Problemy trawienne
 thumbnail: /content/artykuly/img/jelita-a-zdrowie-psychiczne-jak-mikrobiota-wplywa-na-nastroj.png

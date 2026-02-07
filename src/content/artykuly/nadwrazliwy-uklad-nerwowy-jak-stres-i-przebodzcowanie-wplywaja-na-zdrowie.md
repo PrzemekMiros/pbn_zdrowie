@@ -2,7 +2,7 @@
 title: Nadwrażliwy układ nerwowy jak stres i przebodźcowanie wpływają na zdrowie
 description: Artykuł wyjaśnia, czym jest nadwrażliwość układu nerwowego, jak przewlekły stres i nadmiar bodźców wpływają na organizm oraz jakie strategie pomagają przywrócić równowagę.
 author: Przemek
-date: 2026-02-05T23:14:42.486Z
+date: 2025-05-27T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nadwrazliwy-uklad-nerwowy-jak-stres-i-przebodzcowanie-wplywaja-na-zdrowie.png

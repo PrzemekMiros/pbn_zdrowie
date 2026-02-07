@@ -2,7 +2,7 @@
 title: Kortyzol hormon stresu i równowagi organizmu
 description: Kortyzol to hormon stresu, ale także kluczowy regulator metabolizmu, odporności i energii. Sprawdź, jak działa, co go zaburza i jak wspierać jego naturalną równowagę.
 author: Przemek
-date: 2026-02-05T16:26:34.613Z
+date: 2025-03-31T14:32:10.146Z
 category:
   - Hormony
 thumbnail: /content/artykuly/img/kortyzol-hormon-stresu-i-rownowagi-organizmu.png

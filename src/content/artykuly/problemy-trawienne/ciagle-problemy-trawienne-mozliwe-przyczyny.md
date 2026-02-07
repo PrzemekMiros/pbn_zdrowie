@@ -2,7 +2,7 @@
 title: Ciagłe problemy trawienne - możliwe przyczyny
 description: "sbsb"
 author: Przemek
-date: 2024-11-05T17:19:42.446Z
+date: 2025-10-29T14:32:10.146Z
 category:
   - Problemy trawienne
 thumbnail: /content/posts/img/problemy-trawienne/trawienie.png

@@ -2,7 +2,7 @@
 title: Nerw błędny i jego rola w regulacji stresu oraz zdrowia
 description: Poznaj kluczową rolę nerwu błędnego w regulacji stresu, emocji i zdrowia całego organizmu oraz praktyczne sposoby wspierania jego funkcji.
 author: Przemek
-date: 2026-02-05T19:34:41.410Z
+date: 2025-07-07T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-i-jego-rola-w-regulacji-stresu-oraz-zdrowia.png

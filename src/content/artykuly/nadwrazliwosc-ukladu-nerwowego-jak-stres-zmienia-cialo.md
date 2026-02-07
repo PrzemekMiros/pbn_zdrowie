@@ -2,7 +2,7 @@
 title: Nadwrażliwość układu nerwowego jak stres zmienia ciało
 description: Artykuł wyjaśnia, czym jest nadwrażliwość układu nerwowego, jak przewlekły stres wpływa na ciało i psychikę oraz jakie strategie pomagają przywrócić równowagę.
 author: Przemek
-date: 2026-02-05T16:14:28.878Z
+date: 2025-05-23T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nadwrazliwosc-ukladu-nerwowego-jak-stres-zmienia-cialo.png

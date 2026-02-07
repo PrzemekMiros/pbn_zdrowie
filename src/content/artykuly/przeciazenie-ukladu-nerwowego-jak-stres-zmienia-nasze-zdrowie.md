@@ -2,7 +2,7 @@
 title: Przeciążenie układu nerwowego jak stres zmienia nasze zdrowie
 description: Artykuł wyjaśnia, jak długotrwały stres przeciąża układ nerwowy, wpływa na ciało i psychikę oraz jakie sygnały ostrzegawcze i strategie wspierania regeneracji warto znać.
 author: Przemek
-date: 2026-02-07T08:07:34.171Z
+date: 2025-11-19T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/przeciazenie-ukladu-nerwowego-jak-stres-zmienia-nasze-zdrowie.png

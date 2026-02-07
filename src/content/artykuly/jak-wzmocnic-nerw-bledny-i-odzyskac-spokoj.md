@@ -2,7 +2,7 @@
 title: Jak wzmocnić nerw błędny i odzyskać spokój
 description: Artykuł wyjaśnia rolę nerwu błędnego w regulacji stresu, emocji i zdrowia całego organizmu oraz pokazuje, jak świadomie wspierać jego prawidłowe funkcjonowanie.
 author: Przemek
-date: 2026-02-07T10:02:37.296Z
+date: 2025-03-07T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/jak-wzmocnic-nerw-bledny-i-odzyskac-spokoj.png

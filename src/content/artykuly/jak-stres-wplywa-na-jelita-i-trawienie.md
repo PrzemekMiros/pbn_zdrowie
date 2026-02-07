@@ -2,7 +2,7 @@
 title: Jak stres wpływa na jelita i trawienie
 description: Artykuł wyjaśnia, jak przewlekły stres zaburza pracę jelit, mikrobiotę i trawienie. Pokazuje mechanizmy osi mózg–jelita oraz praktyczne sposoby regeneracji układu pokarmowego.
 author: Przemek
-date: 2026-02-07T09:42:38.815Z
+date: 2025-02-23T14:32:10.146Z
 category:
   - Problemy trawienne
 thumbnail: /content/artykuly/img/jak-stres-wplywa-na-jelita-i-trawienie.png

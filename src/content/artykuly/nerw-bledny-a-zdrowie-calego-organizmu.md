@@ -2,7 +2,7 @@
 title: Nerw błędny a zdrowie całego organizmu
 description: Nerw błędny odgrywa kluczową rolę w regulacji stresu, trawienia i odporności. Sprawdź, jak jego kondycja wpływa na ciało i psychikę oraz jak wspierać go na co dzień.
 author: Przemek
-date: 2026-02-06T13:52:09.479Z
+date: 2025-06-21T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-a-zdrowie-calego-organizmu.png

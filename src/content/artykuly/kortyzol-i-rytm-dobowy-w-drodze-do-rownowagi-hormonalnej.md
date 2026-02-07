@@ -2,7 +2,7 @@
 title: Kortyzol i rytm dobowy w drodze do równowagi hormonalnej
 description: Kortyzol może być twoim sprzymierzeńcem albo wrogiem. Sprawdź, jak rytm dobowy, styl życia i stres wpływają na ten hormon oraz jak odzyskać hormonalną równowagę.
 author: Przemek
-date: 2026-02-07T17:02:39.741Z
+date: 2025-04-13T14:32:10.146Z
 category:
   - Hormony
 thumbnail: /content/artykuly/img/kortyzol-i-rytm-dobowy-w-drodze-do-rownowagi-hormonalnej.png

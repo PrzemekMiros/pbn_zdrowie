@@ -2,7 +2,7 @@
 title: Osie jelitowo-mózgowo-immunologiczna jak zdrowe jelita wzmacniają odporność
 description: Artykuł wyjaśnia, jak stan jelit wpływa na układ odpornościowy i mózg, omawia mikrobiotę, dietę, stres oraz praktyczne sposoby wzmacniania odporności od strony jelit.
 author: Przemek
-date: 2026-02-07T11:42:43.459Z
+date: 2025-10-25T14:32:10.146Z
 category:
   - Odporność
 thumbnail: /content/artykuly/img/osie-jelitowo-mozgowo-immunologiczna-jak-zdrowe-jelita-wzmacniaja-odpornosc.png

@@ -2,7 +2,7 @@
 title: Przewlekły stres a przeciążenie układu nerwowego
 description: Artykuł wyjaśnia, jak długotrwały stres wpływa na układ nerwowy, objawia się w ciele i psychice oraz jakie kroki pomagają przywrócić równowagę.
 author: Przemek
-date: 2026-02-05T20:34:42.855Z
+date: 2025-12-13T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/przewlekly-stres-a-przeciazenie-ukladu-nerwowego.png

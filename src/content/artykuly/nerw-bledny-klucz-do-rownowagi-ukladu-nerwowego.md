@@ -2,7 +2,7 @@
 title: Nerw błędny klucz do równowagi układu nerwowego
 description: Nerw błędny odgrywa kluczową rolę w regulacji stresu, emocji i pracy narządów wewnętrznych. Sprawdź, jak wspiera zdrowie psychiczne i fizyczne.
 author: Przemek
-date: 2026-02-06T13:12:12.684Z
+date: 2025-10-01T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-klucz-do-rownowagi-ukladu-nerwowego.png

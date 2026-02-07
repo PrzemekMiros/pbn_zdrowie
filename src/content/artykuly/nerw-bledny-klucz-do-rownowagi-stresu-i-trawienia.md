@@ -2,7 +2,7 @@
 title: Nerw błędny klucz do równowagi stresu i trawienia
 description: Artykuł wyjaśnia, jak nerw błędny wpływa na regulację stresu, emocji i pracy układu trawiennego oraz jak poprzez styl życia wspierać jego prawidłowe funkcjonowanie.
 author: Przemek
-date: 2026-02-07T12:22:40.881Z
+date: 2025-09-27T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-klucz-do-rownowagi-stresu-i-trawienia.png

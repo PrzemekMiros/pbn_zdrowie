@@ -2,7 +2,7 @@
 title: Nerw błędny i naturalna regulacja stresu
 description: Artykuł wyjaśnia rolę nerwu błędnego w regulacji stresu, emocji i zdrowia. Dowiesz się, jak świadomie wspierać układ nerwowy i odzyskiwać wewnętrzną równowagę.
 author: Przemek
-date: 2026-02-07T14:22:41.463Z
+date: 2025-07-28T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-i-naturalna-regulacja-stresu.png

@@ -2,7 +2,7 @@
 title: Regulacja nerwu błędnego w codziennym stresie
 description: Artykuł wyjaśnia rolę nerwu błędnego w reakcji na stres oraz pokazuje, jak jego regulacja wpływa na zdrowie psychiczne, trawienie, odporność i ogólną równowagę organizmu.
 author: Przemek
-date: 2026-02-06T12:20:04.432Z
+date: 2026-01-27T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/regulacja-nerwu-blednego-w-codziennym-stresie.png

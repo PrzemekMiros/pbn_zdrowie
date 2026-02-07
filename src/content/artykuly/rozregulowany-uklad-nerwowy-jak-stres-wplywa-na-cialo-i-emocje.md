@@ -2,7 +2,7 @@
 title: Rozregulowany układ nerwowy jak stres wpływa na ciało i emocje
 description: Przewlekły stres może rozregulować układ nerwowy i prowadzić do licznych objawów fizycznych oraz emocjonalnych. Sprawdź mechanizmy, sygnały ostrzegawcze i sposoby regulacji.
 author: Przemek
-date: 2026-02-07T08:03:42.388Z
+date: 2026-02-04T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/rozregulowany-uklad-nerwowy-jak-stres-wplywa-na-cialo-i-emocje.png

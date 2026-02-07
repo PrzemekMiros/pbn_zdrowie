@@ -2,7 +2,7 @@
 title: Kortyzol hormon stresu jak wpływa na zdrowie
 description: Kortyzol to kluczowy hormon stresu, który wpływa na metabolizm, odporność i układ nerwowy. Sprawdź, jak jego nadmiar lub niedobór odbija się na zdrowiu.
 author: Przemek
-date: 2026-02-06T16:32:15.329Z
+date: 2025-04-04T14:32:10.146Z
 category:
   - Hormony
 thumbnail: /content/artykuly/img/kortyzol-hormon-stresu-jak-wplywa-na-zdrowie.png

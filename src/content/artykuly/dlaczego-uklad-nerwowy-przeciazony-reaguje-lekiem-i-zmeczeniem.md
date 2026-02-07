@@ -2,7 +2,7 @@
 title: Dlaczego układ nerwowy przeciążony reaguje lękiem i zmęczeniem
 description: Przewlekłe napięcie, stres i brak regeneracji mogą rozregulować układ nerwowy. Wyjaśniam mechanizmy, objawy oraz sposoby wspierania równowagi nerwowej.
 author: Przemek
-date: 2026-02-07T08:05:02.308Z
+date: 2025-01-21T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/dlaczego-uklad-nerwowy-przeciazony-reaguje-lekiem-i-zmeczeniem.png

@@ -2,7 +2,7 @@
 title: Nadwrażliwość jelitowa gdy układ trawienny reaguje na stres
 description: Artykuł wyjaśnia, czym jest nadwrażliwość jelitowa, jak stres i układ nerwowy wpływają na trawienie oraz jakie kroki wspierają regenerację osi jelita–mózg.
 author: Przemek
-date: 2026-02-07T18:22:37.676Z
+date: 2025-05-03T14:32:10.146Z
 category:
   - Problemy trawienne
 thumbnail: /content/artykuly/img/nadwrazliwosc-jelitowa-gdy-uklad-trawienny-reaguje-na-stres.png

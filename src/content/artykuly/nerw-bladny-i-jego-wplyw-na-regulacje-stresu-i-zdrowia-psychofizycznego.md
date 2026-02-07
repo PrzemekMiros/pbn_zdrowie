@@ -2,7 +2,7 @@
 title: Nerw błędny i jego wpływ na regulację stresu i zdrowia psychofizycznego
 description: Nerw błędny odgrywa kluczową rolę w regulacji stresu, emocji i pracy narządów wewnętrznych. Sprawdź, jak wspierać jego funkcjonowanie i poprawiać zdrowie.
 author: Przemek
-date: 2026-02-05T23:34:44.137Z
+date: 2025-06-17T14:32:10.146Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bladny-i-jego-wplyw-na-regulacje-stresu-i-zdrowia-psychofizycznego.png
