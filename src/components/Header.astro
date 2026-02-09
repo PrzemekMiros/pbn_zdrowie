@@ -11,7 +11,6 @@ const navItems = [
     { href: "/uklad-nerwowy/", label: "Układ nerwowy" },
     { href: "/sen-i-regeneracja/", label: "Sen i regeneracja" },
     { href: "/hormony/", label: "Hormony" },
-    { href: "/bole-ciala/", label: "Bóle ciała" },
     { href: "/odpornosc/", label: "Odporność" },
 	{ href: "/artykuly/", label: "Artykuły" },
 ];
@@ -48,7 +47,7 @@ const linkClass = (href) =>
                 {
                     navItems.map((item) => (
                         <a
-                            class={`${linkClass(item.href)} transition-colors hover:text-black`}
+                            class={`${linkClass(item.href)} text-sm transition-colors hover:text-black`}
                             href={item.href}
                             aria-current={isActive(item.href) ? "page" : undefined}
                         >
