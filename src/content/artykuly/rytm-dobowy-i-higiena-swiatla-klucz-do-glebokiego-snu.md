@@ -2,7 +2,7 @@
 title: Rytm dobowy i higiena światła klucz do głębokiego snu
 description: Artykuł wyjaśnia, jak rytm dobowy i ekspozycja na światło wpływają na sen, regenerację oraz zdrowie hormonalne, oferując praktyczne wskazówki poprawy jakości snu.
 author: Przemek
-date: 2026-02-07T21:04:02.821Z
+date: 2025-10-22T21:04:02.821Z
 category:
   - Sen i regeneracja
 thumbnail: /content/artykuly/img/rytm-dobowy-i-higiena-swiatla-klucz-do-glebokiego-snu.png

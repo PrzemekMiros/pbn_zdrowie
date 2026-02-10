@@ -2,7 +2,7 @@
 title: Jak światło steruje snem i czuwaniem
 description: Światło jest najsilniejszym regulatorem rytmu dobowego. Sprawdź, jak wpływa na sen, hormony i regenerację oraz jak świadomie używać światła na co dzień.
 author: Przemek
-date: 2026-02-07T21:14:08.418Z
+date: 2026-01-11T21:14:08.418Z
 category:
   - Sen i regeneracja
 thumbnail: /content/artykuly/img/jak-swiatlo-steruje-snem-i-czuwaniem.png

@@ -2,7 +2,7 @@
 title: Jelita jako drugi mózg jak emocje wpływają na trawienie
 description: Artykuł wyjaśniający, jak przewlekły stres i emocje oddziałują na jelita, florę bakteryjną i zdrowie trawienne w ujęciu psychosomatycznym.
 author: Przemek
-date: 2026-02-07T21:33:52.869Z
+date: 2026-01-27T21:33:52.869Z
 category:
   - Psychosomatyka
 thumbnail: /content/artykuly/img/jelita-jako-drugie-mozg-jak-emocje-wplywaja-na-trawienie.png

@@ -2,7 +2,7 @@
 title: Rytm dobowy i światło jak regulować sen naturalnie
 description: Jak światło dzienne i sztuczne wpływa na rytm dobowy oraz jakość snu. Praktyczny przewodnik oparty na fizjologii i aktualnej wiedzy medycznej.
 author: Przemek
-date: 2026-02-07T21:23:31.016Z
+date: 2025-03-01T21:23:31.016Z
 category:
   - Sen i regeneracja
 thumbnail: /content/artykuly/img/rytm-dobowy-i-swiatlo-jak-regulowac-sen-naturalnie.png

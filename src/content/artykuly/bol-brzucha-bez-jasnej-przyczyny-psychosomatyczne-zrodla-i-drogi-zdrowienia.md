@@ -2,7 +2,7 @@
 title: Ból brzucha bez jasnej przyczyny psychosomatyczne źródła i drogi zdrowienia
 description: Bóle brzucha bez uchwytnej diagnozy często mają podłoże psychosomatyczne. Artykuł wyjaśnia mechanizmy, rolę stresu, emocji oraz skuteczne kierunki terapeutyczne.
 author: Przemek
-date: 2026-02-07T21:46:07.363Z
+date: 2026-02-11T21:46:07.363Z
 category:
   - Psychosomatyka
 thumbnail: /content/artykuly/img/bol-brzucha-bez-jasnej-przyczyny-psychosomatyczne-zrodla-i-drogi-zdrowienia.png

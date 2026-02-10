@@ -2,7 +2,7 @@
 title: Ból brzucha jako język emocji w psychosomatyce
 description: Artykuł wyjaśnia, jak emocje, stres i nieuświadomione konflikty mogą wpływać na bóle brzucha oraz funkcjonowanie układu pokarmowego w ujęciu psychosomatycznym.
 author: Przemek
-date: 2026-02-07T21:51:19.869Z
+date: 2026-01-29T21:51:19.869Z
 category:
   - Psychosomatyka
 thumbnail: /content/artykuly/img/bol-brzucha-jako-jezyk-emocji-w-psychosomatyce.png

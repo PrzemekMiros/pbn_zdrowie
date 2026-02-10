@@ -2,7 +2,7 @@
 title: Bóle brzucha widziane przez pryzmat psychosomatyki
 description: Bóle brzucha bez uchwytnej przyczyny organicznej mogą wynikać z napięć emocjonalnych. Artykuł omawia psychosomatyczne mechanizmy, diagnozę oraz drogi terapii.
 author: Przemek
-date: 2026-02-07T21:36:04.006Z
+date: 2025-02-19T21:36:04.006Z
 category:
   - Psychosomatyka
 thumbnail: /content/artykuly/img/bole-brzucha-widziane-przez-pryzmat-psychosomatyki.png

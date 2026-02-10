@@ -2,7 +2,7 @@
 title: Jak rytm dobowy wpływa na zdrowy sen
 description: Artykuł wyjaśnia, czym jest rytm dobowy, jak reguluje sen i czuwanie oraz w jaki sposób styl życia, światło i hormony wpływają na jakość snu i regenerację.
 author: Przemek
-date: 2026-02-07T21:13:08.159Z
+date: 2026-01-12T21:13:08.159Z
 category:
   - Sen i regeneracja
 thumbnail: /content/artykuly/img/jak-rytm-dobowy-wplywa-na-zdrowy-sen.png

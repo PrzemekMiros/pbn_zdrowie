@@ -2,7 +2,7 @@
 title: Światło niebieskie a jakość snu niewidzialny wróg wieczornego wyciszenia
 description: Artykuł wyjaśnia, jak światło niebieskie emitowane przez ekrany wpływa na rytm dobowy, melatoninę i jakość snu oraz przedstawia praktyczne sposoby ochrony snu.
 author: Przemek
-date: 2026-02-07T21:19:52.727Z
+date: 2025-08-23T21:19:52.727Z
 category:
   - Sen i regeneracja
 thumbnail: /content/artykuly/img/swiatlo-niebieskie-a-jakosc-snu-niewidzialny-wrog-wieczornego-wyciszenia.png

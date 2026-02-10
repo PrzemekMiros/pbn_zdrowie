@@ -2,7 +2,7 @@
 title: Nerw błędny strażnik równowagi psychofizycznej
 description: Nerw błędny odgrywa kluczową rolę w regulacji stresu, trawienia i odporności. Sprawdź, jak wpływa na zdrowie psychiczne i somatyczne.
 author: Przemek
-date: 2026-02-07T21:02:38.960Z
+date: 2025-07-24T21:02:38.960Z
 category:
   - Układ nerwowy
 thumbnail: /content/artykuly/img/nerw-bledny-straznik-rownowagi-psychofizycznej.png

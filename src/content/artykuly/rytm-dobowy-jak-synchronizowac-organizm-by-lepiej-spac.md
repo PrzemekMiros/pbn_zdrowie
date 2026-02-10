@@ -2,7 +2,7 @@
 title: Rytm dobowy jak synchronizować organizm by lepiej spać
 description: Artykuł wyjaśnia czym jest rytm dobowy, jak światło, hormony i styl życia wpływają na sen oraz jak praktycznie zsynchronizować organizm, aby poprawić jakość snu i regeneracji.
 author: Przemek
-date: 2026-02-07T21:31:53.980Z
+date: 2025-06-17T21:31:53.980Z
 category:
   - Sen i regeneracja
 thumbnail: /content/artykuly/img/rytm-dobowy-jak-synchronizowac-organizm-by-lepiej-spac.png

@@ -1,8 +1,8 @@
 ---
-title: Ból brzucha i jelita emocji jak stres mówi przez układ trawienny
+title: Ból brzucha i jelita - jak stres mówi przez układ trawienny
 description: Artykuł wyjaśnia psychosomatyczne przyczyny bólu brzucha, rolę stresu i emocji w pracy jelit oraz sposoby rozumienia sygnałów płynących z układu trawiennego.
 author: Przemek
-date: 2026-02-07T21:59:33.687Z
+date: 2025-12-07T21:59:33.687Z
 category:
   - Psychosomatyka
 thumbnail: /content/artykuly/img/bol-brzucha-i-jelita-emocji-jak-stres-mowi-przez-uklad-trawienny.png
