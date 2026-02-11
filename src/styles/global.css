@@ -181,7 +181,7 @@ pre.astro-code {
   fill: none;
 }
 .circle-container svg.circle-progress path {
-  stroke: var(--accent);
+  stroke: var(--accent2);
   stroke-width: 4;
   box-sizing: border-box;
   transition: stroke-dashoffset 100ms linear !important;
