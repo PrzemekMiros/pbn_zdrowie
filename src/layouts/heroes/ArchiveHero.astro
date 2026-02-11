@@ -34,7 +34,7 @@ const { title, lead, meta } = Astro.props;
   </div>
 </section>
 
-  <section class="relative py-5 flex flex-row items-center justify-between border-b border-gray-200">
+  <section class="relative py-5 border-b border-gray-200">
     {meta ? (
       <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">{meta}</p>
     ) : (
@@ -55,8 +55,4 @@ const { title, lead, meta } = Astro.props;
       </div>
     )}
 
-    <a href="/kontakt/" class="flex items-center gap-3 group text-gray-900 font-extrabold text-[11px] uppercase tracking-widest hover:text-orange-600 transition-colors  hidden md:block">
-      Bezpłatna konsultacja
-      <span class="text-orange-600 text-lg -translate-y-0.5 group-hover:translate-x-1 transition-transform">»»»</span>
-    </a>
   </section>

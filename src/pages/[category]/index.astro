@@ -208,7 +208,7 @@ export const prerender = true;
 
       <aside class="sticky top-34 self-start space-y-8">
         <div>
-          <h3 class="text-xs font-bold uppercase tracking-[0.2em] mb-6 border-l-2 border-blue-600 pl-4">Kategorie</h3>
+          <h3 class="text-xs font-bold uppercase tracking-[0.2em] mb-6 border-l-2 border-[var(--accent)] pl-4">Kategorie</h3>
           {sortedCategories.length ? (
             <ul class="space-y-2">
               {sortedCategories.map((category) => {
@@ -217,7 +217,7 @@ export const prerender = true;
                   "block rounded-xl border px-4 py-3 text-sm transition-all",
                   isActive
                     ? "bg-blue-50 border-blue-500/40 text-[var(--accent)]"
-                    : "bg-gray-100 border-white/5 text-neutral-600 hover:border-blue-600/50 hover:text-[var(--accent)]",
+                    : "bg-gray-100 border-white/5 text-neutral-600 hover:border-[var(--accent)] hover:text-[var(--accent)]",
                 ].join(" ");
                 return (
                   <li key={category.slug}>
