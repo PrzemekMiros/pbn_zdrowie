@@ -68,9 +68,12 @@ const getPostUrl = (post) => `/artykuly/${post.categorySlug}/${post.slug}/`;
 
 <div class="relative max-w-7xl pb-20 pt-18">
   <div class="absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 bg-gray-100 overflow-hidden -z-1" style="perspective: 1000px;"></div>
-  <div class="mb-8 border-b border-gray-400 pb-4">
-    <h2 class="text-2xl font-bold text-gray-900 uppercase tracking-tight">{TARGET_CATEGORY}</h2>
-  </div>
+
+  <div class="relative flex items-center mb-8 border-b border-gray-400 pb-4">
+  <div class="absolute -left-2 h-10 w-10 rounded-full bg-[var(--accent)]"></div>
+  
+    <h2 class="text-2xl font-bold text-gray-900 uppercase z-9">{TARGET_CATEGORY}</h2>
+</div>
 
   {posts.length ? (
     <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-none md:grid-rows-2 gap-4 h-auto md:h-[500px]">

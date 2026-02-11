@@ -69,9 +69,11 @@ const getPostUrl = (post) => `/artykuly/${post.categorySlug}/${post.slug}/`;
 <div class="relative max-w-7xl pb-20 pt-18 bg-gray-100">
   <div class="absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 bg-gray-100 overflow-hidden -z-1" style="perspective: 1000px;">
 </div>
-  <div class="mb-8 border-b border-gray-400 pb-4">
-    <h2 class="text-2xl font-bold text-gray-900 uppercase tracking-tight">Hormony</h2>
-  </div>
+  <div class="relative flex items-center mb-8 border-b border-gray-400 pb-4">
+  <div class="absolute -left-2 h-10 w-10 rounded-full bg-[var(--accent)]"></div>
+  
+    <h2 class="text-2xl font-bold text-gray-900 uppercase z-9">Hormony</h2>
+</div>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
     {posts.map((post) => {
       const image = resolveArticleImage(post.tileImage ?? post.thumbnail);
@@ -96,7 +98,7 @@ const getPostUrl = (post) => `/artykuly/${post.categorySlug}/${post.slug}/`;
             )}
           </div>
           <div class="w-2/3 flex flex-col justify-between h-full">
-            <h3 class="font-bold text-gray-900 leading-snug group-hover:text-sky-500 transition-colors line-clamp-2">
+            <h3 class="font-bold text-gray-900 leading-snug group-hover:text-[var(--accent)] transition-colors line-clamp-2">
               {post.title ?? post.slug}
             </h3>
             <div class="flex justify-between items-center mt-3 text-[11px] text-gray-400 font-medium">
@@ -110,7 +112,7 @@ const getPostUrl = (post) => `/artykuly/${post.categorySlug}/${post.slug}/`;
               ) : (
                 <span></span>
               )}
-              <button class="hover:text-sky-500">
+              <button class="hover:text-[var(--accent)]">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
                 </svg>

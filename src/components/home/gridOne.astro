@@ -65,7 +65,7 @@ const getAuthor = (post) => post?.author ?? "Redakcja";
 const getPostUrl = (post) => `/artykuly/${post.categorySlug}/${post.slug}/`;
 ---
 
-<div class="max-w-7xl mx-auto pb-20 pt-8 font-sans">
+<div class="max-w-7xl mx-auto pt-8 font-sans">
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
     {mainPost ? (
       <a class="lg:col-span-2 relative group overflow-hidden rounded-sm cursor-pointer" href={getPostUrl(mainPost)}>
@@ -143,10 +143,10 @@ const getPostUrl = (post) => `/artykuly/${post.categorySlug}/${post.slug}/`;
             </div>
             <div class="w-2/3 flex flex-col justify-between">
               <div>
-                <span class="text-sky-500 text-[10px] font-bold uppercase tracking-widest">
+                <span class="text-[var(--accent)] text-[10px] font-bold uppercase tracking-widest">
                   {getCategoryLabel(post)}
                 </span>
-                <h3 class="font-semibold text-gray-900 line-clamp-2 group-hover:text-sky-500 transition-colors">
+                <h3 class="font-semibold text-gray-900 line-clamp-2 group-hover:text-[var(--accent)] transition-colors">
                   {post.title ?? post.slug}
                 </h3>
               </div>

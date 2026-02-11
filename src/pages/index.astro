@@ -7,6 +7,7 @@ import GridFour from "../components/home/GridFour.astro";
 import GridFive from "../components/home/GridFive.astro";
 import GridSix from "../components/home/GridSix.astro";
 import LoopText from "../components/home/LoopText.astro";
+import BanerOne from "../components/home/BanerOne.astro";
 import settings from "../content/ustawienia.json";
 
 const { site } = Astro;
@@ -31,6 +32,7 @@ const siteLogo = settings.logo ? (baseUrl ? `${baseUrl}${settings.logo}` : setti
 
   <LoopText />
   <GridOne />
+  <BanerOne />
   <GridTwo />
   <GridThree />
   <GridFour />
