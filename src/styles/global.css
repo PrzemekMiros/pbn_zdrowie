@@ -37,7 +37,8 @@
 }
 
 :root {
-  --accent: #ffd200;
+  --accent: #008da9;
+  --accent2: #ffd200;
   --surface: #ffffff;
   --surface-muted: #f7f5f2;
   --bg: #ffffff;

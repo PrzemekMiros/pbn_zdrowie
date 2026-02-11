@@ -1,5 +1,15 @@
-
+---
+import { Image } from "astro:assets";
+import baner from "../../assets/images/sections/baner.jpg";
+---
 
 <div class="max-w-7xl pb-20 pt-12">
-   <img src="src/assets/images/sections/baner.jpg" class="w-full" alt="">
+  <Image
+    src={baner}
+    alt="Baner strony"
+    class="w-full h-auto"
+    widths={[640, 960, 1280, 1600]}
+    sizes="(max-width: 1280px) 100vw, 1280px"
+    loading="lazy"
+  />
 </div>

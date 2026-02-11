@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import heroImage from "../../assets/images/sections/hero-bg.webp";
+import heroImage from "../../assets/images/sections/hero-bg.png";
 const { title, lead, meta } = Astro.props;
 const { site, url } = Astro;
 const baseUrl = site ? site.toString().replace(/\/$/, "") : "";
@@ -14,7 +14,7 @@ const currentUrl = baseUrl ? new URL(url.pathname, baseUrl).toString() : url.pat
     <img
       src={heroImage.src}
       alt=""
-      class="grayscale-[0.5] sepia-10"
+      class="grayscale-[0.5] sepia-10 h-full w-full object-cover"
       loading="lazy"
       decoding="async"
     />
@@ -46,9 +46,6 @@ const currentUrl = baseUrl ? new URL(url.pathname, baseUrl).toString() : url.pat
       <h1 class="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-[1.1] tracking-tight max-w-2xl">
         {title}
       </h1>
-    </div>
-    <div class="relative min-h-[160px] lg:min-h-full">
-
     </div>
   </div>
 </section>

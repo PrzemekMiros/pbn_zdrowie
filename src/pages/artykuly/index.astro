@@ -196,9 +196,7 @@ const categories = Array.from(
       <meta itemprop="itemListOrder" content="https://schema.org/ItemListOrderAscending" />
       <meta itemprop="numberOfItems" content={String(categories.length)} />
       <div>
-        <h3 class="text-xs font-bold uppercase tracking-[0.2em] mb-6 border-l-2 border-orange-600 pl-4">
-          Kategorie
-        </h3>
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] mb-6 border-l-2 border-blue-600 pl-4">Kategorie</h3>
         {categories.length ? (
           <ul class="space-y-2">
             {categories.map((category, index) => (
@@ -212,7 +210,7 @@ const categories = Array.from(
                 <a
                   href={`/${category.slug}/`}
                   itemprop="item"
-                  class="block rounded-xl bg-gray-100 border border-white/5 px-4 py-3 text-sm text-neutral-600 transition-all hover:border-orange-600/50 hover:text-[var(--accent)]"
+                  class="block rounded-xl border px-4 py-3 text-sm transition-all bg-gray-100 border-white/5 text-neutral-600 hover:border-blue-600/50 hover:text-[var(--accent)]"
                 >
                   <span itemprop="name">{category.label}</span>
                 </a>

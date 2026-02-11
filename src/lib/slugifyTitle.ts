@@ -19,9 +19,28 @@ const polishMap: Record<string, string> = {
   Ź: "z",
 };
 
-export function slugifyTitle(value: string) {
-  const normalized = value
-    .toString()
+type SlugSource =
+  | string
+  | {
+      slug?: string;
+      label?: string;
+      name?: string;
+      title?: string;
+    };
+
+const coerceSlugSource = (value: SlugSource) => {
+  if (typeof value === "string") return value;
+  if (value && typeof value === "object") {
+    if (typeof value.slug === "string") return value.slug;
+    if (typeof value.label === "string") return value.label;
+    if (typeof value.name === "string") return value.name;
+    if (typeof value.title === "string") return value.title;
+  }
+  return String(value ?? "");
+};
+
+export function slugifyTitle(value: SlugSource) {
+  const normalized = coerceSlugSource(value)
     .split("")
     .map((char) => polishMap[char] ?? char)
     .join("")
