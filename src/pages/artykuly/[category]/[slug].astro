@@ -172,7 +172,7 @@ if (!artykul) {
     <div class="grid gap-10 lg:grid-cols-[250px_minmax(0,1fr)_280px]">
       <aside class="hidden lg:block">
         <div class="sticky top-38 space-y-4">
-          <h3 class="mb-4 text-sm font-semibold text-[var(--text)] uppercase tracking-wider">Spis treści</h3>
+          <h3 class="text-xs font-bold uppercase tracking-[0.2em] mb-6 border-l-2 border-[var(--accent)] pl-4">Spis treści</h3>
           {headings?.length ? (
             <ol class="space-y-2 text-sm text-[var(--muted)]" data-toc>
               {headings
@@ -293,8 +293,8 @@ if (!artykul) {
 
       <aside class="space-y-6">
         <div class="sticky top-38 space-y-5">
-          <div class="flex items-center justify-between">
-            <h3 class="text-sm font-semibold text-[var(--text)] uppercase tracking-wider">Kategorie</h3>
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="text-xs font-bold uppercase tracking-[0.2em] border-l-2 border-[var(--accent)] pl-4">Kategorie</h3>
             <a href="/artykuly/" class="text-[11px] uppercase tracking-widest text-[var(--accent)] hover:text-[var(--accent)]">Wszystkie</a>
           </div>
           {categories.length ? (
@@ -318,12 +318,14 @@ if (!artykul) {
     </div>
   </article>
   <script>
-    const tocLinks = Array.from(document.querySelectorAll("[data-toc-link]"));
-    const headings = tocLinks
-      .map((link) => document.getElementById(link.dataset.tocTarget))
-      .filter(Boolean);
+    const initToc = () => {
+      const tocLinks = Array.from(document.querySelectorAll("[data-toc-link]"));
+      const headings = tocLinks
+        .map((link) => document.getElementById(link.dataset.tocTarget))
+        .filter(Boolean);
 
-    if (tocLinks.length && headings.length) {
+      if (!tocLinks.length || !headings.length) return () => {};
+
       const offset = 144;
       const setActive = (id) => {
         tocLinks.forEach((link) => {
@@ -356,11 +358,9 @@ if (!artykul) {
         });
       };
 
-      window.addEventListener("scroll", onScroll, { passive: true });
-      window.addEventListener("resize", onScroll);
-
+      const clickHandlers = new Map();
       tocLinks.forEach((link) => {
-        link.addEventListener("click", (event) => {
+        const handler = (event) => {
           event.preventDefault();
           const target = document.getElementById(link.dataset.tocTarget);
           if (target) {
@@ -370,10 +370,35 @@ if (!artykul) {
             history.replaceState(null, "", `#${target.id}`);
             setTimeout(updateActive, 0);
           }
-        });
+        };
+        clickHandlers.set(link, handler);
+        link.addEventListener("click", handler);
       });
 
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll);
+
       updateActive();
-    }
+
+      return () => {
+        window.removeEventListener("scroll", onScroll);
+        window.removeEventListener("resize", onScroll);
+        clickHandlers.forEach((handler, link) => {
+          link.removeEventListener("click", handler);
+        });
+      };
+    };
+
+    const runTocInit = () => {
+      if (window.__tocCleanup) {
+        window.__tocCleanup();
+        window.__tocCleanup = null;
+      }
+      window.__tocCleanup = initToc();
+    };
+
+    runTocInit();
+    document.addEventListener("astro:page-load", runTocInit);
+    document.addEventListener("astro:after-swap", runTocInit);
   </script>
 </BaseLayout>

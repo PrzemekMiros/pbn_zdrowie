@@ -11,12 +11,12 @@ const formattedDate = date ? new Date(date).toLocaleDateString('pl-PL', {
 
  
 <section class="relative pt-42 pb-16">
-  <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 bg-gray-100">
+  <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2">
    <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 overflow-hidden">
     <img
       src={shape31.src}
       alt=""
-      class="grayscale-[0.5] sepia-10"
+      class="grayscale-[1] opacity-50"
       loading="lazy"
       decoding="async"
     />
@@ -28,7 +28,7 @@ const formattedDate = date ? new Date(date).toLocaleDateString('pl-PL', {
         <span class="text-[var(--accent)]"> > </span>
         <span class="text-gray"> {title}</span>
       </div>
-    <h1 class="text-2xl sm:text-3xl/4 md:text-4xl lg:text-5xl font-semibold tracking-tight text-black">
+    <h1 class="text-2xl sm:text-3xl/4 md:text-4xl lg:text-5xl font-semibold tracking-tight">
       {title}
     </h1>
 
