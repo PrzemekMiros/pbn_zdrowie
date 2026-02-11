@@ -37,7 +37,7 @@
 }
 
 :root {
-  --accent: #00a6f4;
+  --accent: #ffd200;
   --surface: #ffffff;
   --surface-muted: #f7f5f2;
   --bg: #ffffff;
@@ -118,7 +118,7 @@ pre.astro-code {
   --pagefind-ui-background: rgba(255, 255, 255, 0.85);
   --pagefind-ui-border: rgba(15, 23, 42, 0.2);
   --pagefind-ui-border-radius: 9999px;
-  --pagefind-ui-font: "Zalando Sans SemiExpanded", "Segoe UI", sans-serif;
+  --pagefind-ui-scale: .65
 }
 
 .pagefind-ui--header .pagefind-ui__form {
@@ -138,9 +138,10 @@ pre.astro-code {
 }
 
 .pagefind-ui--header .pagefind-ui__search-input {
-  padding: 0.55rem 1rem;
+  padding: 0.35rem 1rem !important;
   background: rgba(255, 255, 255, 0.75);
 }
+
 
 .pagefind-ui__form {
   position: relative;
@@ -190,4 +191,14 @@ pre.astro-code {
   visibility: visible;
   transform: translateY(0);
 }
+}
+
+
+@theme {
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
 }

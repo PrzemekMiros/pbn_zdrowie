@@ -65,7 +65,7 @@ const getAuthor = (post) => post?.author ?? "Redakcja";
 const getPostUrl = (post) => `/artykuly/${post.categorySlug}/${post.slug}/`;
 ---
 
-<div class="max-w-7xl mx-auto pb-20 pt-38 font-sans">
+<div class="max-w-7xl mx-auto pb-20 pt-8 font-sans">
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
     {mainPost ? (
       <a class="lg:col-span-2 relative group overflow-hidden rounded-sm cursor-pointer" href={getPostUrl(mainPost)}>
