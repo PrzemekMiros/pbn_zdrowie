@@ -4,9 +4,9 @@ description: Częste infekcje pomimo prawidłowych badań? Sprawdź, co naprawd�
 author: Przemek
 date: 2026-02-14T18:07:10.681Z
 category:
----
-Odporność
+- Odporność
 thumbnail: /content/artykuly/img/dlaczego-twoja-odpornosc-nie-dziala-mimo-ze-wyniki-sa-dobre.png
+---
 
 Wyniki krwi w normie. CRP niskie. Leukocyty prawidłowe. A mimo to co kilka tygodni pojawia się infekcja – gardło, zatoki, opryszczka, przedłużające się przeziębienie. To jeden z najczęstszych paradoksów, z jakimi spotykam się w praktyce.
 
