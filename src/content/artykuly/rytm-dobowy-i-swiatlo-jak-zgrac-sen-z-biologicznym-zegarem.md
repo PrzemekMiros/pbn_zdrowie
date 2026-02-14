@@ -10,7 +10,7 @@ thumbnail: /content/artykuly/img/rytm-dobowy-i-swiatlo-jak-zgrac-sen-z-biologicz
 
 Sen nie jest zjawiskiem oderwanym od reszty procesów fizjologicznych. To precyzyjnie regulowany element biologii człowieka, głęboko zakorzeniony w rytmie dobowym. Współczesny styl życia, sztuczne oświetlenie i nieregularne godziny aktywności sprawiają jednak, że coraz częściej funkcjonujemy wbrew własnemu zegarowi biologicznemu. Zrozumienie, jak działa rytm dobowy oraz jaka jest rola światła, stanowi fundament skutecznej regeneracji.
 
-## Czym jest rytm dobowy
+## Czym jest rytm dobowy 
 
 Rytm dobowy to około 24-godzinny cykl biologiczny regulujący sen i czuwanie, temperaturę ciała, wydzielanie hormonów, apetyt oraz poziom energii. Jego centralnym regulatorem jest podwzgórze, a dokładniej jądro nadskrzyżowaniowe, które odbiera sygnały ze środowiska i synchronizuje pracę całego organizmu.
 
@@ -26,7 +26,7 @@ Choć jądro nadskrzyżowaniowe pełni rolę nadrzędną, praktycznie każda tka
 
 Światło jest najsilniejszym synchronizatorem rytmu dobowego. Dociera do specjalnych receptorów w siatkówce oka, które nie odpowiadają za widzenie, lecz za przekazywanie informacji o jasności do mózgu.
 
-### Melatonina – hormon nocy
+### Melatonina - hormon nocy
 
 W odpowiedzi na ciemność szyszynka zaczyna wydzielać melatoninę. Hormon ten obniża poziom czujności, przygotowuje organizm do snu oraz wspiera procesy regeneracyjne. Ekspozycja na światło w godzinach wieczornych skutecznie hamuje jego wydzielanie.
 
