@@ -1,11 +1,11 @@
 ---
 title: Dlaczego często łapiesz infekcje i co naprawdę osłabia odporność
- description: Nawracające infekcje nie zawsze wynikają z „słabej odporności”. Sprawdź, jakie mechanizmy biologiczne i styl życia wpływają na częste chorowanie oraz jak realnie wzmocnić organizm.
- author: Przemek
- date: 2026-02-14T16:04:25.785Z
- category:
+description: Nawracające infekcje nie zawsze wynikają z słabej odporności. Sprawdź, jakie mechanizmy biologiczne i styl życia wpływają na częste chorowanie oraz jak realnie wzmocnić organizm.
+author: Przemek
+date: 2026-02-14T16:04:25.785Z
+category:
    - Odporność
- thumbnail: /content/artykuly/img/dlaczego-czesto-lapiesz-infekcje-i-co-naprawde-oslabia-odpornosc.png
+thumbnail: /content/artykuly/img/dlaczego-czesto-lapiesz-infekcje-i-co-naprawde-oslabia-odpornosc.png
 ---
 
 Katar co kilka tygodni. Drapanie w gardle przy pierwszym chłodniejszym dniu. Przedłużające się zmęczenie po „zwykłej” infekcji. Wiele osób traktuje to jako normę – zwłaszcza w sezonie jesienno-zimowym. Jednak nawracające infekcje to nie tylko kwestia kontaktu z wirusami. To często sygnał, że układ odpornościowy działa w trybie przeciążenia.

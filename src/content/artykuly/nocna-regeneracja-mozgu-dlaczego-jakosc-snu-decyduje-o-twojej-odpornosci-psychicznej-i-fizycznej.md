@@ -4,7 +4,7 @@ description: Sen to nie bierny odpoczynek, lecz aktywny proces regeneracji mózg
 author: Przemek
 date: 2026-02-14T17:08:54.326Z
 category:
-  - 
+  - Odporność
 thumbnail: /content/artykuly/img/nocna-regeneracja-mozgu-dlaczego-jakosc-snu-decyduje-o-twojej-odpornosci-psychicznej-i-fizycznej.png
 ---
 
