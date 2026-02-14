@@ -1,10 +1,10 @@
 ---
 
+import { Image } from "astro:assets";
+
 const { title, lead, tags, date, headerImage } = Astro.props;
-const headerSrc = headerImage?.src ?? headerImage;
-const headerSrcset = headerImage?.srcset ?? undefined;
-const headerWidth = headerImage?.width ?? undefined;
-const headerHeight = headerImage?.height ?? undefined;
+const isHeaderAsset = !!headerImage && typeof headerImage === "object" && "src" in headerImage;
+const headerSrc = !isHeaderAsset ? headerImage : null;
 const formattedDate = date ? new Date(date).toLocaleDateString('pl-PL', {
   year: 'numeric',
   month: '2-digit',
@@ -18,18 +18,28 @@ const formattedDate = date ? new Date(date).toLocaleDateString('pl-PL', {
   <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2">
    <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 overflow-hidden">
   {headerImage ? (
-    <img
-      class="absolute inset-0 h-full w-full object-cover"
-      src={headerSrc}
-      srcset={headerSrcset}
-      sizes="100vw"
-      width={headerWidth}
-      height={headerHeight}
-      loading="lazy"
-      decoding="async"
-      alt=""
-      aria-hidden="true"
-    />
+    isHeaderAsset ? (
+      <Image
+        src={headerImage}
+        alt=""
+        class="absolute inset-0 h-full w-full object-cover"
+        sizes="100vw"
+        widths={[640, 960, 1280, 1600, 1920]}
+        loading="lazy"
+        decoding="async"
+        aria-hidden="true"
+      />
+    ) : (
+      <img
+        class="absolute inset-0 h-full w-full object-cover"
+        src={headerSrc}
+        sizes="100vw"
+        loading="lazy"
+        decoding="async"
+        alt=""
+        aria-hidden="true"
+      />
+    )
   ) : null}
    </div>
    <div class="absolute inset-0 bg-black/60"></div>
