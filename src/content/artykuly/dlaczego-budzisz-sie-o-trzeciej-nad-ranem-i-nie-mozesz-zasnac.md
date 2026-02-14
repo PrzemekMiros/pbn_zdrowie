@@ -1,5 +1,5 @@
 ---
-title: Dlaczego budzisz się o trzeciej nad ranem i nie możesz zasnąć
+title: Dlaczego budzisz się o trzeciej nad ranem i nie możesz zasnąć?
 description: Regularne wybudzenia około trzeciej nad ranem to częsty problem związany ze stresem, kortyzolem i napięciem psychicznym. Sprawdź, co oznacza i jak odzyskać spokojny sen.
 author: Przemek
 date: 2026-02-14T12:22:11.901Z

@@ -1,8 +1,8 @@
 ---
-title: Dlaczego budzisz się między 3 a 5 nad ranem Biologia stresu i drogi do spokojnego snu
+title: Dlaczego budzisz się między 3 a 5 nad ranem?
 description: Regularne wybudzanie się między 3 a 5 nad ranem to częsty objaw przeciążenia układu nerwowego. Poznaj biologiczne mechanizmy tego zjawiska i skuteczne sposoby na głęboki sen.
 author: Przemek
-date: 2026-02-13T20:24:01.625Z
+date: 2026-02-08T20:24:01.625Z
 category:
   - Sen i regeneracja
 thumbnail: /content/artykuly/img/dlaczego-budzisz-sie-miedzy-3-a-5-nad-ranem-biologia-stresu-i-drogi-do-spokojnego-snu.png
