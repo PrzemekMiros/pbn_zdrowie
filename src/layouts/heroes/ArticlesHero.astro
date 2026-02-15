@@ -13,10 +13,10 @@ const formattedDate = date ? new Date(date).toLocaleDateString('pl-PL', {
 ---
 
   
-<section class="relative pt-36 pb-8 md:pt-42 md:pb-16">
+<section class="relative pt-28 pb-8 md:pt-42 md:pb-16">
   
-  <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2">
-   <div class="pointer-events-none absolute inset-y-0 left-1/2 w-screen -translate-x-1/2 overflow-hidden">
+  <div class="w-screen ml-[calc(50%-50vw)] pointer-events-none absolute inset-0">
+   <div class="pointer-events-none absolute inset-0 overflow-hidden">
   {headerImage ? (
     isHeaderAsset ? (
       <Image
@@ -44,7 +44,7 @@ const formattedDate = date ? new Date(date).toLocaleDateString('pl-PL', {
    </div>
    <div class="absolute inset-0 bg-black/60"></div>
   </div>
-  <div class="relative mx-auto w-full grid gap-10 lg:grid-cols-[250px_minmax(0,1fr)_280px] text-white">
+  <div class="relative grid gap-10 lg:grid-cols-[250px_minmax(0,1fr)_280px]">
     <div class="hidden lg:block"></div>
     <div class="space-y-4">
         <div class="text-[8px] md:text-[10px] uppercase tracking-[0.1em] text-white/70 mb-3 md:mb-6 font-semibold">
@@ -52,13 +52,13 @@ const formattedDate = date ? new Date(date).toLocaleDateString('pl-PL', {
         <span class="text-[var(--accent)]"> > </span>
         <span class="text-white/90"> {title}</span>
       </div>
-    <h1 class="text-2xl sm:text-3xl/4 md:text-4xl lg:text-5xl font-semibold tracking-tight text-white" data-pagefind-body>
+    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white" data-pagefind-body>
       {title}
     </h1>
 
   <div class="max-w-2xl">
 
-  <div class="flex flex-wrap gap-x-8 gap-y-2 pt-6 mt-6 border-t border-white/15 font-semibold text-[8px] md:text-[10px] tracking-[0.15em] uppercase text-white/70">
+  <div class="flex flex-wrap gap-x-8 gap-y-2 pt-6 mt-6 border-t border-white/25 font-semibold text-[8px] md:text-[10px] tracking-[0.15em] uppercase text-white/70">
     {tags && tags.length > 0 && (
       <div>
         Kategoria <span class="text-[var(--accent)]"> > </span> <span class="text-white/90">{tags[0]}</span>

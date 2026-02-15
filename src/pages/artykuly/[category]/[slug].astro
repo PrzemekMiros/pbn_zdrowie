@@ -172,7 +172,7 @@ if (!artykul) {
       <meta itemprop="name" content={siteName} />
       {siteLogo ? <meta itemprop="logo" content={siteLogo} /> : null}
     </div>
-    <div class="grid gap-10 lg:grid-cols-[250px_minmax(0,1fr)_280px]">
+    <div class="grid gap-10 grid-cols-1 lg:grid-cols-[250px_minmax(0,1fr)_280px]">
       <aside class="hidden lg:block mt-2">
         <div class="sticky top-38 space-y-4">
           <h3 class="text-xs font-bold uppercase tracking-[0.2em] mb-6 border-l-2 border-[var(--accent)] pl-4">Spis treści</h3>
@@ -200,16 +200,10 @@ if (!artykul) {
       </aside>
 
       <div class="space-y-12">
-        {artykul.classes?.length ? (
-          <section class="mx-auto max-w-3xl space-y-2">
-            <h2 class="text-lg font-semibold text-[var(--text)]">Zakres</h2>
-            <p class="text-sm leading-6 text-[var(--muted)]">{artykul.classes.join(", ")}</p>
-          </section>
-        ) : null}
         {Content ? (
   <section
     id="article-content"
-    class="mx-auto max-w-2xl space-y-6 text-[16px] leading-relaxed text-[var(--text)] sm:text-[17px] sm:leading-relaxed 
+    class="space-y-6 text-[16px] leading-relaxed text-[var(--text)] sm:text-[17px] sm:leading-relaxed 
     [&>a]:underline [&>a]:decoration-[var(--accent)] [&>a]:underline-offset-4 [&>a]:font-medium hover:[&>a]:text-[var(--accent)]
     [&>blockquote]:border-l-4 [&>blockquote]:border-[var(--accent)] [&>blockquote]:pl-6 [&>blockquote]:italic [&>blockquote]:text-[var(--muted)] 
     [&>h2]:mt-10 [&>h2]:mb-4 [&>h2]:text-2xl [&>h2]:font-semibold [&>h2]:tracking-tight [&>h2]:text-[var(--text)] [&>h2]:scroll-mt-[144px]
@@ -234,14 +228,14 @@ if (!artykul) {
                   ? `${baseUrl}/artykuly/${item?.categorySlug ?? ""}/${item?.slug ?? ""}/`
                   : `/artykuly/${item?.categorySlug ?? ""}/${item?.slug ?? ""}/`;
                 return (
-                  <a class="group flex gap-3 rounded-xl border border-[var(--border)] bg-white/80 p-3 hover:shadow-sm" href={itemUrl}>
-                    <div class="h-36 w-52 shrink-0 overflow-hidden rounded-lg border border-black/10">
+                  <a class="group grid grid-cols-1 md:grid-cols-2 gap-3 rounded-xl border border-[var(--border)] bg-white/80 p-3 hover:shadow-sm" href={itemUrl}>
+                    <div class="shrink-0 overflow-hidden rounded-lg border border-black/10">
                       {itemImage ? (
                         <Image
                           class="h-full w-full object-cover"
                           src={itemImage}
                           alt={item?.title ?? item?.slug}
-                          widths={[160, 240]}
+                          widths={[560, 340]}
                           sizes="80px"
                           loading="lazy"
                           placeholder="blur"
