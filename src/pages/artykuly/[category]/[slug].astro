@@ -122,6 +122,7 @@ if (allArticles.length > 1) {
     }
   }
 }
+const inlineLinkArticle = relatedArticles[0] ?? null;
 const headerImage = resolveArticleImage(artykul?.tileImage ?? artykul?.thumbnail);
 const headerImageUrl = headerImage?.src ?? headerImage;
 const { site } = Astro;
@@ -213,6 +214,19 @@ if (!artykul) {
   >
     <Content />
   </section>
+        ) : null}
+
+        {inlineLinkArticle ? (
+          <p class="text-[15px] leading-relaxed text-[var(--text)]">
+            Jeśli chcesz pogłębić wątek, zobacz także{" "}
+            <a
+              class="underline decoration-[var(--accent)] underline-offset-4 font-medium hover:text-[var(--accent)]"
+              href={`/artykuly/${inlineLinkArticle?.categorySlug ?? ""}/${inlineLinkArticle?.slug ?? ""}/`}
+            >
+              {inlineLinkArticle?.title ?? inlineLinkArticle?.slug}
+            </a>
+            .
+          </p>
         ) : null}
 
         {relatedArticles.length ? (
