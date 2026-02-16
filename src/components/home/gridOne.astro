@@ -61,7 +61,6 @@ const getCategoryLabel = (post) => {
   const category = Array.isArray(post?.category) ? post.category[0] : post?.category;
   return category ?? "Artykul";
 };
-const getAuthor = (post) => post?.author ?? "Redakcja";
 const getPostUrl = (post) => `/artykuly/${post.categorySlug}/${post.slug}/`;
 ---
 
@@ -97,7 +96,7 @@ const getPostUrl = (post) => `/artykuly/${post.categorySlug}/${post.slug}/`;
             <div class="flex items-center gap-4 text-xs text-gray-300">
               <div class="flex items-center gap-2">
                 <div class="w-6 h-6 rounded-full border border-gray-500 bg-black/40"></div>
-                <span class="font-semibold text-white">{getAuthor(mainPost)}</span>
+                <span class="font-semibold text-white">Redakcja</span>
               </div>
               {mainPost.date ? (
                 <div class="flex items-center gap-1">
